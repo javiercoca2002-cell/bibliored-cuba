@@ -3,61 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plataforma educativa nacional con acceso libre desde la red móvil cubana" />
   <title>Bibliored Cuba</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      line-height: 1.6;
+    :root {
+      --bg-primary: #121212;
+      --bg-secondary: #1f1f1f;
+      --text-primary: #f0f0f0;
+      --text-secondary: #cccccc;
+      --accent-primary: #00ffff;
+      --accent-secondary: #00ccff;
+      --border-color: #333;
+      --menu-bg: #1a1a1a;
+      --search-bg: #2a2a2a;
+      --card-bg: #1a1a1a;
     }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-top: 70px; /* Espacio para el menú fijo */
+    }
+    
+    /* Mejoras de accesibilidad para enfoque */
+    a:focus, button:focus {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+    }
+    
+    /* Header */
     header, footer {
-      background-color: #1f1f1f;
+      background-color: var(--bg-secondary);
       padding: 30px 20px;
       text-align: center;
       animation: fadeIn 1s ease-in;
     }
+    
     h1 {
-      color: #00ffff;
+      color: var(--accent-primary);
       font-size: 2em;
       margin-bottom: 10px;
     }
+    
     p.subtitulo {
-      color: #cccccc;
+      color: var(--text-secondary);
       font-size: 1.1em;
     }
+    
+    /* Menú de navegación */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--menu-bg);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      color: var(--accent-primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-item {
+      margin: 0 0.5rem;
+    }
+    
+    .nav-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover, .nav-link:focus {
+      background-color: rgba(0, 255, 255, 0.1);
+      text-decoration: none;
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+    }
+    
+    /* Buscador */
+    .search-container {
+      padding: 1rem;
+      background-color: var(--search-bg);
+      position: sticky;
+      top: 60px;
+      z-index: 999;
+    }
+    
+    .search-box {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+    }
+    
+    #searchInput {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    #searchButton {
+      padding: 0.8rem 1.2rem;
+      background-color: var(--accent-primary);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    /* Contadores */
+    .category-counter {
+      display: inline-block;
+      background-color: var(--accent-primary);
+      color: var(--bg-primary);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      font-size: 0.8rem;
+      margin-left: 8px;
+    }
+    
+    /* Secciones */
     section {
       padding: 20px;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid var(--border-color);
       animation: fadeInUp 0.8s ease-in;
     }
+    
     h2 {
-      color: #00ccff;
-      margin-bottom: 10px;
+      color: var(--accent-secondary);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
     }
+    
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .resource-count {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
     ul {
       list-style: none;
       padding-left: 0;
     }
+    
     li {
-      margin-bottom: 6px;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
     }
+    
+    li:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    li.hidden {
+      display: none;
+    }
+    
     a {
-      color: #00ccff;
+      color: var(--accent-secondary);
       text-decoration: none;
     }
+    
     a:hover {
       text-decoration: underline;
     }
+    
+    /* Footer */
     footer p {
       font-size: 0.9em;
       color: #999;
     }
+    
+    /* Animaciones */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -65,16 +239,97 @@
     
     /* Mejoras de responsividad */
     @media (max-width: 768px) {
+      body {
+        padding-top: 60px;
+      }
+      
       h1 {
         font-size: 1.5em;
       }
+      
       section {
         padding: 15px;
+      }
+      
+      .navbar {
+        padding: 0.8rem 1rem;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: var(--menu-bg);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .nav-item {
+        margin: 0.8rem 0;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .search-container {
+        top: 50px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .category-header {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Menú de navegación fijo -->
+  <nav class="nav-container" role="navigation" aria-label="Menú principal">
+    <div class="navbar">
+      <a href="#" class="logo">📚 Bibliored Cuba</a>
+      <ul class="nav-menu" role="menubar">
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#enseñanza-aprendizaje" role="menuitem">Enseñanza-Aprendizaje</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#repositorios-academicos" role="menuitem">Repositorios Académicos</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#revistas-cientificas" role="menuitem">Revistas Científicas</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#bibliotecas-virtuales" role="menuitem">Bibliotecas Virtuales</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#eventos-academicos" role="menuitem">Eventos Académicos</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#observatorios-academicos" role="menuitem">Observatorios Académicos</a>
+        </li>
+      </ul>
+      <button class="hamburger" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    </div>
+  </nav>
+
+  <!-- Buscador -->
+  <div class="search-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar por universidad o palabra clave..." aria-label="Buscar recursos">
+      <button id="searchButton">Buscar</button>
+    </div>
+  </div>
 
   <header>
     <h1>📚 Bibliored Cuba</h1>
@@ -84,8 +339,11 @@
     </p>
   </header>
 
-  <section>
-    <h2>📘 Enseñanza-Aprendizaje</h2>
+  <section id="enseñanza-aprendizaje">
+    <div class="category-header">
+      <h2>📘 Enseñanza-Aprendizaje <span class="category-counter" id="counter-enseñanza">0</span></h2>
+      <span class="resource-count" id="count-enseñanza">0 recursos mostrados de 0</span>
+    </div>
     <ul>
       <li><strong>UNAH:</strong> <a href="https://evea.unah.edu.cu">evea</a>, <a href="https://evead.unah.edu.cu">evead</a>, <a href="https://eveapg.unah.edu.cu">eveapg</a></li>
       <li><strong>UDG:</strong> <a href="https://eddist.udg.co.cu">eddist</a>, <a href="https://moodle.udg.co.cu">moodle</a>, <a href="https://mooc.udg.co.cu">mooc</a>, <a href="https://eva.udg.co.cu">eva</a>, <a href="https://evea.udg.co.cu">evea</a></li>
@@ -115,8 +373,11 @@
     </ul>
   </section>
 
-  <section>
-    <h2>📂 Repositorios Académicos</h2>
+  <section id="repositorios-academicos">
+    <div class="category-header">
+      <h2>📂 Repositorios Académicos <span class="category-counter" id="counter-repositorios">0</span></h2>
+      <span class="resource-count" id="count-repositorios">0 recursos mostrados de 0</span>
+    </div>
     <ul>
       <li><strong>UNAH:</strong> <a href="https://dspace.unah.edu.cu">dspace</a>, <a href="https://runah.unah.edu.cu">runah</a></li>
       <li><strong>UDG:</strong> <a href="https://repositorio.udg.co.cu">repositorio</a></li>
@@ -143,8 +404,11 @@
     </ul>
   </section>
 
-  <section>
-    <h2>🧪 Revistas Científicas</h2>
+  <section id="revistas-cientificas">
+    <div class="category-header">
+      <h2>🧪 Revistas Científicas <span class="category-counter" id="counter-revistas">0</span></h2>
+      <span class="resource-count" id="count-revistas">0 recursos mostrados de 0</span>
+    </div>
     <ul>
       <li><strong>UNAH:</strong> <a href="https://revistas.unah.edu.cu">revistas</a></li>
       <li><strong>UDG:</strong> <a href="https://revistas.udg.co.cu">revistas</a></li>
@@ -199,8 +463,11 @@
     </ul>
   </section>
 
-  <section>
-    <h2>📚 Bibliotecas Virtuales</h2>
+  <section id="bibliotecas-virtuales">
+    <div class="category-header">
+      <h2>📚 Bibliotecas Virtuales <span class="category-counter" id="counter-bibliotecas">0</span></h2>
+      <span class="resource-count" id="count-bibliotecas">0 recursos mostrados de 0</span>
+    </div>
     <ul>
       <li><strong>UNAH:</strong> <a href="https://ebiblio.unah.edu.cu">ebiblio</a></li>
       <li><strong>UM:</strong> <a href="https://abcd.umcc.cu">abcd</a></li>
@@ -216,8 +483,11 @@
     </ul>
   </section>
 
-  <section>
-    <h2>🗓️ Sitios de Eventos Académicos</h2>
+  <section id="eventos-academicos">
+    <div class="category-header">
+      <h2>🗓️ Sitios de Eventos Académicos <span class="category-counter" id="counter-eventos">0</span></h2>
+      <span class="resource-count" id="count-eventos">0 recursos mostrados de 0</span>
+    </div>
     <ul>
       <li><strong>UDG:</strong> <a href="https://congresodesarrollolocal.udg.co.cu">congresodesarrollolocal</a></li>
       <li><strong>UCf:</strong> <a href="https://eventos.ucf.edu.cu">eventos</a>, <a href="https://talleres.ucf.edu.cu">talleres</a></li>
@@ -225,8 +495,11 @@
     </ul>
   </section>
 
-  <section>
-    <h2>🔍 Observatorios Académicos</h2>
+  <section id="observatorios-academicos">
+    <div class="category-header">
+      <h2>🔍 Observatorios Académicos <span class="category-counter" id="counter-observatorios">0</span></h2>
+      <span class="resource-count" id="count-observatorios">0 recursos mostrados de 0</span>
+    </div>
     <ul>
       <li><strong>UPR:</strong> <a href="https://sciobs.upr.edu.cu">sciobs</a>, <a href="https://techobs.upr.edu.cu">techobs</a>, <a href="https://tareavida.upr.edu.cu">tareavida</a></li>
       <li><strong>UH:</strong> <a href="https://eventos.uh.cu">eventos</a></li>
@@ -241,5 +514,131 @@
     Esta plataforma promueve el acceso libre y gratuito a recursos educativos institucionales.</p>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Variables globales
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.getElementById('searchButton');
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      const allListItems = document.querySelectorAll('section ul li');
+      const categoryIds = [
+        'enseñanza-aprendizaje', 
+        'repositorios-academicos', 
+        'revistas-cientificas', 
+        'bibliotecas-virtuales', 
+        'eventos-academicos', 
+        'observatorios-academicos'
+      ];
+      
+      // Inicializar contadores
+      initializeCounters();
+      
+      // Configurar menú hamburguesa
+      hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', 
+          hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      });
+      
+      // Cerrar menú al hacer clic en un enlace
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // Configurar búsqueda
+      searchInput.addEventListener('input', performSearch);
+      searchButton.addEventListener('click', performSearch);
+      
+      // Permitir búsqueda con Enter
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          performSearch();
+        }
+      });
+      
+      // Función para realizar la búsqueda
+      function performSearch() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        
+        if (searchTerm === '') {
+          // Si no hay término de búsqueda, mostrar todos los elementos
+          allListItems.forEach(item => {
+            item.classList.remove('hidden');
+          });
+        } else {
+          // Filtrar elementos según el término de búsqueda
+          allListItems.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(searchTerm)) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        }
+        
+        // Actualizar contadores después de la búsqueda
+        updateCounters();
+      }
+      
+      // Inicializar contadores
+      function initializeCounters() {
+        categoryIds.forEach(categoryId => {
+          const section = document.getElementById(categoryId);
+          const listItems = section.querySelectorAll('li');
+          const counterElement = document.getElementById(`counter-${categoryId.split('-')[0]}`);
+          
+          // Establecer el contador inicial
+          counterElement.textContent = listItems.length;
+          
+          // Inicializar el contador de recursos mostrados
+          const countElement = document.getElementById(`count-${categoryId.split('-')[0]}`);
+          countElement.textContent = `${listItems.length} recursos mostrados de ${listItems.length}`;
+        });
+      }
+      
+      // Actualizar contadores después de búsqueda/filtrado
+      function updateCounters() {
+        categoryIds.forEach(categoryId => {
+          const section = document.getElementById(categoryId);
+          const allItems = section.querySelectorAll('li');
+          const visibleItems = section.querySelectorAll('li:not(.hidden)');
+          const counterElement = document.getElementById(`counter-${categoryId.split('-')[0]}`);
+          const countElement = document.getElementById(`count-${categoryId.split('-')[0]}`);
+          
+          // Actualizar contador
+          counterElement.textContent = visibleItems.length;
+          
+          // Actualizar texto de recursos mostrados
+          countElement.textContent = `${visibleItems.length} recursos mostrados de ${allItems.length}`;
+        });
+      }
+      
+      // Smooth scroll para enlaces internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
