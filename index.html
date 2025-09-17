@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Plataforma educativa nacional con acceso libre desde la red móvil cubana" />
-  <title>Bibliored Cuba</title>
+  <title>Bibliored Cuba - Universidades</title>
   <style>
     :root {
       --bg-primary: #121212;
@@ -18,47 +18,44 @@
       --search-bg: #2a2a2a;
       --card-bg: #1a1a1a;
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
-      padding-top: 70px; /* Espacio para el menú fijo */
+      padding-top: 70px;
     }
-    
-    /* Mejoras de accesibilidad para enfoque */
+
     a:focus, button:focus {
       outline: 2px solid var(--accent-primary);
       outline-offset: 2px;
     }
-    
-    /* Header */
+
     header, footer {
       background-color: var(--bg-secondary);
       padding: 30px 20px;
       text-align: center;
       animation: fadeIn 1s ease-in;
     }
-    
+
     h1 {
       color: var(--accent-primary);
       font-size: 2em;
       margin-bottom: 10px;
     }
-    
+
     p.subtitulo {
       color: var(--text-secondary);
       font-size: 1.1em;
     }
-    
-    /* Menú de navegación */
+
     .nav-container {
       position: fixed;
       top: 0;
@@ -68,7 +65,7 @@
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
-    
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -77,23 +74,23 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    
+
     .logo {
       color: var(--accent-primary);
       font-weight: bold;
       font-size: 1.2rem;
       text-decoration: none;
     }
-    
+
     .nav-menu {
       display: flex;
       list-style: none;
     }
-    
+
     .nav-item {
       margin: 0 0.5rem;
     }
-    
+
     .nav-link {
       color: var(--text-primary);
       text-decoration: none;
@@ -101,12 +98,12 @@
       border-radius: 4px;
       transition: background-color 0.3s;
     }
-    
+
     .nav-link:hover, .nav-link:focus {
       background-color: rgba(0, 255, 255, 0.1);
       text-decoration: none;
     }
-    
+
     .hamburger {
       display: none;
       cursor: pointer;
@@ -115,8 +112,7 @@
       color: var(--text-primary);
       font-size: 1.5rem;
     }
-    
-    /* Buscador */
+
     .search-container {
       padding: 1rem;
       background-color: var(--search-bg);
@@ -124,13 +120,13 @@
       top: 60px;
       z-index: 999;
     }
-    
+
     .search-box {
       max-width: 600px;
       margin: 0 auto;
       display: flex;
     }
-    
+
     #searchInput {
       flex: 1;
       padding: 0.8rem;
@@ -139,7 +135,7 @@
       background-color: var(--bg-primary);
       color: var(--text-primary);
     }
-    
+
     #searchButton {
       padding: 0.8rem 1.2rem;
       background-color: var(--accent-primary);
@@ -149,112 +145,92 @@
       cursor: pointer;
       font-weight: bold;
     }
-    
-    /* Contadores */
-    .category-counter {
-      display: inline-block;
-      background-color: var(--accent-primary);
-      color: var(--bg-primary);
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      text-align: center;
-      line-height: 24px;
-      font-size: 0.8rem;
-      margin-left: 8px;
-    }
-    
-    /* Secciones */
-    section {
+
+    .university-section {
       padding: 20px;
       border-bottom: 1px solid var(--border-color);
       animation: fadeInUp 0.8s ease-in;
     }
-    
-    h2 {
+
+    .university-header {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--accent-primary);
+    }
+
+    .university-title {
+      color: var(--accent-primary);
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+    }
+
+    .resource-card {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .resource-type {
       color: var(--accent-secondary);
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
     }
-    
-    .category-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    .resource-count {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-    
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    li {
-      margin-bottom: 10px;
-      padding: 8px;
+
+    .resource-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      padding: 5px;
       border-radius: 4px;
       transition: background-color 0.2s;
     }
-    
-    li:hover {
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-    
-    li.hidden {
-      display: none;
-    }
-    
-    a {
-      color: var(--accent-secondary);
-      text-decoration: none;
-    }
-    
-    a:hover {
+
+    .resource-link:hover {
+      background-color: rgba(0, 204, 255, 0.1);
       text-decoration: underline;
     }
-    
-    /* Footer */
+
     footer p {
       font-size: 0.9em;
       color: #999;
     }
-    
-    /* Animaciones */
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
-    /* Mejoras de responsividad */
+
     @media (max-width: 768px) {
       body {
         padding-top: 60px;
       }
-      
+
       h1 {
         font-size: 1.5em;
       }
-      
-      section {
-        padding: 15px;
-      }
-      
+
       .navbar {
         padding: 0.8rem 1rem;
       }
-      
+
       .nav-menu {
         position: fixed;
         left: -100%;
@@ -267,247 +243,596 @@
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         padding: 1rem 0;
       }
-      
+
       .nav-menu.active {
         left: 0;
       }
-      
+
       .nav-item {
         margin: 0.8rem 0;
       }
-      
+
       .hamburger {
         display: block;
       }
-      
+
       .search-container {
         top: 50px;
       }
-    }
-    
-    @media (max-width: 480px) {
-      .category-header {
-        flex-direction: column;
-        align-items: flex-start;
+
+      .resources-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Menú de navegación fijo -->
   <nav class="nav-container" role="navigation" aria-label="Menú principal">
     <div class="navbar">
-      <a href="#" class="logo">📚 Bibliored Cuba</a>
+      <a href="index.html" class="logo">📚 Bibliored Cuba</a>
       <ul class="nav-menu" role="menubar">
         <li class="nav-item" role="none">
-          <a class="nav-link" href="#enseñanza-aprendizaje" role="menuitem">Enseñanza-Aprendizaje</a>
+          <a class="nav-link" href="index.html" role="menuitem">Inicio</a>
         </li>
         <li class="nav-item" role="none">
-          <a class="nav-link" href="#repositorios-academicos" role="menuitem">Repositorios Académicos</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link" href="#revistas-cientificas" role="menuitem">Revistas Científicas</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link" href="#bibliotecas-virtuales" role="menuitem">Bibliotecas Virtuales</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link" href="#eventos-academicos" role="menuitem">Eventos Académicos</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link" href="#observatorios-academicos" role="menuitem">Observatorios Académicos</a>
+          <a class="nav-link" href="#top" role="menuitem">Volver arriba</a>
         </li>
       </ul>
       <button class="hamburger" aria-expanded="false" aria-label="Abrir menú">☰</button>
     </div>
   </nav>
 
-  <!-- Buscador -->
   <div class="search-container">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar por universidad o palabra clave..." aria-label="Buscar recursos">
+      <input type="text" id="searchInput" placeholder="Buscar por universidad o recurso..." aria-label="Buscar recursos">
       <button id="searchButton">Buscar</button>
     </div>
   </div>
 
   <header>
-    <h1>📚 Bibliored Cuba</h1>
+    <h1>🏫 Universidades Cubanas</h1>
     <p class="subtitulo">
-      Plataforma educativa nacional con acceso libre desde la red móvil cubana.<br>
-      Más de 300 recursos institucionales organizados por categoría, universidad y utilidad pública.
+      Recursos organizados por institución académica<br>
+      Acceso directo a todos los portales y servicios universitarios
     </p>
   </header>
 
-  <section id="enseñanza-aprendizaje">
-    <div class="category-header">
-      <h2>📘 Enseñanza-Aprendizaje <span class="category-counter" id="counter-enseñanza">0</span></h2>
-      <span class="resource-count" id="count-enseñanza">0 recursos mostrados de 0</span>
-    </div>
-    <ul>
-      <li><strong>UNAH:</strong> <a href="https://evea.unah.edu.cu">evea</a>, <a href="https://evead.unah.edu.cu">evead</a>, <a href="https://eveapg.unah.edu.cu">eveapg</a></li>
-      <li><strong>UDG:</strong> <a href="https://eddist.udg.co.cu">eddist</a>, <a href="https://moodle.udg.co.cu">moodle</a>, <a href="https://mooc.udg.co.cu">mooc</a>, <a href="https://eva.udg.co.cu">eva</a>, <a href="https://evea.udg.co.cu">evea</a></li>
-      <li><strong>UCf:</strong> <a href="https://cursos.ucf.edu.cu">cursos</a>, <a href="https://clasesvirtuales.ucf.edu.cu">clasesvirtuales</a>, <a href="https://postgradosvirtuales.ucf.edu.cu">postgradosvirtuales</a>, <a href="https://pled.ucf.edu.cu">pled</a></li>
-      <li><strong>UM:</strong> <a href="https://eva.umcc.cu">eva</a></li>
-      <li><strong>UHo:</strong> <a href="https://eduvirtual.uho.edu.cu">eduvirtual</a>, <a href="https://aulasvirtuales.uho.edu.cu">aulasvirtuales</a>, <a href="https://eadvirtual.uho.edu.cu">eadvirtual</a></li>
-      <li><strong>ESCEG:</strong> <a href="https://eva.esceg.cu">eva</a></li>
-      <li><strong>UPR:</strong> <a href="https://aulas-virtuales.upr.edu.cu">aulas-virtuales</a>, <a href="https://moodle.upr.edu.cu">moodle</a>, <a href="https://moodle.ceces.upr.edu.cu">ceces</a>, <a href="https://moodleed.upr.edu.cu">moodleed</a></li>
-      <li><strong>UCI:</strong> <a href="https://aulacened.uci.cu">aulacened</a>, <a href="https://eva.uci.cu">eva</a></li>
-      <li><strong>UNICA:</strong> <a href="https://pregrado.unica.cu">pregrado</a>, <a href="https://posgrado.unica.cu">posgrado</a></li>
-      <li><strong>UO:</strong> <a href="https://eva.uo.edu.cu">eva</a>, <a href="https://cursos.uo.edu.cu">cursos</a></li>
-      <li><strong>UH:</strong> <a href="https://evea.uh.cu">evea</a>, <a href="https://moocs.uh.cu">moocs</a></li>
-      <li><strong>UCPEJV:</strong> <a href="https://webdocente.ucpejv.edu.cu">webdocente</a></li>
-      <li><strong>UA:</strong> <a href="https://uva.uart.edu.cu">uva</a></li>
-      <li><strong>UMoa:</strong> <a href="https://moodle.ismm.edu.cu">moodle</a>, <a href="https://moodle-postgrado.ismm.edu.cu">postgrado</a></li>
-      <li><strong>CUJAE:</strong> <a href="https://moodle.cujae.edu.cu">moodle</a>, <a href="https://teleportal.cujae.edu.cu">teleportal</a></li>
-      <li><strong>UG:</strong> <a href="https://cursovirtual.cug.co.cu">cursovirtual</a></li>
-      <li><strong>INCA:</strong> <a href="https://moodle.inca.edu.cu">moodle</a></li>
-      <li><strong>CENSA:</strong> <a href="https://evea.censa.edu.cu">evea</a></li>
-      <li><strong>ICA:</strong> <a href="https://moodle.ica.edu.cu">moodle</a></li>
-      <li><strong>UCLV:</strong> <a href="https://aula.uclv.edu.cu">aula</a>, <a href="https://moodle.uclv.edu.cu">moodle</a></li>
-      <li><strong>UCCFD:</strong> <a href="https://posgrado.uccfd.cu">posgrado</a>, <a href="https://moodle.uccfd.cu">moodle</a></li>
-      <li><strong>UNISS:</strong> <a href="https://pregrado.uniss.edu.cu">pregrado</a>, <a href="https://posgrado.uniss.edu.cu">posgrado</a>, <a href="https://mooc.uniss.edu.cu">mooc</a></li>
-      <li><strong>UC:</strong> <a href="https://moodle.reduc.edu.cu">moodle</a>, <a href="https://moodlepost.reduc.edu.cu">moodlepost</a></li>
-      <li><strong>ULT:</strong> <a href="https://pregrado.ult.edu.cu">pregrado</a>, <a href="https://uvp.ult.edu.cu">uvp</a></li>
-      <li><strong>UIJ:</strong> <a href="https://aulavirtual.uij.edu.cu">aulavirtual</a>, <a href="https://postgrado.uij.edu.cu">postgrado</a></li>
-    </ul>
-  </section>
+  <main>
+    <!-- UNAH -->
+    <section id="unah" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UNAH (Universidad de Artemisa)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.unah.edu.cu" class="resource-link" target="_blank">https://www.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.unah.edu.cu" class="resource-link" target="_blank">https://webmail.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.unah.edu.cu" class="resource-link" target="_blank">https://nube.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">FTP</span><a href="https://ftp.unah.edu.cu" class="resource-link" target="_blank">https://ftp.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.unah.edu.cu" class="resource-link" target="_blank">https://sigenu.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.unah.edu.cu" class="resource-link" target="_blank">https://dspace.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://git.unah.edu.cu" class="resource-link" target="_blank">https://git.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.unah.edu.cu" class="resource-link" target="_blank">https://revistas.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://evea.unah.edu.cu" class="resource-link" target="_blank">https://evea.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://evead.unah.edu.cu" class="resource-link" target="_blank">https://evead.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://eveapg.unah.edu.cu" class="resource-link" target="_blank">https://eveapg.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de OA</span><a href="https://runah.unah.edu.cu" class="resource-link" target="_blank">https://runah.unah.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://ebiblio.unah.edu.cu" class="resource-link" target="_blank">https://ebiblio.unah.edu.cu</a></div>
+      </div>
+    </section>
 
-  <section id="repositorios-academicos">
-    <div class="category-header">
-      <h2>📂 Repositorios Académicos <span class="category-counter" id="counter-repositorios">0</span></h2>
-      <span class="resource-count" id="count-repositorios">0 recursos mostrados de 0</span>
-    </div>
-    <ul>
-      <li><strong>UNAH:</strong> <a href="https://dspace.unah.edu.cu">dspace</a>, <a href="https://runah.unah.edu.cu">runah</a></li>
-      <li><strong>UDG:</strong> <a href="https://repositorio.udg.co.cu">repositorio</a></li>
-      <li><strong>UCf:</strong> <a href="https://dspace.ucf.edu.cu">dspace</a></li>
-      <li><strong>UM:</strong> <a href="https://cict.umcc.cu">cict</a>, <a href="https://rein.umcc.cu">rein</a></li>
-      <li><strong>UHo:</strong> <a href="https://repositorio.uho.edu.cu">repositorio</a></li>
-      <li><strong>UPR:</strong> <a href="https://rc.upr.edu.cu">rc</a></li>
-      <li><strong>UCI:</strong> <a href="https://repositorio.uci.cu">repositorio</a></li>
-      <li><strong>UNICA:</strong> <a href="https://dspace.unica.cu">dspace</a></li>
-      <li><strong>UO:</strong> <a href="https://referenciaict.uo.edu.cu">referenciaict</a>, <a href="https://repositorio.uo.edu.cu">repositorio</a></li>
-      <li><strong>UH:</strong> <a href="https://accesoabierto.uh.cu">accesoabierto</a></li>
-      <li><strong>UA:</strong> <a href="https://repositorio.uart.edu.cu">repositorio</a>, <a href="https://ftp.uart.edu.cu">ftp</a></li>
-      <li><strong>UMoa:</strong> <a href="https://ninive.ismm.edu.cu">ninive</a>, <a href="https://cep.ismm.edu.cu">cep</a></li>
-      <li><strong>CUJAE:</strong> <a href="https://repositorio.cujae.edu.cu">repositorio</a></li>
-      <li><strong>UG:</strong> <a href="https://docsvirtual.cug.co.cu">docsvirtual</a>, <a href="https://repositorio.cug.co.cu">repositorio</a></li>
-      <li><strong>INCA:</strong> <a href="https://dspace.inca.edu.cu">dspace</a></li>
-      <li><strong>CENSA:</strong> <a href="https://dspace.censa.edu.cu">dspace</a></li>
-      <li><strong>ICA:</strong> <a href="https://dspace.ica.edu.cu">dspace</a></li>
-      <li><strong>UCLV:</strong> <a href="https://dspace.uclv.edu.cu">dspace</a>, <a href="https://libros.uclv.edu.cu">libros</a>, <a href="https://elibros.uclv.edu.cu">elibros</a></li>
-      <li><strong>UNISS:</strong> <a href="https://dspace.uniss.edu.cu">dspace</a></li>
-      <li><strong>UC:</strong> <a href="https://rediuc.reduc.edu.cu">rediuc</a></li>
-      <li><strong>ULT:</strong> <a href="https://roa.ult.edu.cu">roa</a></li>
-      <li><strong>UIJ:</strong> <a href="https://ftp.uij.edu.cu">ftp</a></li>
-    </ul>
-  </section>
+    <!-- UDG -->
+    <section id="udg" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UDG (Universidad de Granma)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.udg.co.cu" class="resource-link" target="_blank">https://revistas.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="https://congresodesarrollolocal.udg.co.cu" class="resource-link" target="_blank">https://congresodesarrollolocal.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://passwd.udg.co.cu" class="resource-link" target="_blank">https://passwd.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://secretaria.udg.co.cu" class="resource-link" target="_blank">https://secretaria.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://poblacion.udg.co.cu" class="resource-link" target="_blank">https://poblacion.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Linux</span><a href="https://repo.udg.co.cu" class="resource-link" target="_blank">https://repo.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://eddist.udg.co.cu" class="resource-link" target="_blank">https://eddist.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correos.udg.co.cu" class="resource-link" target="_blank">https://correos.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.udg.co.cu" class="resource-link" target="_blank">https://webmail.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://moodle.udg.co.cu" class="resource-link" target="_blank">https://moodle.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://mooc.udg.co.cu" class="resource-link" target="_blank">https://mooc.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.udg.co.cu" class="resource-link" target="_blank">https://www.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://gestion.udg.co.cu" class="resource-link" target="_blank">https://gestion.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://eva.udg.co.cu" class="resource-link" target="_blank">https://eva.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://evea.udg.co.cu" class="resource-link" target="_blank">https://evea.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://ediciones.udg.co.cu" class="resource-link" target="_blank">https://ediciones.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://repositorio.udg.co.cu" class="resource-link" target="_blank">https://repositorio.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://cloud.udg.co.cu" class="resource-link" target="_blank">https://cloud.udg.co.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://office.udg.co.cu" class="resource-link" target="_blank">https://office.udg.co.cu</a></div>
+      </div>
+    </section>
 
-  <section id="revistas-cientificas">
-    <div class="category-header">
-      <h2>🧪 Revistas Científicas <span class="category-counter" id="counter-revistas">0</span></h2>
-      <span class="resource-count" id="count-revistas">0 recursos mostrados de 0</span>
-    </div>
-    <ul>
-      <li><strong>UNAH:</strong> <a href="https://revistas.unah.edu.cu">revistas</a></li>
-      <li><strong>UDG:</strong> <a href="https://revistas.udg.co.cu">revistas</a></li>
-      <li><strong>UCf:</strong> <a href="https://rus.ucf.edu.cu">rus</a>, <a href="https://conrado.ucf.edu.cu">conrado</a>, <a href="https://aes.ucf.edu.cu">aes</a>, <a href="https://rccd.ucf.edu.cu">rccd</a>, <a href="https://universosur.ucf.edu.cu">universosur</a></li>
-      <li><strong>UM:</strong> <a href="https://retosturisticos.umcc.cu">retosturisticos</a>, <a href="https://atenas.umcc.cu">atenas</a></li>
-      <li><strong>UHo:</strong> <a href="https://deporvida.uho.edu.cu">deporvida</a>, <a href="https://luz.uho.edu.cu">luz</a>, <a href="https://tecedu.uho.edu.cu">tecedu</a></li>
-      <li><strong>ESCEG:</strong> <a href="https://apye.esceg.cu">apye</a></li>
-      <li><strong>UPR:</strong> <a href="https://mendive.upr.edu.cu">mendive</a>, <a href="https://podium.upr.edu.cu">podium</a>, <a href="https://coodes.upr.edu.cu">coodes</a>, <a href="https://cifam.upr.edu.cu">cifam</a>, <a href="https://cfores.upr.edu.cu">cfores</a>, <a href="https://sceiba.reduniv.edu.cu">sceiba</a></li>
-      <li><strong>UCI:</strong> <a href="https://rcci.uci.cu">rcci</a>, <a href="https://publicaciones.uci.cu">publicaciones</a></li>
-      <li><strong>UNICA:</strong> <a href="https://revistas.unica.cu">revistas</a>, <a href="https://edusoc.unica.cu">edusoc</a>, <a href="https://regu.unica.cu">regu</a></li>
-      <li><strong>UO:</strong> <a href="https://anuarioeco.uo.edu.cu">anuarioeco</a>, <a href="https://maestroysociedad.uo.edu.cu">maestroysociedad</a>, <a href="https://santiago.uo.edu.cu">santiago</a>, <a href="https://tecnologiaquimica.uo.edu.cu">tecnologiaquimica</a>, <a href="https://cubanaquimica.uo.edu.cu">cubanaquimica</a></li>
-      <li><strong>UH:</strong> <a href="https://revistas.uh.cu">revistas</a>, <a href="https://a3manos.uh.cu">a3manos</a></li>
-      <li><strong>UCPEJV:</strong> <a href="https://revistas.ucpejv.edu.cu">revistas</a></li>
-      <li><strong>UA:</strong> <a href="https://revistavillena.uart.edu.cu">revistavillena</a></li>
-      <li><strong>UMoa:</strong> <a href="https://revista.ismm.edu.cu">revista</a></li>
-      <li><strong>CUJAE:</strong> 
-        <a href="https://renia.cujae.edu.cu">renia</a>, 
-        <a href="https://revistamecanica.cujae.edu.cu">revistamecanica</a>, 
-        <a href="https://revistarrancada.cujae.edu.cu">revistarrancada</a>, 
-        <a href="https://revistatelematica.cujae.edu.cu">revistatelematica</a>, 
-        <a href="https://rie.cujae.edu.cu">rie</a>, 
-        <a href="https://rielac.cujae.edu.cu">rielac</a>, 
-        <a href="https://riha.cujae.edu.cu">riha</a>, 
-        <a href="https://rii.cujae.edu.cu">rii</a>, 
-        <a href="https://rrp.cujae.edu.cu">rrp</a>
-      </li>
-      <li><strong>INCA:</strong> <a href="https://ediciones.inca.edu.cu">ediciones</a></li>
-      <li><strong>CENSA:</strong> <a href="https://revistas.censa.edu.cu">revistas</a></li>
-      <li><strong>ICA:</strong> <a href="https://revistas.ica.edu.cu">revistas</a></li>
-      <li><strong>UCLV:</strong> 
-        <a href="https://islas.uclv.edu.cu">islas</a>, 
-        <a href="https://revistavarela.uclv.edu.cu">revistavarela</a>, 
-        <a href="https://revistaciaf.uclv.edu.cu">revistaciaf</a>, 
-        <a href="https://centroazucar.uclv.edu.cu">centroazucar</a>, 
-        <a href="https://cagricola.uclv.edu.cu">cagricola</a>
-      </li>
-      <li><strong>UCCFD:</strong> <a href="https://accion.uccfd.cu">accion</a></li>
-      <li><strong>UNISS:</strong> <a href="https://revistas.uniss.edu.cu">revistas</a></li>
-      <li><strong>UC:</strong> 
-        <a href="https://revistas.reduc.edu.cu">revistas</a>, 
-        <a href="https://cienciaydeporte.reduc.edu.cu">cienciaydeporte</a>, 
-        <a href="https://agrisost.reduc.edu.cu">agrisost</a>, 
-        <a href="https://monteverdia.reduc.edu.cu">monteverdia</a>, 
-        <a href="https://transformacion.reduc.edu.cu">transformacion</a>, 
-        <a href="https://retos.reduc.edu.cu">retos</a>, 
-        <a href="https://arcada.reduc.edu.cu">arcada</a>, 
-        <a href="https://rpa.reduc.edu.cu">rpa</a>, 
-        <a href="https://perspectiva.reduc.edu.cu">perspectiva</a>
-      </li>
-      <li><strong>ULT:</strong> <a href="https://opuntiabrava.ult.edu.cu">opuntiabrava</a>, <a href="https://revistas.ult.edu.cu">revistas</a></li>
-      <li><strong>UIJ:</strong> <a href="https://magisterio.uij.edu.cu">magisterio</a></li>
-    </ul>
-  </section>
+    <!-- UCf -->
+    <section id="ucf" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UCf (Universidad de Cienfuegos)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.ucf.edu.cu" class="resource-link" target="_blank">https://correo.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.ucf.edu.cu" class="resource-link" target="_blank">https://webmail.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.ucf.edu.cu" class="resource-link" target="_blank">https://nube.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.ucf.edu.cu" class="resource-link" target="_blank">https://dspace.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.ucf.cu" class="resource-link" target="_blank">https://webmail.ucf.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.ucf.edu.cu" class="resource-link" target="_blank">https://www.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Intranet</span><a href="https://intranet.ucf.edu.cu" class="resource-link" target="_blank">https://intranet.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA MOOCs</span><a href="https://cursos.ucf.edu.cu" class="resource-link" target="_blank">https://cursos.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://clasesvirtuales.ucf.edu.cu" class="resource-link" target="_blank">https://clasesvirtuales.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://postgradosvirtuales.ucf.edu.cu" class="resource-link" target="_blank">https://postgradosvirtuales.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.ucf.edu.cu" class="resource-link" target="_blank">https://sigenu.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://pled.ucf.edu.cu" class="resource-link" target="_blank">https://pled.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rus.ucf.edu.cu" class="resource-link" target="_blank">https://rus.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://conrado.ucf.edu.cu" class="resource-link" target="_blank">https://conrado.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://aes.ucf.edu.cu" class="resource-link" target="_blank">https://aes.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rccd.ucf.edu.cu/" class="resource-link" target="_blank">https://rccd.ucf.edu.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://universosur.ucf.edu.cu" class="resource-link" target="_blank">https://universosur.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://encuestas.ucf.edu.cu" class="resource-link" target="_blank">https://encuestas.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://caipd.ucf.edu.cu" class="resource-link" target="_blank">https://caipd.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://npv.ucf.edu.cu" class="resource-link" target="_blank">https://npv.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="https://eventos.ucf.edu.cu" class="resource-link" target="_blank">https://eventos.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="https://talleres.ucf.edu.cu" class="resource-link" target="_blank">https://talleres.ucf.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://auth.ucf.edu.cu" class="resource-link" target="_blank">https://auth.ucf.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://micuenta.ucf.edu.cu" class="resource-link" target="_blank">https://micuenta.ucf.edu.cu</a></div>
+  </div>
+</section>
 
-  <section id="bibliotecas-virtuales">
-    <div class="category-header">
-      <h2>📚 Bibliotecas Virtuales <span class="category-counter" id="counter-bibliotecas">0</span></h2>
-      <span class="resource-count" id="count-bibliotecas">0 recursos mostrados de 0</span>
-    </div>
-    <ul>
-      <li><strong>UNAH:</strong> <a href="https://ebiblio.unah.edu.cu">ebiblio</a></li>
-      <li><strong>UM:</strong> <a href="https://abcd.umcc.cu">abcd</a></li>
-      <li><strong>UHo:</strong> <a href="https://redbibliotecas.uho.edu.cu">redbibliotecas</a></li>
-      <li><strong>UPR:</strong> <a href="https://earchivos.upr.edu.cu">earchivos</a></li>
-      <li><strong>UH:</strong> <a href="https://accesoabierto.uh.cu">accesoabierto</a></li>
-      <li><strong>UG:</strong> <a href="https://biblioteca.cug.co.cu">biblioteca</a></li>
-      <li><strong>UCLV:</strong> <a href="https://bida.uclv.edu.cu">bida</a>, <a href="https://cdict.uclv.edu.cu">cdict</a></li>
-      <li><strong>UCCFD:</strong> <a href="https://info.uccfd.cu">info</a></li>
-      <li><strong>UNISS:</strong> <a href="https://desiderionavarro.uniss.edu.cu">desiderionavarro</a></li>
-      <li><strong>UC:</strong> <a href="https://bivi.reduc.edu.cu">bivi</a></li>
-      <li><strong>ULT:</strong> <a href="https://biblioteca.ult.edu.cu">biblioteca</a></li>
-    </ul>
-  </section>
+<!-- UM -->
+<section id="um" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UM (Universidad de Matanzas)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.umcc.cu" class="resource-link" target="_blank">https://www.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://eva.umcc.cu" class="resource-link" target="_blank">https://eva.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.umcc.cu" class="resource-link" target="_blank">https://correo.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correoest.umcc.cu" class="resource-link" target="_blank">https://correoest.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://cict.umcc.cu" class="resource-link" target="_blank">https://cict.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://abcd.umcc.cu" class="resource-link" target="_blank">https://abcd.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://retosturisticos.umcc.cu" class="resource-link" target="_blank">https://retosturisticos.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://atenas.umcc.cu" class="resource-link" target="_blank">https://atenas.umcc.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://rein.umcc.cu" class="resource-link" target="_blank">https://rein.umcc.cu</a></div>
+  </div>
+</section>
 
-  <section id="eventos-academicos">
-    <div class="category-header">
-      <h2>🗓️ Sitios de Eventos Académicos <span class="category-counter" id="counter-eventos">0</span></h2>
-      <span class="resource-count" id="count-eventos">0 recursos mostrados de 0</span>
-    </div>
-    <ul>
-      <li><strong>UDG:</strong> <a href="https://congresodesarrollolocal.udg.co.cu">congresodesarrollolocal</a></li>
-      <li><strong>UCf:</strong> <a href="https://eventos.ucf.edu.cu">eventos</a>, <a href="https://talleres.ucf.edu.cu">talleres</a></li>
-      <li><strong>UPR:</strong> <a href="https://eventos.upr.edu.cu">eventos</a></li>
-    </ul>
-  </section>
+<!-- UHo -->
+<section id="uho" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UHo (Universidad de Holguín)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.uho.edu.cu" class="resource-link" target="_blank">https://www.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.uho.edu.cu" class="resource-link" target="_blank">https://correo.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://deporvida.uho.edu.cu" class="resource-link" target="_blank">https://deporvida.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://luz.uho.edu.cu" class="resource-link" target="_blank">https://luz.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://tecedu.uho.edu.cu" class="resource-link" target="_blank">https://tecedu.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://redbibliotecas.uho.edu.cu" class="resource-link" target="_blank">https://redbibliotecas.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://repositorio.uho.edu.cu" class="resource-link" target="_blank">https://repositorio.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://eduvirtual.uho.edu.cu" class="resource-link" target="_blank">https://eduvirtual.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://aulasvirtuales.uho.edu.cu" class="resource-link" target="_blank">https://aulasvirtuales.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://educa.uho.edu.cu" class="resource-link" target="_blank">https://educa.uho.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://eadvirtual.uho.edu.cu" class="resource-link" target="_blank">https://eadvirtual.uho.edu.cu</a></div>
+  </div>
+</section>
 
-  <section id="observatorios-academicos">
-    <div class="category-header">
-      <h2>🔍 Observatorios Académicos <span class="category-counter" id="counter-observatorios">0</span></h2>
-      <span class="resource-count" id="count-observatorios">0 recursos mostrados de 0</span>
-    </div>
-    <ul>
-      <li><strong>UPR:</strong> <a href="https://sciobs.upr.edu.cu">sciobs</a>, <a href="https://techobs.upr.edu.cu">techobs</a>, <a href="https://tareavida.upr.edu.cu">tareavida</a></li>
-      <li><strong>UH:</strong> <a href="https://eventos.uh.cu">eventos</a></li>
-      <li><strong>UCPEJV:</strong> <a href="https://eventos.ucpejv.edu.cu">eventos</a></li>
-      <li><strong>UCLV:</strong> <a href="https://convencion.uclv.cu">convencion</a></li>
-      <li><strong>UNISS:</strong> <a href="https://eventos.uniss.edu.cu">eventos</a></li>
-    </ul>
-  </section>
+<!-- ESCEG -->
+<section id="esceg" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">ESCEG (Escuela Superior de Comercio y Gestión)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://eva.esceg.cu" class="resource-link" target="_blank">https://eva.esceg.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.esceg.cu" class="resource-link" target="_blank">https://www.esceg.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://apye.esceg.cu" class="resource-link" target="_blank">https://apye.esceg.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.esceg.cu" class="resource-link" target="_blank">https://correo.esceg.cu</a></div>
+  </div>
+</section>
+
+<!-- UPR -->
+<section id="upr" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UPR (Universidad de Pinar del Río)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.upr.edu.cu/home" class="resource-link" target="_blank">https://www.upr.edu.cu/home</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://rc.upr.edu.cu/" class="resource-link" target="_blank">https://rc.upr.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://earchivos.upr.edu.cu" class="resource-link" target="_blank">https://earchivos.upr.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="http://aulas-virtuales.upr.edu.cu/" class="resource-link" target="_blank">http://aulas-virtuales.upr.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://moodle.upr.edu.cu/" class="resource-link" target="_blank">https://moodle.upr.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://moodle.ceces.upr.edu.cu/moodle/" class="resource-link" target="_blank">https://moodle.ceces.upr.edu.cu/moodle/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://moodleed.upr.edu.cu/" class="resource-link" target="_blank">https://moodleed.upr.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.upr.edu.cu/" class="resource-link" target="_blank">https://correo.upr.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://estudiantes.upr.edu.cu/" class="resource-link" target="_blank">https://estudiantes.upr.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://mendive.upr.edu.cu/index.php/MendiveUPR" class="resource-link" target="_blank">https://mendive.upr.edu.cu/index.php/MendiveUPR</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://podium.upr.edu.cu/index.php/podium" class="resource-link" target="_blank">https://podium.upr.edu.cu/index.php/podium</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://coodes.upr.edu.cu/index.php/coodes" class="resource-link" target="_blank">https://coodes.upr.edu.cu/index.php/coodes</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://cifam.upr.edu.cu/index.php/cifam" class="resource-link" target="_blank">https://cifam.upr.edu.cu/index.php/cifam</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://cfores.upr.edu.cu/index.php/cfores" class="resource-link" target="_blank">https://cfores.upr.edu.cu/index.php/cfores</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="https://eventos.upr.edu.cu/home" class="resource-link" target="_blank">https://eventos.upr.edu.cu/home</a></div>
+    <div class="resource-card"><span class="resource-type">Observatorio</span><a href="https://sciobs.upr.edu.cu/indicators" class="resource-link" target="_blank">https://sciobs.upr.edu.cu/indicators</a></div>
+    <div class="resource-card"><span class="resource-type">Observatorio</span><a href="https://techobs.upr.edu.cu/indicators" class="resource-link" target="_blank">https://techobs.upr.edu.cu/indicators</a></div>
+    <div class="resource-card"><span class="resource-type">Observatorio</span><a href="https://tareavida.upr.edu.cu/home" class="resource-link" target="_blank">https://tareavida.upr.edu.cu/home</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://sceiba.reduniv.edu.cu/" class="resource-link" target="_blank">https://sceiba.reduniv.edu.cu/</a></div>
+  </div>
+</section>
+
+<!-- UCI -->
+<section id="uci" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UCI (Universidad de las Ciencias Informáticas)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.uci.cu/" class="resource-link" target="_blank">https://www.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://aulacened.uci.cu/" class="resource-link" target="_blank">https://aulacened.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://repositorio.uci.cu/jspui/" class="resource-link" target="_blank">https://repositorio.uci.cu/jspui/</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rcci.uci.cu/index.php/RCCI" class="resource-link" target="_blank">https://rcci.uci.cu/index.php/RCCI</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://publicaciones.uci.cu/" class="resource-link" target="_blank">https://publicaciones.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://eva.uci.cu/" class="resource-link" target="_blank">https://eva.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://admision.uci.cu/" class="resource-link" target="_blank">https://admision.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.estudiantes.uci.cu/" class="resource-link" target="_blank">https://correo.estudiantes.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.uci.cu/" class="resource-link" target="_blank">https://correo.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://drst.uci.cu/" class="resource-link" target="_blank">https://drst.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://cuenta.uci.cu/" class="resource-link" target="_blank">https://cuenta.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://usuario.uci.cu/" class="resource-link" target="_blank">https://usuario.uci.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://gitlab.prod.uci.cu" class="resource-link" target="_blank">https://gitlab.prod.uci.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Videoconferencia</span><a href="https://conferencia.uci.cu" class="resource-link" target="_blank">https://conferencia.uci.cu</a></div>
+  </div>
+</section>
+
+<!-- UNICA -->
+<section id="unica" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UNICA (Universidad de Camagüey)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.unica.cu" class="resource-link" target="_blank">https://www.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Intranet</span><a href="https://intranet.unica.cu" class="resource-link" target="_blank">https://intranet.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.unica.cu" class="resource-link" target="_blank">https://nube.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.unica.cu" class="resource-link" target="_blank">https://correo.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.unica.cu" class="resource-link" target="_blank">https://sigenu.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.unica.cu" class="resource-link" target="_blank">https://dspace.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.unica.cu/index.php/uciencia" class="resource-link" target="_blank">https://revistas.unica.cu/index.php/uciencia</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.unica.cu/index.php/edusoc" class="resource-link" target="_blank">https://revistas.unica.cu/index.php/edusoc</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.unica.cu/index.php/regu" class="resource-link" target="_blank">https://revistas.unica.cu/index.php/regu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://pregrado.unica.cu" class="resource-link" target="_blank">https://pregrado.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://posgrado.unica.cu" class="resource-link" target="_blank">https://posgrado.unica.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://tunota.unica.cu/" class="resource-link" target="_blank">https://tunota.unica.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://unilegal.unica.cu/" class="resource-link" target="_blank">https://unilegal.unica.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://tickets.unica.cu/" class="resource-link" target="_blank">https://tickets.unica.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://tickets.sma.unica.cu/" class="resource-link" target="_blank">https://tickets.sma.unica.cu/</a></div>
+  </div>
+</section>
+
+<!-- UC -->
+<section id="uc" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UC (Universidad de Camagüey)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.reduc.edu.cu" class="resource-link" target="_blank">https://correo.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.reduc.edu.cu" class="resource-link" target="_blank">https://webmail.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail1.reduc.edu.cu" class="resource-link" target="_blank">https://webmail1.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.reduc.edu.cu" class="resource-link" target="_blank">https://revistas.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://cienciaydeporte.reduc.edu.cu" class="resource-link" target="_blank">https://cienciaydeporte.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://agrisost.reduc.edu.cu" class="resource-link" target="_blank">https://agrisost.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://monteverdia.reduc.edu.cu" class="resource-link" target="_blank">https://monteverdia.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://transformacion.reduc.edu.cu" class="resource-link" target="_blank">https://transformacion.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://retos.reduc.edu.cu" class="resource-link" target="_blank">https://retos.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://arcada.reduc.edu.cu" class="resource-link" target="_blank">https://arcada.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rpa.reduc.edu.cu" class="resource-link" target="_blank">https://rpa.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://perspectiva.reduc.edu.cu" class="resource-link" target="_blank">https://perspectiva.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.reduc.edu.cu" class="resource-link" target="_blank">https://www.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA de Pregrado</span><a href="https://moodle.reduc.edu.cu" class="resource-link" target="_blank">https://moodle.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA de Posgrado</span><a href="https://moodlepost.reduc.edu.cu" class="resource-link" target="_blank">https://moodlepost.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.reduc.edu.cu" class="resource-link" target="_blank">https://sigenu.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.reduc.edu.cu" class="resource-link" target="_blank">https://nube.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://gitlab.reduc.edu.cu" class="resource-link" target="_blank">https://gitlab.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://rediuc.reduc.edu.cu" class="resource-link" target="_blank">https://rediuc.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://bivi.reduc.edu.cu" class="resource-link" target="_blank">https://bivi.reduc.edu.cu</a></div>
+    <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://encuestas.reduc.edu.cu" class="resource-link" target="_blank">https://encuestas.reduc.edu.cu</a></div>
+  </div>
+</section>
+
+<!-- UO -->
+<section id="uo" class="university-section">
+  <div class="university-header">
+    <h2 class="university-title">UO (Universidad de Oriente)</h2>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="http://www.uo.edu.cu/" class="resource-link" target="_blank">http://www.uo.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="http://correo.uo.edu.cu/" class="resource-link" target="_blank">http://correo.uo.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="http://consejo.uo.edu.cu/" class="resource-link" target="_blank">http://consejo.uo.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="http://eva.uo.edu.cu/" class="resource-link" target="_blank">http://eva.uo.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="http://cursos.uo.edu.cu/" class="resource-link" target="_blank">http://cursos.uo.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://anuarioeco.uo.edu.cu/" class="resource-link" target="_blank">http://anuarioeco.uo.edu.cu/</a></div>
+    <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://maestroysociedad.uo.edu.cu/" class="resource-link" target="_blank">http://maestroysociedad.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://santiago.uo.edu.cu/" class="resource-link" target="_blank">http://santiago.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://tecnologiaquimica.uo.edu.cu/" class="resource-link" target="_blank">http://tecnologiaquimica.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://cubanaquimica.uo.edu.cu" class="resource-link" target="_blank">http://cubanaquimica.uo.edu.cu</a></div>
+<div class="resource-card"><span class="resource-type">Nube</span><a href="http://nube.uo.edu.cu/" class="resource-link" target="_blank">http://nube.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="http://referenciaict.uo.edu.cu" class="resource-link" target="_blank">http://referenciaict.uo.edu.cu</a></div>
+<div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="http://repositorio.uo.edu.cu/" class="resource-link" target="_blank">http://repositorio.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Repositorio de OA</span><a href="http://repotematico.uo.edu.cu/" class="resource-link" target="_blank">http://repotematico.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Sitio Web</span><a href="http://redes.uo.edu.cu/" class="resource-link" target="_blank">http://redes.uo.edu.cu/</a></div>
+<div class="resource-card"><span class="resource-type">Sitio Web</span><a href="http://reportes.uo.edu.cu/" class="resource-link" target="_blank">http://reportes.uo.edu.cu/</a></div>
+      </div>
+    </section>
+
+    <!-- UH -->
+    <section id="uh" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UH (Universidad de La Habana)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="http://correo.uh.cu" class="resource-link" target="_blank">http://correo.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="http://correo.estudiantes.uh.cu" class="resource-link" target="_blank">http://correo.estudiantes.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://revistas.uh.cu" class="resource-link" target="_blank">http://revistas.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="http://accesoabierto.uh.cu" class="resource-link" target="_blank">http://accesoabierto.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://a3manos.uh.cu" class="resource-link" target="_blank">http://a3manos.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="http://programas.uh.cu" class="resource-link" target="_blank">http://programas.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="http://eventos.uh.cu" class="resource-link" target="_blank">http://eventos.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="http://jbn.uh.cu" class="resource-link" target="_blank">http://jbn.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="http://sic.uh.cu" class="resource-link" target="_blank">http://sic.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="http://sigenu.uh.cu" class="resource-link" target="_blank">http://sigenu.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">VPN</span><a href="http://vnet.uh.cu" class="resource-link" target="_blank">http://vnet.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="http://evea.uh.cu" class="resource-link" target="_blank">http://evea.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="http://minube.uh.cu" class="resource-link" target="_blank">http://minube.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="http://www.uh.cu" class="resource-link" target="_blank">http://www.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="http://facultades.uh.cu" class="resource-link" target="_blank">http://facultades.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="http://dime.uh.cu" class="resource-link" target="_blank">http://dime.uh.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA MOOCs</span><a href="http://moocs.uh.cu" class="resource-link" target="_blank">http://moocs.uh.cu</a></div>
+      </div>
+    </section>
+
+    <!-- UCPEJV -->
+    <section id="ucpejv" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UCPEJV (Universidad de Ciencias Pedagógicas Enrique José Varona)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="http://portal.ucpejv.edu.cu/" class="resource-link" target="_blank">http://portal.ucpejv.edu.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="http://eventos.ucpejv.edu.cu/" class="resource-link" target="_blank">http://eventos.ucpejv.edu.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="http://webdocente.ucpejv.edu.cu/" class="resource-link" target="_blank">http://webdocente.ucpejv.edu.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="http://revistas.ucpejv.edu.cu/" class="resource-link" target="_blank">http://revistas.ucpejv.edu.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.ucpejv.edu.cu/" class="resource-link" target="_blank">https://webmail.ucpejv.edu.cu/</a></div>
+      </div>
+    </section>
+
+    <!-- UA -->
+    <section id="ua" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UA (Universidad de las Artes)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://ua.uart.edu.cu" class="resource-link" target="_blank">https://ua.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://uva.uart.edu.cu" class="resource-link" target="_blank">https://uva.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.uart.edu.cu" class="resource-link" target="_blank">https://correo.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://repositorio.uart.edu.cu" class="resource-link" target="_blank">https://repositorio.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenus.uart.edu.cu" class="resource-link" target="_blank">https://sigenus.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistavillena.uart.edu.cu" class="resource-link" target="_blank">https://revistavillena.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="ftp.uart.edu.cu" class="resource-link" target="_blank">ftp.uart.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://redsocial.uart.edu.cu" class="resource-link" target="_blank">https://redsocial.uart.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- UMoa -->
+    <section id="umoa" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UMoa (Universidad de Moa)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.ismm.edu.cu" class="resource-link" target="_blank">https://www.ismm.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://moodle-postgrado.ismm.edu.cu" class="resource-link" target="_blank">https://moodle-postgrado.ismm.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revista.ismm.edu.cu" class="resource-link" target="_blank">https://revista.ismm.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://ninive.ismm.edu.cu" class="resource-link" target="_blank">https://ninive.ismm.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://cep.ismm.edu.cu" class="resource-link" target="_blank">https://cep.ismm.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://moodle.ismm.edu.cu" class="resource-link" target="_blank">https://moodle.ismm.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.cujae.edu.cu" class="resource-link" target="_blank">https://correo.cujae.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- CUJAE -->
+    <section id="cujae" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">CUJAE (Universidad Tecnológica de La Habana)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Chat</span><a href="https://smi.cujae.edu.cu" class="resource-link" target="_blank">https://smi.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.cujae.edu.cu" class="resource-link" target="_blank">https://sigenu.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://moodle.cujae.edu.cu" class="resource-link" target="_blank">https://moodle.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://repositorio.cujae.edu.cu" class="resource-link" target="_blank">https://repositorio.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.cujae.edu.cu" class="resource-link" target="_blank">https://nube.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://cujae.edu.cu" class="resource-link" target="_blank">https://cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://renia.cujae.edu.cu" class="resource-link" target="_blank">https://renia.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistamecanica.cujae.edu.cu" class="resource-link" target="_blank">https://revistamecanica.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistarrancada.cujae.edu.cu" class="resource-link" target="_blank">https://revistarrancada.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistatelematica.cujae.edu.cu" class="resource-link" target="_blank">https://revistatelematica.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rie.cujae.edu.cu" class="resource-link" target="_blank">https://rie.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rielac.cujae.edu.cu" class="resource-link" target="_blank">https://rielac.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://riha.cujae.edu.cu" class="resource-link" target="_blank">https://riha.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rii.cujae.edu.cu" class="resource-link" target="_blank">https://rii.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://rrp.cujae.edu.cu" class="resource-link" target="_blank">https://rrp.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Intranet</span><a href="https://intranet.cujae.edu.cu" class="resource-link" target="_blank">https://intranet.cujae.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://teleportal.cujae.edu.cu" class="resource-link" target="_blank">https://teleportal.cujae.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- UG -->
+    <section id="ug" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UG (Universidad de Guantánamo)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://cursovirtual.cug.co.cu/" class="resource-link" target="_blank">https://cursovirtual.cug.co.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://docsvirtual.cug.co.cu/" class="resource-link" target="_blank">https://docsvirtual.cug.co.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Bibliografías de apoyo al Moodle</span><a href="https://docsvirtual.cug.co.cu/" class="resource-link" target="_blank">https://docsvirtual.cug.co.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.cug.co.cu/" class="resource-link" target="_blank">https://correo.cug.co.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="http://biblioteca.cug.co.cu/" class="resource-link" target="_blank">http://biblioteca.cug.co.cu/</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="http://repositorio.cug.co.cu:8080/jspui/" class="resource-link" target="_blank">http://repositorio.cug.co.cu:8080/jspui/</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.cug.co.cu/" class="resource-link" target="_blank">https://www.cug.co.cu/</a></div>
+      </div>
+    </section>
+
+    <!-- UCLV -->
+    <section id="uclv" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UCLV (Universidad Central "Marta Abreu" de Las Villas)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.uclv.edu.cu" class="resource-link" target="_blank">https://www.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.uclv.edu.cu" class="resource-link" target="_blank">https://dspace.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://bida.uclv.edu.cu" class="resource-link" target="_blank">https://bida.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="http://www.cdict.uclv.edu.cu" class="resource-link" target="_blank">http://www.cdict.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="http://feijoo.cdict.uclv.edu.cu" class="resource-link" target="_blank">http://feijoo.cdict.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://islas.uclv.edu.cu" class="resource-link" target="_blank">https://islas.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistavarela.uclv.edu.cu" class="resource-link" target="_blank">https://revistavarela.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistaciaf.uclv.edu.cu" class="resource-link" target="_blank">https://revistaciaf.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://centroazucar.uclv.edu.cu" class="resource-link" target="_blank">https://centroazucar.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://cagricola.uclv.edu.cu" class="resource-link" target="_blank">https://cagricola.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://cti.uclv.edu.cu" class="resource-link" target="_blank">https://cti.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="https://convencion.uclv.cu" class="resource-link" target="_blank">https://convencion.uclv.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de Libros</span><a href="https://libros.uclv.edu.cu" class="resource-link" target="_blank">https://libros.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de Libros</span><a href="https://elibros.uclv.edu.cu" class="resource-link" target="_blank">https://elibros.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://aula.uclv.edu.cu" class="resource-link" target="_blank">https://aula.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de aplicaciones</span><a href="https://soft.uclv.edu.cu" class="resource-link" target="_blank">https://soft.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://repos.uclv.edu.cu" class="resource-link" target="_blank">https://repos.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Respositorio de Antivirus</span><a href="https://antivirus.uclv.edu.cu" class="resource-link" target="_blank">https://antivirus.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.uclv.edu.cu" class="resource-link" target="_blank">https://sigenu.uclv.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://teletrabajo.uclv.cu" class="resource-link" target="_blank">https://teletrabajo.uclv.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://moodle.uclv.edu.cu" class="resource-link" target="_blank">https://moodle.uclv.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- UCCFD -->
+    <section id="uccfd" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UCCFD (Universidad de Ciencias de la Cultura Física y el Deporte)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.uccfd.cu" class="resource-link" target="_blank">https://www.uccfd.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://posgrado.uccfd.cu" class="resource-link" target="_blank">https://posgrado.uccfd.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://moodle.uccfd.cu" class="resource-link" target="_blank">https://moodle.uccfd.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://accion.uccfd.cu" class="resource-link" target="_blank">https://accion.uccfd.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.uccfd.cu" class="resource-link" target="_blank">https://correo.uccfd.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.uccfd.cu" class="resource-link" target="_blank">https://sigenu.uccfd.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://info.uccfd.cu" class="resource-link" target="_blank">https://info.uccfd.cu</a></div>
+      </div>
+    </section>
+
+    <!-- UNISS -->
+    <section id="uniss" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UNISS (Universidad de Sancti Spíritus "José Martí Pérez")</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.uniss.edu.cu" class="resource-link" target="_blank">https://www.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.uniss.edu.cu" class="resource-link" target="_blank">https://correo.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://pregrado.uniss.edu.cu" class="resource-link" target="_blank">https://pregrado.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://posgrado.uniss.edu.cu" class="resource-link" target="_blank">https://posgrado.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA EaD</span><a href="https://mooc.uniss.edu.cu" class="resource-link" target="_blank">https://mooc.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">SIGENU</span><a href="https://sigenu.uniss.edu.cu" class="resource-link" target="_blank">https://sigenu.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://cambio.uniss.edu.cu" class="resource-link" target="_blank">https://cambio.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.uniss.edu.cu" class="resource-link" target="_blank">https://dspace.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.uniss.edu.cu" class="resource-link" target="_blank">https://revistas.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de aplicaciones</span><a href="https://software.uniss.edu.cu" class="resource-link" target="_blank">https://software.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Eventos</span><a href="https://eventos.uniss.edu.cu" class="resource-link" target="_blank">https://eventos.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://desiderionavarro.uniss.edu.cu" class="resource-link" target="_blank">https://desiderionavarro.uniss.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web</span><a href="https://encuestas.uniss.edu.cu" class="resource-link" target="_blank">https://encuestas.uniss.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- ULT -->
+    <section id="ult" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">ULT (Universidad de Las Tunas)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.ult.edu.cu" class="resource-link" target="_blank">https://nube.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://pregrado.ult.edu.cu" class="resource-link" target="_blank">https://pregrado.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.ult.edu.cu" class="resource-link" target="_blank">https://correo.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correoest.ult.edu.cu" class="resource-link" target="_blank">https://correoest.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de Videos</span><a href="https://media.ult.edu.cu" class="resource-link" target="_blank">https://media.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://roa.ult.edu.cu" class="resource-link" target="_blank">https://roa.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Biblioteca</span><a href="https://biblioteca.ult.edu.cu" class="resource-link" target="_blank">https://biblioteca.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://opuntiabrava.ult.edu.cu" class="resource-link" target="_blank">https://opuntiabrava.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://uvp.ult.edu.cu" class="resource-link" target="_blank">https://uvp.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.ult.edu.cu" class="resource-link" target="_blank">https://www.ult.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.ult.edu.cu" class="resource-link" target="_blank">https://revistas.ult.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- UIJ -->
+    <section id="uij" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">UIJ (Universidad de Isla de la Juventud)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.uij.edu.cu" class="resource-link" target="_blank">https://www.uij.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://correo.uij.edu.cu" class="resource-link" target="_blank">https://correo.uij.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Pregrado</span><a href="https://aulavirtual.uij.edu.cu" class="resource-link" target="_blank">https://aulavirtual.uij.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://postgrado.uij.edu.cu" class="resource-link" target="_blank">https://postgrado.uij.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://magisterio.uij.edu.cu" class="resource-link" target="_blank">https://magisterio.uij.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de aplicaciones</span><a href="https://ftp.uij.edu.cu" class="resource-link" target="_blank">https://ftp.uij.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- INCA -->
+    <section id="inca" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">INCA (Instituto Nacional de Cancerología)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.inca.edu.cu" class="resource-link" target="_blank">https://webmail.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.inca.edu.cu" class="resource-link" target="_blank">https://www.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.inca.edu.cu" class="resource-link" target="_blank">https://nube.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">FTP</span><a href="https://ftp.inca.edu.cu" class="resource-link" target="_blank">https://ftp.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.inca.edu.cu" class="resource-link" target="_blank">https://dspace.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://git.inca.edu.cu" class="resource-link" target="_blank">https://git.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://ediciones.inca.edu.cu" class="resource-link" target="_blank">https://ediciones.inca.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://moodle.inca.edu.cu" class="resource-link" target="_blank">https://moodle.inca.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- CENSA -->
+    <section id="censa" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">CENSA (Centro Nacional de Sanidad Agropecuaria)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.censa.edu.cu" class="resource-link" target="_blank">https://webmail.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.censa.edu.cu" class="resource-link" target="_blank">https://www.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.censa.edu.cu" class="resource-link" target="_blank">https://nube.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">FTP</span><a href="https://ftp.censa.edu.cu" class="resource-link" target="_blank">https://ftp.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.censa.edu.cu" class="resource-link" target="_blank">https://dspace.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://git.censa.edu.cu" class="resource-link" target="_blank">https://git.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.censa.edu.cu" class="resource-link" target="_blank">https://revistas.censa.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://evea.censa.edu.cu" class="resource-link" target="_blank">https://evea.censa.edu.cu</a></div>
+      </div>
+    </section>
+
+    <!-- ICA -->
+    <section id="ica" class="university-section">
+      <div class="university-header">
+        <h2 class="university-title">ICA (Instituto de Ciencia Animal)</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card"><span class="resource-type">Correo electrónico</span><a href="https://webmail.ica.edu.cu" class="resource-link" target="_blank">https://webmail.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Sitio Web Institucional</span><a href="https://www.ica.edu.cu" class="resource-link" target="_blank">https://www.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Nube</span><a href="https://nube.ica.edu.cu" class="resource-link" target="_blank">https://nube.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">FTP</span><a href="https://ftp.ica.edu.cu" class="resource-link" target="_blank">https://ftp.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio Institucional</span><a href="https://dspace.ica.edu.cu" class="resource-link" target="_blank">https://dspace.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Repositorio de código</span><a href="https://git.ica.edu.cu" class="resource-link" target="_blank">https://git.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">Revista Científica</span><a href="https://revistas.ica.edu.cu" class="resource-link" target="_blank">https://revistas.ica.edu.cu</a></div>
+        <div class="resource-card"><span class="resource-type">EVEA Posgrado</span><a href="https://moodle.ica.edu.cu" class="resource-link" target="_blank">https://moodle.ica.edu.cu</a></div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     <p>© 2025 Bibliored Cuba. Todos los derechos reservados.<br>
@@ -516,31 +841,20 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Variables globales
       const searchInput = document.getElementById('searchInput');
       const searchButton = document.getElementById('searchButton');
       const hamburger = document.querySelector('.hamburger');
       const navMenu = document.querySelector('.nav-menu');
-      const allListItems = document.querySelectorAll('section ul li');
-      const categoryIds = [
-        'enseñanza-aprendizaje', 
-        'repositorios-academicos', 
-        'revistas-cientificas', 
-        'bibliotecas-virtuales', 
-        'eventos-academicos', 
-        'observatorios-academicos'
-      ];
-      
-      // Inicializar contadores
-      initializeCounters();
-      
+      const allSections = document.querySelectorAll('.university-section');
+      const allLinks = document.querySelectorAll('.resource-link');
+
       // Configurar menú hamburguesa
       hamburger.addEventListener('click', function() {
         navMenu.classList.toggle('active');
         hamburger.setAttribute('aria-expanded', 
           hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
       });
-      
+
       // Cerrar menú al hacer clic en un enlace
       document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
@@ -548,96 +862,63 @@
           hamburger.setAttribute('aria-expanded', 'false');
         });
       });
-      
+
       // Configurar búsqueda
       searchInput.addEventListener('input', performSearch);
       searchButton.addEventListener('click', performSearch);
-      
-      // Permitir búsqueda con Enter
+
       searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
           performSearch();
         }
       });
-      
-      // Función para realizar la búsqueda
+
       function performSearch() {
         const searchTerm = searchInput.value.trim().toLowerCase();
         
         if (searchTerm === '') {
-          // Si no hay término de búsqueda, mostrar todos los elementos
-          allListItems.forEach(item => {
-            item.classList.remove('hidden');
+          allSections.forEach(section => {
+            section.style.display = 'block';
+          });
+          allLinks.forEach(link => {
+            link.parentElement.style.display = 'block';
           });
         } else {
-          // Filtrar elementos según el término de búsqueda
-          allListItems.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            if (text.includes(searchTerm)) {
-              item.classList.remove('hidden');
-            } else {
-              item.classList.add('hidden');
+          // Ocultar todas las secciones primero
+          allSections.forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // Buscar coincidencias
+          allSections.forEach(section => {
+            const universityName = section.querySelector('.university-title').textContent.toLowerCase();
+            const links = section.querySelectorAll('.resource-link');
+            let hasMatch = false;
+            
+            if (universityName.includes(searchTerm)) {
+              section.style.display = 'block';
+              hasMatch = true;
+            }
+            
+            links.forEach(link => {
+              const linkText = link.textContent.toLowerCase();
+              const linkType = link.previousElementSibling.textContent.toLowerCase();
+              
+              if (linkText.includes(searchTerm) || linkType.includes(searchTerm)) {
+                link.parentElement.style.display = 'block';
+                section.style.display = 'block';
+                hasMatch = true;
+              } else {
+                link.parentElement.style.display = 'none';
+              }
+            });
+            
+            if (hasMatch) {
+              section.style.display = 'block';
             }
           });
         }
-        
-        // Actualizar contadores después de la búsqueda
-        updateCounters();
       }
-      
-      // Inicializar contadores
-      function initializeCounters() {
-        categoryIds.forEach(categoryId => {
-          const section = document.getElementById(categoryId);
-          const listItems = section.querySelectorAll('li');
-          const counterElement = document.getElementById(`counter-${categoryId.split('-')[0]}`);
-          
-          // Establecer el contador inicial
-          counterElement.textContent = listItems.length;
-          
-          // Inicializar el contador de recursos mostrados
-          const countElement = document.getElementById(`count-${categoryId.split('-')[0]}`);
-          countElement.textContent = `${listItems.length} recursos mostrados de ${listItems.length}`;
-        });
-      }
-      
-      // Actualizar contadores después de búsqueda/filtrado
-      function updateCounters() {
-        categoryIds.forEach(categoryId => {
-          const section = document.getElementById(categoryId);
-          const allItems = section.querySelectorAll('li');
-          const visibleItems = section.querySelectorAll('li:not(.hidden)');
-          const counterElement = document.getElementById(`counter-${categoryId.split('-')[0]}`);
-          const countElement = document.getElementById(`count-${categoryId.split('-')[0]}`);
-          
-          // Actualizar contador
-          counterElement.textContent = visibleItems.length;
-          
-          // Actualizar texto de recursos mostrados
-          countElement.textContent = `${visibleItems.length} recursos mostrados de ${allItems.length}`;
-        });
-      }
-      
-      // Smooth scroll para enlaces internos
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            const headerOffset = 80;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
     });
   </script>
 </body>
