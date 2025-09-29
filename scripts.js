@@ -10,23 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const favoritesList = document.getElementById('favoritesList');
   const themeToggle = document.getElementById('themeToggle');
   const main = document.querySelector('main');
-  const paginationContainer = document.getElementById('pagination');
   const noResultsMessage = document.getElementById('noResults');
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   let allUniversities = [];
-  let currentPage = 1;
-  const itemsPerPage = 10;
 
   // Cargar datos de JSON y generar secciones
   fetch('universities.json')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al cargar universities.json: ' + response.status);
+      }
+      return response.json();
+    })
     .then(data => {
+      console.log('Datos cargados:', data);
       allUniversities = data;
-      renderSections(allUniversities, currentPage);
-      setupPagination(allUniversities);
+      renderSections(allUniversities);
 
-      // Configurar observador para carga diferida
+      // Configurar observador para animaciones
       const allSections = document.querySelectorAll('.university-section');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -37,9 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }, { threshold: 0.1 });
 
-      allSections.forEach(section => {
-        observer.observe(section);
-      });
+      allSections.forEach(section => observer.observe(section));
 
       // Configurar búsqueda
       let searchTimeout;
@@ -70,7 +70,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     })
-    .catch(error => console.error('Error al cargar universities.json:', error));
+    .catch(error => {
+      console.error('Error:', error);
+      main.innerHTML = '<p>Error al cargar los datos. Por favor, intenta de nuevo.</p>';
+    });
+
+  // Renderizar secciones
+  function renderSections(universities) {
+    main.innerHTML = '<p id="noResults" style="display: none;">No se encontraron resultados para tu búsqueda.</p>';
+    universities.forEach(university => {
+      const section = document.createElement('section');
+      section.id = university.id;
+      section.className = 'university-section';
+      section.setAttribute('aria-labelledby', `${university.id}-title`);
+      section.innerHTML = `
+        <div class="university-header">
+          <h2 class="university-title" id="${university.id}-title">${university.name}</h2>
+          <span class="resource-count-badge">${university.resources.length} recursos</span>
+        </div>
+        <div class="resources-grid">
+          ${university.resources.map(resource => `
+            <div class="resource-card">
+              <button class="favorite-btn" data-url="${resource.url}" data-title="${resource.title}" aria-label="Añadir ${resource.title} a favoritos">☆</button>
+              <span class="resource-type">${resource.type}</span>
+              <a href="${resource.url}" class="resource-link" target="_blank">${resource.title}</a>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      main.appendChild(section);
+
+      // Configurar botones de favoritos
+      section.querySelectorAll('.favorite-btn').forEach(btn => {
+        const url = btn.getAttribute('data-url');
+        btn.addEventListener('click', () => toggleFavorite(btn, url));
+        if (favorites.some(fav => fav.url === url)) {
+          btn.textContent = '★';
+          btn.classList.add('active');
+          btn.setAttribute('aria-label', `Quitar ${btn.getAttribute('data-title')} de favoritos`);
+        }
+      });
+    });
+  }
 
   // Configurar menú hamburguesa
   hamburger.addEventListener('click', function() {
@@ -105,92 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
       favoritesModal.style.display = 'none';
     }
   });
-
-  // Función para renderizar secciones con paginación
-  function renderSections(universities, page) {
-    main.innerHTML = '<p id="noResults" style="display: none;">No se encontraron resultados para tu búsqueda.</p><div id="pagination" class="pagination"></div>';
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const paginatedUniversities = universities.slice(start, end);
-
-    paginatedUniversities.forEach(university => {
-      const section = document.createElement('section');
-      section.id = university.id;
-      section.className = 'university-section';
-      section.setAttribute('aria-labelledby', `${university.id}-title`);
-      section.innerHTML = `
-        <div class="university-header">
-          <h2 class="university-title" id="${university.id}-title">${university.name}</h2>
-          <span class="resource-count-badge">${university.resources.length} recursos</span>
-        </div>
-        <div class="resources-grid">
-          ${university.resources.map(resource => `
-            <div class="resource-card">
-              <button class="favorite-btn" data-url="${resource.url}" data-title="${resource.title}" aria-label="Añadir ${resource.title} a favoritos">☆</button>
-              <span class="resource-type">${resource.type}</span>
-              <a href="${resource.url}" class="resource-link" target="_blank">${resource.title}</a>
-            </div>
-          `).join('')}
-        </div>
-      `;
-      main.insertBefore(section, paginationContainer);
-      
-      // Configurar botones de favoritos
-      section.querySelectorAll('.favorite-btn').forEach(btn => {
-        const url = btn.getAttribute('data-url');
-        btn.addEventListener('click', () => toggleFavorite(btn, url));
-        if (favorites.some(fav => fav.url === url)) {
-          btn.textContent = '★';
-          btn.classList.add('active');
-          btn.setAttribute('aria-label', `Quitar ${btn.getAttribute('data-title')} de favoritos`);
-        }
-      });
-    });
-
-    setupPagination(universities);
-  }
-
-  // Configurar paginación
-  function setupPagination(universities) {
-    const totalPages = Math.ceil(universities.length / itemsPerPage);
-    paginationContainer.innerHTML = '';
-
-    const prevButton = document.createElement('button');
-    prevButton.textContent = 'Anterior';
-    prevButton.disabled = currentPage === 1;
-    prevButton.addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderSections(universities, currentPage);
-        window.scrollTo({ top: main.offsetTop, behavior: 'smooth' });
-      }
-    });
-    paginationContainer.appendChild(prevButton);
-
-    for (let i = 1; i <= totalPages; i++) {
-      const button = document.createElement('button');
-      button.textContent = i;
-      button.disabled = i === currentPage;
-      button.addEventListener('click', () => {
-        currentPage = i;
-        renderSections(universities, currentPage);
-        window.scrollTo({ top: main.offsetTop, behavior: 'smooth' });
-      });
-      paginationContainer.appendChild(button);
-    }
-
-    const nextButton = document.createElement('button');
-    nextButton.textContent = 'Siguiente';
-    nextButton.disabled = currentPage === totalPages;
-    nextButton.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderSections(universities, currentPage);
-        window.scrollTo({ top: main.offsetTop, behavior: 'smooth' });
-      }
-    });
-    paginationContainer.appendChild(nextButton);
-  }
 
   // Función para alternar favoritos
   function toggleFavorite(btn, url) {
@@ -255,20 +210,17 @@ document.addEventListener('DOMContentLoaded', function() {
     showFavorites();
   }
 
-  // Función para realizar la búsqueda optimizada con Fuse.js y resaltado
+  // Función para realizar la búsqueda
   function performSearch() {
     const searchTerm = searchInput.value.trim().toLowerCase();
     const allSections = document.querySelectorAll('.university-section');
     noResultsMessage.style.display = 'none';
-    paginationContainer.style.display = 'none';
 
     if (searchTerm === '') {
-      currentPage = 1;
-      renderSections(allUniversities, currentPage);
+      renderSections(allUniversities);
       return;
     }
 
-    // Crear una lista plana de recursos con sus universidades
     const flatResources = [];
     allUniversities.forEach(university => {
       university.resources.forEach(resource => {
@@ -282,7 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    // Configurar Fuse.js
     const fuse = new Fuse(flatResources, {
       keys: ['universityName', 'type', 'url', 'title'],
       threshold: 0.3,
@@ -293,17 +244,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const results = fuse.search(searchTerm);
 
-    // Limpiar secciones existentes
     allSections.forEach(section => section.remove());
-    paginationContainer.innerHTML = '';
 
-    // Mostrar mensaje de no resultados
     if (results.length === 0) {
       noResultsMessage.style.display = 'block';
       return;
     }
 
-    // Agrupar resultados por universidad
     const groupedResults = {};
     results.forEach(result => {
       const { universityId, universityName, type, url, title, matches } = result.item;
@@ -316,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
       groupedResults[universityId].resources.push({ type, url, title, matches });
     });
 
-    // Renderizar resultados agrupados
     Object.keys(groupedResults).forEach(universityId => {
       const university = groupedResults[universityId];
       const section = document.createElement('section');
@@ -349,9 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }).join('')}
         </div>
       `;
-      main.insertBefore(section, paginationContainer);
+      main.appendChild(section);
 
-      // Configurar botones de favoritos
       section.querySelectorAll('.favorite-btn').forEach(btn => {
         const url = btn.getAttribute('data-url');
         btn.addEventListener('click', () => toggleFavorite(btn, url));
