@@ -155,11 +155,12 @@ p.subtitulo {
   margin: 0 auto;
   display: flex;
   position: relative;
+  align-items: stretch; /* Asegura que los elementos se alineen correctamente */
 }
 
 #searchInput {
   flex: 1;
-  padding: 0.8rem 3.5rem 0.8rem 0.8rem; /* Aumentado padding-right para el botón X */
+  padding: 0.8rem 2.5rem 0.8rem 0.8rem; /* Espacio para el botón X */
   border: none;
   border-radius: 4px 0 0 4px;
   background-color: var(--bg-primary);
@@ -169,7 +170,7 @@ p.subtitulo {
 
 #clearSearch {
   position: absolute;
-  right: 0; /* Ajustado para estar dentro del campo de búsqueda */
+  right: 5px; /* Dentro del campo de búsqueda, cerca del borde derecho */
   top: 50%;
   transform: translateY(-50%);
   background: none;
