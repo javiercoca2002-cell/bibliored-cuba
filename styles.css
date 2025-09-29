@@ -37,6 +37,8 @@ body {
   line-height: 1.6;
   padding-top: 70px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a:focus, button:focus {
@@ -49,6 +51,7 @@ header, footer {
   padding: 30px 20px;
   text-align: center;
   animation: fadeIn 1s ease-in;
+  max-width: 100%;
 }
 
 h1 {
@@ -71,6 +74,8 @@ p.subtitulo {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -141,6 +146,8 @@ p.subtitulo {
   top: 60px;
   z-index: 999;
   transition: background-color 0.3s ease;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .search-box {
@@ -170,6 +177,13 @@ p.subtitulo {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow-x: hidden;
+}
+
 .university-section {
   padding: 20px;
   border-bottom: 1px solid var(--border-color);
@@ -177,6 +191,8 @@ p.subtitulo {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .university-section.visible {
@@ -222,6 +238,7 @@ p.subtitulo {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 
 .resource-card:hover {
@@ -244,6 +261,8 @@ p.subtitulo {
   padding: 5px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .resource-link:hover {
@@ -272,7 +291,7 @@ p.subtitulo {
   color: gold;
 }
 
-/* Modal de favoritos */
+/* Modal de favoritos y confirmación de tour */
 .modal {
   display: none;
   position: fixed;
@@ -332,6 +351,13 @@ p.subtitulo {
 
 .favorite-item:hover {
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.favorite-item a {
+  color: var(--text-primary);
+  text-decoration: none;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .remove-favorite {
@@ -403,10 +429,19 @@ footer p {
 
   .search-container {
     top: 50px;
+    padding: 1rem 10px;
+  }
+
+  .search-box {
+    max-width: 100%;
   }
 
   .resources-grid {
     grid-template-columns: 1fr;
+  }
+
+  .resource-card {
+    max-width: 100%;
   }
 
   .university-header {
@@ -414,21 +449,17 @@ footer p {
     align-items: flex-start;
     gap: 10px;
   }
-  main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.university-section {
-  overflow-x: auto; /* Agrega scroll horizontal si es necesario, pero con max-width evita el problema */
-}
-    }
-  }
 
   .modal-content {
     width: 95%;
     margin: 10% auto;
+    padding: 15px;
+  }
+
+  .tour-tooltip {
+    max-width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -477,10 +508,4 @@ footer p {
 
 .tour-tooltip button:hover {
   background-color: var(--accent-secondary);
-}
-
-@media (max-width: 768px) {
-  .tour-tooltip {
-    max-width: 90%;
-  }
 }
