@@ -159,7 +159,7 @@ p.subtitulo {
 
 #searchInput {
   flex: 1;
-  padding: 0.8rem 3rem 0.8rem 0.8rem; /* Aumentado padding-right para espacio del botón X */
+  padding: 0.8rem 3.5rem 0.8rem 0.8rem; /* Aumentado padding-right para el botón X */
   border: none;
   border-radius: 4px 0 0 4px;
   background-color: var(--bg-primary);
@@ -169,7 +169,7 @@ p.subtitulo {
 
 #clearSearch {
   position: absolute;
-  right: 10px; /* Ajustado para estar al final del campo */
+  right: 0; /* Ajustado para estar dentro del campo de búsqueda */
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -179,6 +179,7 @@ p.subtitulo {
   font-size: 1rem;
   display: none;
   transition: color 0.3s ease;
+  z-index: 1; /* Asegura que esté sobre el campo de texto */
 }
 
 #clearSearch:hover {
