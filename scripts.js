@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         section.className = 'university-section';
         section.innerHTML = `
           <div class="university-header">
+            ${university.logo ? `<img src="${university.logo}" alt="Logo de ${university.name}" class="university-logo" role="img" loading="lazy">` : ''}
             <h2 class="university-title">${university.name}</h2>
             <span class="resource-count-badge">${university.resources.length} recursos</span>
           </div>
