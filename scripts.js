@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('searchInput');
   const searchButton = document.getElementById('searchButton');
-  const searchSpinner = document.getElementById('searchSpinner');
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const favoritesLink = document.getElementById('favoritesLink');
@@ -12,106 +11,74 @@ document.addEventListener('DOMContentLoaded', function() {
   const main = document.querySelector('main');
   const noResultsMessage = document.getElementById('noResults');
 
+  // Cargar favoritos desde localStorage
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   let allUniversities = [];
 
   // Cargar datos de JSON y generar secciones
   fetch('universities.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al cargar universities.json: ' + response.status);
-      }
-      return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-      console.log('Datos cargados:', data);
       allUniversities = data;
-      renderSections(allUniversities);
 
-      // Configurar observador para animaciones
+      data.forEach(university => {
+        const section = document.createElement('section');
+        section.id = university.id;
+        section.className = 'university-section';
+        section.innerHTML = `
+          <div class="university-header">
+            <h2 class="university-title">${university.name}</h2>
+            <span class="resource-count-badge">${university.resources.length} recursos</span>
+          </div>
+          <div class="resources-grid">
+            ${university.resources.map(resource => `
+              <div class="resource-card">
+                <button class="favorite-btn" data-url="${resource.url}" data-title="${resource.title}">☆</button>
+                <span class="resource-type">${resource.type}</span>
+                <a href="${resource.url}" class="resource-link" target="_blank">${resource.url}</a>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        main.appendChild(section);
+
+        // Configurar botones de favoritos para esta sección
+        section.querySelectorAll('.favorite-btn').forEach(btn => {
+          const url = btn.getAttribute('data-url');
+          btn.addEventListener('click', () => toggleFavorite(btn, url));
+
+          // Marcar si ya es favorito
+          if (favorites.some(fav => fav.url === url)) {
+            btn.textContent = '★';
+            btn.classList.add('active');
+          }
+        });
+      });
+
+      // Configurar observador para animaciones después de generar las secciones
       const allSections = document.querySelectorAll('.university-section');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry);
           }
         });
       }, { threshold: 0.1 });
 
-      allSections.forEach(section => observer.observe(section));
+      allSections.forEach(section => {
+        observer.observe(section);
+      });
 
       // Configurar búsqueda
-      let searchTimeout;
-      searchInput.addEventListener('input', () => {
-        clearTimeout(searchTimeout);
-        searchSpinner.style.display = 'block';
-        searchTimeout = setTimeout(() => {
-          performSearch();
-          searchSpinner.style.display = 'none';
-        }, 500);
-      });
-
-      searchButton.addEventListener('click', () => {
-        searchSpinner.style.display = 'block';
-        performSearch();
-        searchSpinner.style.display = 'none';
-      });
-
+      searchInput.addEventListener('input', performSearch);
+      searchButton.addEventListener('click', performSearch);
       searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-          searchSpinner.style.display = 'block';
-          performSearch();
-          searchSpinner.style.display = 'none';
-        }
-        if (e.key === 'Escape') {
-          searchInput.value = '';
           performSearch();
         }
       });
     })
-    .catch(error => {
-      console.error('Error:', error);
-      main.innerHTML = '<p>Error al cargar los datos. Por favor, intenta de nuevo.</p>';
-    });
-
-  // Renderizar secciones
-  function renderSections(universities) {
-    main.innerHTML = '<p id="noResults" style="display: none;">No se encontraron resultados para tu búsqueda.</p>';
-    universities.forEach(university => {
-      const section = document.createElement('section');
-      section.id = university.id;
-      section.className = 'university-section';
-      section.setAttribute('aria-labelledby', `${university.id}-title`);
-      section.innerHTML = `
-        <div class="university-header">
-          <h2 class="university-title" id="${university.id}-title">${university.name}</h2>
-          <span class="resource-count-badge">${university.resources.length} recursos</span>
-        </div>
-        <div class="resources-grid">
-          ${university.resources.map(resource => `
-            <div class="resource-card">
-              <button class="favorite-btn" data-url="${resource.url}" data-title="${resource.title}" aria-label="Añadir ${resource.title} a favoritos">☆</button>
-              <span class="resource-type">${resource.type}</span>
-              <a href="${resource.url}" class="resource-link" target="_blank">${resource.title}</a>
-            </div>
-          `).join('')}
-        </div>
-      `;
-      main.appendChild(section);
-
-      // Configurar botones de favoritos
-      section.querySelectorAll('.favorite-btn').forEach(btn => {
-        const url = btn.getAttribute('data-url');
-        btn.addEventListener('click', () => toggleFavorite(btn, url));
-        if (favorites.some(fav => fav.url === url)) {
-          btn.textContent = '★';
-          btn.classList.add('active');
-          btn.setAttribute('aria-label', `Quitar ${btn.getAttribute('data-title')} de favoritos`);
-        }
-      });
-    });
-  }
+    .catch(error => console.error('Error al cargar universities.json:', error));
 
   // Configurar menú hamburguesa
   hamburger.addEventListener('click', function() {
@@ -156,12 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
       favorites.push({ url, title });
       btn.textContent = '★';
       btn.classList.add('active');
-      btn.setAttribute('aria-label', `Quitar ${title} de favoritos`);
     } else {
       favorites.splice(index, 1);
       btn.textContent = '☆';
       btn.classList.remove('active');
-      btn.setAttribute('aria-label', `Añadir ${title} a favoritos`);
     }
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -179,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         li.className = 'favorite-item';
         li.innerHTML = `
           <a href="${fav.url}" target="_blank">${fav.title}</a>
-          <button class="remove-favorite" data-index="${index}" aria-label="Eliminar ${fav.title} de favoritos">×</button>
+          <button class="remove-favorite" data-index="${index}">×</button>
         `;
         favoritesList.appendChild(li);
       });
@@ -202,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btn) {
       btn.textContent = '☆';
       btn.classList.remove('active');
-      btn.setAttribute('aria-label', `Añadir ${removedFavorite.title} a favoritos`);
     }
 
     favorites.splice(index, 1);
@@ -210,17 +174,23 @@ document.addEventListener('DOMContentLoaded', function() {
     showFavorites();
   }
 
-  // Función para realizar la búsqueda
+  // Función para realizar la búsqueda optimizada con Fuse.js
   function performSearch() {
     const searchTerm = searchInput.value.trim().toLowerCase();
     const allSections = document.querySelectorAll('.university-section');
     noResultsMessage.style.display = 'none';
 
     if (searchTerm === '') {
-      renderSections(allUniversities);
+      allSections.forEach(section => {
+        section.style.display = 'block';
+      });
+      document.querySelectorAll('.resource-card').forEach(card => {
+        card.style.display = 'block';
+      });
       return;
     }
 
+    // Crear una lista plana de recursos con sus universidades para búsqueda fuzzy
     const flatResources = [];
     allUniversities.forEach(university => {
       university.resources.forEach(resource => {
@@ -234,78 +204,54 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+    // Configurar Fuse.js para búsqueda fuzzy
     const fuse = new Fuse(flatResources, {
       keys: ['universityName', 'type', 'url', 'title'],
       threshold: 0.3,
       ignoreLocation: true,
-      includeScore: true,
-      includeMatches: true
+      includeScore: true
     });
 
     const results = fuse.search(searchTerm);
 
-    allSections.forEach(section => section.remove());
+    // Ocultar todas las secciones y tarjetas primero
+    allSections.forEach(section => {
+      section.style.display = 'none';
+    });
+    document.querySelectorAll('.resource-card').forEach(card => {
+      card.style.display = 'none';
+    });
 
+    // Mostrar mensaje de no resultados si no hay coincidencias
     if (results.length === 0) {
       noResultsMessage.style.display = 'block';
       return;
     }
 
-    const groupedResults = {};
+    // Mostrar coincidencias
+    const matchedUniversityIds = new Set();
     results.forEach(result => {
-      const { universityId, universityName, type, url, title, matches } = result.item;
-      if (!groupedResults[universityId]) {
-        groupedResults[universityId] = {
-          name: universityName,
-          resources: []
-        };
-      }
-      groupedResults[universityId].resources.push({ type, url, title, matches });
-    });
-
-    Object.keys(groupedResults).forEach(universityId => {
-      const university = groupedResults[universityId];
-      const section = document.createElement('section');
-      section.id = universityId;
-      section.className = 'university-section visible';
-      section.setAttribute('aria-labelledby', `${universityId}-title`);
-      section.innerHTML = `
-        <div class="university-header">
-          <h2 class="university-title" id="${universityId}-title">${university.name}</h2>
-          <span class="resource-count-badge">${university.resources.length} recursos</span>
-        </div>
-        <div class="resources-grid">
-          ${university.resources.map(resource => {
-            let highlightedTitle = resource.title;
-            resource.matches.forEach(match => {
-              if (match.key === 'title') {
-                match.indices.forEach(([start, end]) => {
-                  const term = resource.title.slice(start, end + 1);
-                  highlightedTitle = highlightedTitle.replace(term, `<span class="highlight">${term}</span>`);
-                });
-              }
-            });
-            return `
-              <div class="resource-card">
-                <button class="favorite-btn" data-url="${resource.url}" data-title="${resource.title}" aria-label="Añadir ${resource.title} a favoritos">☆</button>
-                <span class="resource-type">${resource.type}</span>
-                <a href="${resource.url}" class="resource-link" target="_blank">${highlightedTitle}</a>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-      main.appendChild(section);
-
-      section.querySelectorAll('.favorite-btn').forEach(btn => {
-        const url = btn.getAttribute('data-url');
-        btn.addEventListener('click', () => toggleFavorite(btn, url));
-        if (favorites.some(fav => fav.url === url)) {
-          btn.textContent = '★';
-          btn.classList.add('active');
-          btn.setAttribute('aria-label', `Quitar ${btn.getAttribute('data-title')} de favoritos`);
+      const { universityId, universityName } = result.item;
+      const section = document.getElementById(universityId);
+      if (section) {
+        // Si el término coincide con el nombre de la universidad, mostrar todos sus recursos
+        if (universityName.toLowerCase().includes(searchTerm)) {
+          section.style.display = 'block';
+          section.querySelectorAll('.resource-card').forEach(card => {
+            card.style.display = 'block';
+          });
+        } else {
+          // Mostrar solo los recursos específicos que coinciden
+          section.style.display = 'block';
+          section.querySelectorAll('.resource-card').forEach(card => {
+            const cardUrl = card.querySelector('.resource-link').href;
+            if (cardUrl === result.item.url) {
+              card.style.display = 'block';
+            }
+          });
         }
-      });
+        matchedUniversityIds.add(universityId);
+      }
     });
   }
 
