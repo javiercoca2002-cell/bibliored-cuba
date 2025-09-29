@@ -390,6 +390,22 @@ footer p {
   display: none;
 }
 
+/* Estilos para los logos de las universidades */
+.university-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.university-section.visible .university-logo {
+  opacity: 1;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -465,5 +481,9 @@ footer p {
     width: 95%;
     margin: 10% auto;
     padding: 15px;
+  }
+
+  .university-logo {
+    max-width: 100px;
   }
 }
