@@ -291,7 +291,7 @@ main {
   color: gold;
 }
 
-/* Modal de favoritos y confirmación de tour */
+/* Modal de favoritos */
 .modal {
   display: none;
   position: fixed;
@@ -351,13 +351,6 @@ main {
 
 .favorite-item:hover {
   background-color: rgba(255, 255, 255, 0.05);
-}
-
-.favorite-item a {
-  color: var(--text-primary);
-  text-decoration: none;
-  word-break: break-all;
-  overflow-wrap: break-word;
 }
 
 .remove-favorite {
@@ -429,19 +422,10 @@ footer p {
 
   .search-container {
     top: 50px;
-    padding: 1rem 10px;
-  }
-
-  .search-box {
-    max-width: 100%;
   }
 
   .resources-grid {
     grid-template-columns: 1fr;
-  }
-
-  .resource-card {
-    max-width: 100%;
   }
 
   .university-header {
@@ -449,17 +433,19 @@ footer p {
     align-items: flex-start;
     gap: 10px;
   }
+  main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
+.university-section {
+  overflow-x: auto; /* Agrega scroll horizontal si es necesario, pero con max-width evita el problema */
+}
+    }
   .modal-content {
     width: 95%;
     margin: 10% auto;
-    padding: 15px;
-  }
-
-  .tour-tooltip {
-    max-width: calc(100% - 20px);
-    padding: 10px;
-    box-sizing: border-box;
   }
 }
 
@@ -508,4 +494,21 @@ footer p {
 
 .tour-tooltip button:hover {
   background-color: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+  .tour-tooltip {
+    max-width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+/* Estilo para mensaje de no resultados */
+#noResults {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.2em;
+  margin: 20px 0;
+  display: none;
 }
