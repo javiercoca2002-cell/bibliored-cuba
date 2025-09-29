@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('searchInput');
   const searchButton = document.getElementById('searchButton');
+  const clearSearch = document.getElementById('clearSearch');
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const favoritesLink = document.getElementById('favoritesLink');
@@ -15,18 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const skipTourBtn = document.getElementById('skipTourBtn');
   const tourOverlay = document.getElementById('tourOverlay');
   const tourTooltip = document.getElementById('tourTooltip');
+  const noResultsMessage = document.getElementById('noResults');
+  const spotlightSvg = document.getElementById('tourSpotlight');
+  const spotlightCircle = document.getElementById('spotlightCircle');
 
   // Cargar favoritos desde localStorage
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-  // Variable para almacenar todos los datos de universidades
   let allUniversities = [];
-
-  // Crear elemento para mensaje de no resultados
-  const noResultsMessage = document.createElement('p');
-  noResultsMessage.id = 'noResults';
-  noResultsMessage.textContent = 'No se encontraron resultados para tu búsqueda.';
-  main.appendChild(noResultsMessage);
 
   // Cargar datos de JSON y generar secciones
   fetch('universities.json')
@@ -82,13 +78,24 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
       });
 
-      // Ahora que las secciones existen, configurar búsqueda
+      // Configurar búsqueda
       searchInput.addEventListener('input', performSearch);
       searchButton.addEventListener('click', performSearch);
       searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
           performSearch();
         }
+      });
+
+      // Configurar botón de borrar búsqueda
+      searchInput.addEventListener('input', () => {
+        clearSearch.style.display = searchInput.value ? 'block' : 'none';
+      });
+
+      clearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearch.style.display = 'none';
+        performSearch();
       });
 
       // Mostrar confirmación de tour al cargar la página si no se ha visto antes
@@ -247,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configurar Fuse.js para búsqueda fuzzy
     const fuse = new Fuse(flatResources, {
       keys: ['universityName', 'type', 'url', 'title'],
-      threshold: 0.3, // Tolerancia para errores ortográficos (0.0 = exacto, 1.0 = muy laxo)
+      threshold: 0.3,
       ignoreLocation: true,
       includeScore: true
     });
@@ -262,24 +269,35 @@ document.addEventListener('DOMContentLoaded', function() {
       card.style.display = 'none';
     });
 
+    // Mostrar mensaje de no resultados si no hay coincidencias
     if (results.length === 0) {
       noResultsMessage.style.display = 'block';
       return;
     }
 
     // Mostrar coincidencias
+    const matchedUniversityIds = new Set();
     results.forEach(result => {
-      const { universityId } = result.item;
+      const { universityId, universityName } = result.item;
       const section = document.getElementById(universityId);
       if (section) {
-        section.style.display = 'block';
-        // Mostrar todas las tarjetas de la universidad coincidente, o solo las coincidentes si quieres más precisión
-        section.querySelectorAll('.resource-card').forEach(card => {
-          const cardUrl = card.querySelector('.resource-link').href;
-          if (cardUrl === result.item.url) {
+        // Si el término coincide con el nombre de la universidad, mostrar todos sus recursos
+        if (universityName.toLowerCase().includes(searchTerm)) {
+          section.style.display = 'block';
+          section.querySelectorAll('.resource-card').forEach(card => {
             card.style.display = 'block';
-          }
-        });
+          });
+        } else {
+          // Mostrar solo los recursos específicos que coinciden
+          section.style.display = 'block';
+          section.querySelectorAll('.resource-card').forEach(card => {
+            const cardUrl = card.querySelector('.resource-link').href;
+            if (cardUrl === result.item.url) {
+              card.style.display = 'block';
+            }
+          });
+        }
+        matchedUniversityIds.add(universityId);
       }
     });
   }
@@ -352,7 +370,14 @@ document.addEventListener('DOMContentLoaded', function() {
         <button id="nextTourBtn">Siguiente</button>
       `;
 
-      // Ajustar posición vertical
+      // Ajustar posición del círculo SVG
+      const circleRadius = Math.max(rect.width, rect.height) / 2 + 20; // Añadir margen
+      spotlightCircle.setAttribute('cx', rect.left + rect.width / 2);
+      spotlightCircle.setAttribute('cy', rect.top + rect.height / 2);
+      spotlightCircle.setAttribute('r', circleRadius);
+      spotlightSvg.style.display = 'block';
+
+      // Ajustar posición vertical del tooltip
       let topPosition = rect.bottom + 10;
       if (topPosition + tourTooltip.offsetHeight > window.innerHeight) {
         topPosition = rect.top - tourTooltip.offsetHeight - 10;
@@ -370,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       tourTooltip.style.left = `${leftPosition}px`;
 
-      target.classList.add('tour-highlight');
       document.getElementById('nextTourBtn').addEventListener('click', nextStep);
     } else {
       nextStep();
@@ -378,10 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function nextStep() {
-    const currentTarget = document.querySelector(tourSteps[currentStep].element);
-    if (currentTarget) {
-      currentTarget.classList.remove('tour-highlight');
-    }
+    spotlightSvg.style.display = 'none';
     tourTooltip.style.display = 'none';
     currentStep++;
     showStep(currentStep);
@@ -390,6 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function endTour() {
     tourOverlay.style.display = 'none';
     tourTooltip.style.display = 'none';
+    spotlightSvg.style.display = 'none';
     currentStep = 0;
   }
 
