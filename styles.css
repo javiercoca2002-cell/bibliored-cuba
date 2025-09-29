@@ -272,7 +272,7 @@ p.subtitulo {
   color: gold;
 }
 
-/* Modal de favoritos */
+/* Modal de favoritos y confirmación de tour */
 .modal {
   display: none;
   position: fixed;
@@ -406,37 +406,13 @@ footer p {
   }
 
   .resources-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Permite que las tarjetas mantengan su ancho, causando scroll horizontal */
   }
 
   .university-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-  }
-
-  main {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  .university-section {
-    overflow-x: hidden; /* Elimina scroll horizontal */
-  }
-
-  .resource-card {
-    width: 100%; /* Asegura que quepa en la pantalla */
-    max-width: 100%;
-  }
-
-  .search-box {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .navbar {
-    padding: 0.8rem 0.5rem;
   }
 
   .modal-content {
