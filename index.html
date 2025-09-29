@@ -49,6 +49,7 @@
   <div class="search-container">
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Buscar por universidad o recurso..." aria-label="Buscar recursos">
+      <button id="clearSearch" class="clear-btn" aria-label="Borrar búsqueda">×</button>
       <button id="searchButton">Buscar</button>
     </div>
   </div>
@@ -61,9 +62,21 @@
     </p>
   </header>
 
-  <main></main>
+  <main>
+    <p id="noResults" style="display: none;">No se encontraron resultados para tu búsqueda.</p>
+  </main>
 
-  <div id="tourOverlay" class="tour-overlay"></div>
+  <div id="tourOverlay" class="tour-overlay">
+    <svg id="tourSpotlight" class="tour-spotlight">
+      <defs>
+        <mask id="spotlightMask">
+          <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+          <circle id="spotlightCircle" cx="0" cy="0" r="0" fill="black"/>
+        </mask>
+      </defs>
+      <rect x="0" y="0" width="100%" height="100%" fill="rgba(0, 0, 0, 0.9)" mask="url(#spotlightMask)"/>
+    </svg>
+  </div>
   <div id="tourTooltip" class="tour-tooltip"></div>
 
   <footer>
