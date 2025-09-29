@@ -9,21 +9,19 @@
   --menu-bg: #1a1a1a;
   --search-bg: #2a2a2a;
   --card-bg: #1a1a1a;
-  --highlight-bg: rgba(0, 255, 255, 0.2);
 }
 
 body.light-mode {
-  --bg-primary: #f5f5f5;
+  --bg-primary: #f0f0f0;
   --bg-secondary: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
+  --text-primary: #121212;
+  --text-secondary: #333333;
   --accent-primary: #007bff;
   --accent-secondary: #0056b3;
   --border-color: #ddd;
   --menu-bg: #ffffff;
   --search-bg: #f8f9fa;
   --card-bg: #ffffff;
-  --highlight-bg: rgba(0, 123, 255, 0.2);
 }
 
 * {
@@ -33,7 +31,7 @@ body.light-mode {
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -43,14 +41,14 @@ body {
   overflow-x: hidden;
 }
 
-a:focus, button:focus, input:focus {
+a:focus, button:focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
 header, footer {
   background-color: var(--bg-secondary);
-  padding: 2rem 1rem;
+  padding: 30px 20px;
   text-align: center;
   animation: fadeIn 1s ease-in;
   max-width: 100%;
@@ -59,7 +57,7 @@ header, footer {
 h1 {
   color: var(--accent-primary);
   font-size: 2em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 p.subtitulo {
@@ -74,7 +72,7 @@ p.subtitulo {
   width: 100%;
   background-color: var(--menu-bg);
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease;
   max-width: 100%;
   overflow-x: hidden;
@@ -91,7 +89,7 @@ p.subtitulo {
 
 .logo {
   color: var(--accent-primary);
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.2rem;
   text-decoration: none;
 }
@@ -108,13 +106,13 @@ p.subtitulo {
 .nav-link {
   color: var(--text-primary);
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .nav-link:hover, .nav-link:focus {
-  background-color: var(--highlight-bg);
+  background-color: rgba(0, 255, 255, 0.1);
   text-decoration: none;
 }
 
@@ -134,10 +132,10 @@ p.subtitulo {
   cursor: pointer;
   font-size: 1.2rem;
   padding: 0.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-#themeToggle:hover, #themeToggle:focus {
+#themeToggle:hover {
   color: var(--accent-primary);
 }
 
@@ -156,23 +154,13 @@ p.subtitulo {
   max-width: 600px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
   position: relative;
-}
-
-.search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-secondary);
-  font-size: 1rem;
-  pointer-events: none;
+  align-items: stretch;
 }
 
 #searchInput {
   flex: 1;
-  padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+  padding: 0.8rem;
   border: none;
   border-radius: 4px 0 0 4px;
   background-color: var(--bg-primary);
@@ -191,38 +179,20 @@ p.subtitulo {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#searchButton:hover, #searchButton:focus {
-  background-color: var(--accent-secondary);
-}
-
-.spinner {
-  display: none;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 3px solid var(--text-secondary);
-  border-top: 3px solid var(--accent-primary);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 20px;
   overflow-x: hidden;
 }
 
 .university-section {
-  padding: 1.5rem;
+  padding: 20px;
   border-bottom: 1px solid var(--border-color);
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-in;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -236,9 +206,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--accent-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--accent-primary);
 }
 
 .university-title {
@@ -250,7 +220,7 @@ main {
 .resource-count-badge {
   background-color: var(--accent-primary);
   color: var(--bg-primary);
-  padding: 0.3rem 0.75rem;
+  padding: 5px 10px;
   border-radius: 20px;
   font-weight: bold;
   font-size: 0.9rem;
@@ -260,28 +230,28 @@ main {
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: 15px;
 }
 
 .resource-card {
   background-color: var(--card-bg);
-  padding: 1rem;
+  padding: 15px;
   border-radius: 8px;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   max-width: 100%;
 }
 
 .resource-card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .resource-type {
   color: var(--accent-secondary);
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   display: block;
 }
 
@@ -289,8 +259,8 @@ main {
   color: var(--text-primary);
   text-decoration: none;
   display: block;
-  margin: 0.3rem 0;
-  padding: 0.3rem;
+  margin: 5px 0;
+  padding: 5px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   word-break: break-all;
@@ -298,20 +268,14 @@ main {
 }
 
 .resource-link:hover {
-  background-color: var(--highlight-bg);
+  background-color: rgba(0, 204, 255, 0.1);
   text-decoration: underline;
-}
-
-.resource-link .highlight {
-  background-color: var(--highlight-bg);
-  padding: 0 0.2rem;
-  border-radius: 2px;
 }
 
 .favorite-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   color: var(--text-secondary);
@@ -320,7 +284,7 @@ main {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.favorite-btn:hover, .favorite-btn:focus {
+.favorite-btn:hover {
   color: gold;
   transform: scale(1.2);
 }
@@ -329,6 +293,7 @@ main {
   color: gold;
 }
 
+/* Modal de favoritos */
 .modal {
   display: none;
   position: fixed;
@@ -345,7 +310,7 @@ main {
 .modal-content {
   background-color: var(--bg-secondary);
   margin: 5% auto;
-  padding: 1.5rem;
+  padding: 20px;
   border-radius: 8px;
   max-width: 800px;
   width: 90%;
@@ -355,20 +320,20 @@ main {
 }
 
 .close-modal {
-  color: var(--text-secondary);
+  color: #aaa;
   float: right;
-  font-size: 1.5rem;
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
 
-.close-modal:hover, .close-modal:focus {
+.close-modal:hover {
   color: var(--text-primary);
 }
 
 .modal-title {
   color: var(--accent-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -378,7 +343,7 @@ main {
 }
 
 .favorite-item {
-  padding: 0.5rem;
+  padding: 10px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
@@ -387,7 +352,7 @@ main {
 }
 
 .favorite-item:hover {
-  background-color: var(--highlight-bg);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .favorite-item a {
@@ -406,48 +371,23 @@ main {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.remove-favorite:hover, .remove-favorite:focus {
+.remove-favorite:hover {
   color: #ff0000;
   transform: scale(1.2);
 }
 
 footer p {
   font-size: 0.9em;
-  color: var(--text-secondary);
+  color: #999;
 }
 
+/* Estilo para mensaje de no resultados */
 #noResults {
   text-align: center;
   color: var(--text-secondary);
   font-size: 1.2em;
-  margin: 1.5rem 0;
+  margin: 20px 0;
   display: none;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 0;
-}
-
-.pagination button {
-  padding: 0.5rem 1rem;
-  background-color: var(--accent-primary);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.pagination button:hover, .pagination button:focus {
-  background-color: var(--accent-secondary);
-}
-
-.pagination button:disabled {
-  background-color: var(--text-secondary);
-  cursor: not-allowed;
 }
 
 @keyframes fadeIn {
@@ -458,11 +398,6 @@ footer p {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 @media (max-width: 768px) {
@@ -505,7 +440,7 @@ footer p {
 
   .search-container {
     top: 50px;
-    padding: 0.5rem 0.5rem;
+    padding: 1rem 10px;
   }
 
   .search-box {
@@ -523,12 +458,12 @@ footer p {
   .university-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 10px;
   }
 
   .modal-content {
     width: 95%;
     margin: 10% auto;
-    padding: 1rem;
+    padding: 15px;
   }
 }
