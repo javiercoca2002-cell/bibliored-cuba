@@ -5,20 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const favoritesLink = document.getElementById('favoritesLink');
-  const helpLink = document.getElementById('helpLink');
   const favoritesModal = document.getElementById('favoritesModal');
-  const tourConfirmModal = document.getElementById('tourConfirmModal');
   const closeModal = document.querySelectorAll('.close-modal');
   const favoritesList = document.getElementById('favoritesList');
   const themeToggle = document.getElementById('themeToggle');
   const main = document.querySelector('main');
-  const startTourBtn = document.getElementById('startTourBtn');
-  const skipTourBtn = document.getElementById('skipTourBtn');
-  const tourOverlay = document.getElementById('tourOverlay');
-  const tourTooltip = document.getElementById('tourTooltip');
   const noResultsMessage = document.getElementById('noResults');
-  const spotlightSvg = document.getElementById('tourSpotlight');
-  const spotlightCircle = document.getElementById('spotlightCircle');
 
   // Cargar favoritos desde localStorage
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -97,11 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         clearSearch.style.display = 'none';
         performSearch();
       });
-
-      // Mostrar confirmación de tour al cargar la página si no se ha visto antes
-      if (!sessionStorage.getItem('tourSeen')) {
-        tourConfirmModal.style.display = 'block';
-      }
     })
     .catch(error => console.error('Error al cargar universities.json:', error));
 
@@ -126,17 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
     showFavorites();
   });
 
-  // Activar tour desde el menú de ayuda
-  helpLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    startTour();
-  });
-
   // Cerrar modales
   closeModal.forEach(btn => {
     btn.addEventListener('click', () => {
       favoritesModal.style.display = 'none';
-      tourConfirmModal.style.display = 'none';
     });
   });
 
@@ -144,21 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (event.target === favoritesModal) {
       favoritesModal.style.display = 'none';
     }
-    if (event.target === tourConfirmModal) {
-      tourConfirmModal.style.display = 'none';
-    }
-  });
-
-  // Botones de confirmación del tour
-  startTourBtn.addEventListener('click', () => {
-    tourConfirmModal.style.display = 'none';
-    startTour();
-    sessionStorage.setItem('tourSeen', 'true');
-  });
-
-  skipTourBtn.addEventListener('click', () => {
-    tourConfirmModal.style.display = 'none';
-    sessionStorage.setItem('tourSeen', 'true');
   });
 
   // Función para alternar favoritos
@@ -317,103 +282,4 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     themeToggle.textContent = '☀️';
   }
-
-  // Lógica del tour interactivo
-  const tourSteps = [
-    {
-      element: '.logo',
-      description: 'Este es el logo de Bibliored Cuba. Haz clic para volver a la página principal.'
-    },
-    {
-      element: '#themeToggle',
-      description: 'Botón para cambiar entre modo oscuro y claro.'
-    },
-    {
-      element: '.search-box',
-      description: 'Barra de búsqueda: Escribe para buscar universidades o recursos.'
-    },
-    {
-      element: '.university-section:first-child .university-header',
-      description: 'Cabecera de universidad: Muestra el nombre y el número de recursos.'
-    },
-    {
-      element: '.resource-card:first-child',
-      description: 'Tarjeta de recurso: Contiene tipo, enlace y botón de favorito.'
-    },
-    {
-      element: '#favoritesLink',
-      description: 'Enlace a favoritos: Abre el modal con tus recursos guardados.'
-    }
-  ];
-
-  let currentStep = 0;
-
-  function startTour() {
-    tourOverlay.style.display = 'block';
-    showStep(currentStep);
-  }
-
-  function showStep(step) {
-    if (step >= tourSteps.length) {
-      endTour();
-      return;
-    }
-
-    const { element, description } = tourSteps[step];
-    const target = document.querySelector(element);
-
-    if (target) {
-      const rect = target.getBoundingClientRect();
-      tourTooltip.style.display = 'block';
-      tourTooltip.innerHTML = `
-        <p>${description}</p>
-        <button id="nextTourBtn">Siguiente</button>
-      `;
-
-      // Ajustar posición del círculo SVG
-      const circleRadius = Math.max(rect.width, rect.height) / 2 + 20; // Añadir margen
-      spotlightCircle.setAttribute('cx', rect.left + rect.width / 2);
-      spotlightCircle.setAttribute('cy', rect.top + rect.height / 2);
-      spotlightCircle.setAttribute('r', circleRadius);
-      spotlightSvg.style.display = 'block';
-
-      // Ajustar posición vertical del tooltip
-      let topPosition = rect.bottom + 10;
-      if (topPosition + tourTooltip.offsetHeight > window.innerHeight) {
-        topPosition = rect.top - tourTooltip.offsetHeight - 10;
-      }
-      tourTooltip.style.top = `${topPosition}px`;
-
-      // Ajustar posición horizontal para que no se salga del viewport
-      let leftPosition = rect.left + (rect.width / 2) - (tourTooltip.offsetWidth / 2);
-      const tooltipWidth = tourTooltip.offsetWidth;
-      const viewportWidth = window.innerWidth;
-      if (leftPosition < 10) {
-        leftPosition = 10;
-      } else if (leftPosition + tooltipWidth > viewportWidth - 10) {
-        leftPosition = viewportWidth - tooltipWidth - 10;
-      }
-      tourTooltip.style.left = `${leftPosition}px`;
-
-      document.getElementById('nextTourBtn').addEventListener('click', nextStep);
-    } else {
-      nextStep();
-    }
-  }
-
-  function nextStep() {
-    spotlightSvg.style.display = 'none';
-    tourTooltip.style.display = 'none';
-    currentStep++;
-    showStep(currentStep);
-  }
-
-  function endTour() {
-    tourOverlay.style.display = 'none';
-    tourTooltip.style.display = 'none';
-    spotlightSvg.style.display = 'none';
-    currentStep = 0;
-  }
-
-  tourOverlay.addEventListener('click', endTour);
 });
