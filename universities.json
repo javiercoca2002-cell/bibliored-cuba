@@ -1,0 +1,1364 @@
+[
+  {
+    "id": "upr",
+    "name": "UPR (Universidad de Pinar del Río)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.upr.edu.cu/home",
+        "title": "UPR - Sitio Web Institucional"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://rc.upr.edu.cu/",
+        "title": "UPR - Repositorio Institucional"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://earchivos.upr.edu.cu",
+        "title": "UPR - Sitio Web Biblioteca"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "http://aulas-virtuales.upr.edu.cu/",
+        "title": "UPR - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://moodle.upr.edu.cu/",
+        "title": "UPR - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://moodle.ceces.upr.edu.cu/moodle/",
+        "title": "UPR - EVEA Posgrado"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://moodleed.upr.edu.cu/",
+        "title": "UPR - EVEA EaD"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.upr.edu.cu/",
+        "title": "UPR - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://estudiantes.upr.edu.cu/",
+        "title": "UPR - Correo electrónico"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://mendive.upr.edu.cu/index.php/MendiveUPR",
+        "title": "UPR - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://podium.upr.edu.cu/index.php/podium",
+        "title": "UPR - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://coodes.upr.edu.cu/index.php/coodes",
+        "title": "UPR - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://cifam.upr.edu.cu/index.php/cifam",
+        "title": "UPR - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://cfores.upr.edu.cu/index.php/cfores",
+        "title": "UPR - Revista Científica"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "https://eventos.upr.edu.cu/home",
+        "title": "UPR - Sitio Web Eventos"
+      },
+      {
+        "type": "Observatorio",
+        "url": "https://sciobs.upr.edu.cu/indicators",
+        "title": "UPR - Observatorio"
+      },
+      {
+        "type": "Observatorio",
+        "url": "https://techobs.upr.edu.cu/indicators",
+        "title": "UPR - Observatorio"
+      },
+      {
+        "type": "Observatorio",
+        "url": "https://tareavida.upr.edu.cu/home",
+        "title": "UPR - Observatorio"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://sceiba.reduniv.edu.cu/",
+        "title": "UPR - Revista Científica"
+      }
+    ]
+  },
+  {
+    "id": "uij",
+    "name": "UIJ (Universidad de Isla de la Juventud)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.uij.edu.cu",
+        "title": "UIJ - Sitio Web Institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.uij.edu.cu",
+        "title": "UIJ - Correo electrónico"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://aulavirtual.uij.edu.cu",
+        "title": "UIJ - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://postgrado.uij.edu.cu",
+        "title": "UIJ - EVEA Posgrado"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://magisterio.uij.edu.cu",
+        "title": "UIJ - Revista Científica"
+      },
+      {
+        "type": "Repositorio de aplicaciones",
+        "url": "https://ftp.uij.edu.cu",
+        "title": "UIJ - Repositorio de aplicaciones"
+      }
+    ]
+  },
+  {
+    "id": "uh",
+    "name": "UH (Universidad de La Habana)",
+    "resources": [
+      {
+        "type": "Correo electrónico",
+        "url": "http://correo.uh.cu",
+        "title": "UH - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "http://correo.estudiantes.uh.cu",
+        "title": "UH - Correo electrónico"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://revistas.uh.cu",
+        "title": "UH - Revista Científica"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "http://accesoabierto.uh.cu",
+        "title": "UH - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://a3manos.uh.cu",
+        "title": "UH - Revista Científica"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "http://programas.uh.cu",
+        "title": "UH - EVEA Posgrado"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "http://eventos.uh.cu",
+        "title": "UH - Sitio Web Eventos"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "http://jbn.uh.cu",
+        "title": "UH - Sitio Web Institucional"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "http://sic.uh.cu",
+        "title": "UH - Sitio Web"
+      },
+      {
+        "type": "SIGENU",
+        "url": "http://sigenu.uh.cu",
+        "title": "UH - SIGENU"
+      },
+      {
+        "type": "VPN",
+        "url": "http://vnet.uh.cu",
+        "title": "UH - VPN"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "http://evea.uh.cu",
+        "title": "UH - EVEA Pregrado"
+      },
+      {
+        "type": "Nube",
+        "url": "http://minube.uh.cu",
+        "title": "UH - Nube"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "http://www.uh.cu",
+        "title": "UH - Sitio Web Institucional"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "http://facultades.uh.cu",
+        "title": "UH - Sitio Web Institucional"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "http://dime.uh.cu",
+        "title": "UH - Sitio Web"
+      },
+      {
+        "type": "EVEA MOOCs",
+        "url": "http://moocs.uh.cu",
+        "title": "UH - EVEA MOOCs"
+      }
+    ]
+  },
+  {
+    "id": "uci",
+    "name": "UCI (Universidad de las Ciencias Informáticas)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.uci.cu/",
+        "title": "UCI - Sitio Web Institucional"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://aulacened.uci.cu/",
+        "title": "UCI - EVEA Posgrado"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://repositorio.uci.cu/jspui/",
+        "title": "UCI - Repositorio Institucional"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rcci.uci.cu/index.php/RCCI",
+        "title": "UCI - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://publicaciones.uci.cu/",
+        "title": "UCI - Revista Científica"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://eva.uci.cu/",
+        "title": "UCI - EVEA Pregrado"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://admision.uci.cu/",
+        "title": "UCI - Sitio Web"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.estudiantes.uci.cu/",
+        "title": "UCI - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.uci.cu/",
+        "title": "UCI - Correo electrónico"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://drst.uci.cu/",
+        "title": "UCI - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://cuenta.uci.cu/",
+        "title": "UCI - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://usuario.uci.cu/",
+        "title": "UCI - Sitio Web"
+      },
+      {
+        "type": "Repositorio de código",
+        "url": "https://gitlab.prod.uci.cu",
+        "title": "UCI - Repositorio de código"
+      },
+      {
+        "type": "Videoconferencia",
+        "url": "https://conferencia.uci.cu",
+        "title": "UCI - Videoconferencia"
+      }
+    ]
+  },
+  {
+    "id": "cujae",
+    "name": "CUJAE (Universidad Tecnológica de La Habana)",
+    "resources": [
+      {
+        "type": "Chat",
+        "url": "https://smi.cujae.edu.cu",
+        "title": "CUJAE - Chat"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.cujae.edu.cu",
+        "title": "CUJAE - SIGENU"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://moodle.cujae.edu.cu",
+        "title": "CUJAE - EVEA Pregrado"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://repositorio.cujae.edu.cu",
+        "title": "CUJAE - Repositorio Institucional"
+      },
+      {
+        "type": "Nube",
+        "url": "https://nube.cujae.edu.cu",
+        "title": "CUJAE - Nube"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://cujae.edu.cu",
+        "title": "CUJAE - Sitio Web Institucional"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://renia.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistamecanica.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistarrancada.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistatelematica.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rie.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rielac.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://riha.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rii.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rrp.cujae.edu.cu",
+        "title": "CUJAE - Revista Científica"
+      },
+      {
+        "type": "Intranet",
+        "url": "https://intranet.cujae.edu.cu",
+        "title": "CUJAE - Intranet"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://teleportal.cujae.edu.cu",
+        "title": "CUJAE - EVEA Posgrado"
+      }
+    ]
+  },
+  {
+    "id": "ucpejv",
+    "name": "UCPEJV (Universidad de Ciencias Pedagógicas Enrique José Varona)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "http://portal.ucpejv.edu.cu/",
+        "title": "UCPEJV - Sitio Web Institucional"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "http://eventos.ucpejv.edu.cu/",
+        "title": "UCPEJV - Sitio Web Eventos"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "http://webdocente.ucpejv.edu.cu/",
+        "title": "UCPEJV - EVEA Pregrado"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://revistas.ucpejv.edu.cu/",
+        "title": "UCPEJV - Revista Científica"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.ucpejv.edu.cu/",
+        "title": "UCPEJV - Correo electrónico"
+      }
+    ]
+  },
+  {
+    "id": "um",
+    "name": "UM (Universidad de Matanzas)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.umcc.cu",
+        "title": "UM - Sitio Web Institucional"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://eva.umcc.cu",
+        "title": "UM - EVEA Pregrado"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.umcc.cu",
+        "title": "UM - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correoest.umcc.cu",
+        "title": "UM - Correo electrónico"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://cict.umcc.cu",
+        "title": "UM - Repositorio Institucional"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://abcd.umcc.cu",
+        "title": "UM - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://retosturisticos.umcc.cu",
+        "title": "UM - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://atenas.umcc.cu",
+        "title": "UM - Revista Científica"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://rein.umcc.cu",
+        "title": "UM - Repositorio Institucional"
+      }
+    ]
+  },
+  {
+    "id": "uclv",
+    "name": "UCLV (Universidad Central \"Marta Abreu\" de Las Villas)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.uclv.edu.cu",
+        "title": "UCLV - Sitio Web Institucional"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://dspace.uclv.edu.cu",
+        "title": "UCLV - Repositorio Institucional"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://bida.uclv.edu.cu",
+        "title": "UCLV - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "http://www.cdict.uclv.edu.cu",
+        "title": "UCLV - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "http://feijoo.cdict.uclv.edu.cu",
+        "title": "UCLV - Sitio Web"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://islas.uclv.edu.cu",
+        "title": "UCLV - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistavarela.uclv.edu.cu",
+        "title": "UCLV - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistaciaf.uclv.edu.cu",
+        "title": "UCLV - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://centroazucar.uclv.edu.cu",
+        "title": "UCLV - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://cagricola.uclv.edu.cu",
+        "title": "UCLV - Revista Científica"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://cti.uclv.edu.cu",
+        "title": "UCLV - Sitio Web"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "https://convencion.uclv.cu",
+        "title": "UCLV - Sitio Web Eventos"
+      },
+      {
+        "type": "Repositorio de Libros",
+        "url": "https://libros.uclv.edu.cu",
+        "title": "UCLV - Repositorio de Libros"
+      },
+      {
+        "type": "Repositorio de Libros",
+        "url": "https://elibros.uclv.edu.cu",
+        "title": "UCLV - Repositorio de Libros"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://aula.uclv.edu.cu",
+        "title": "UCLV - EVEA Posgrado"
+      },
+      {
+        "type": "Repositorio de aplicaciones",
+        "url": "https://soft.uclv.edu.cu",
+        "title": "UCLV - Repositorio de aplicaciones"
+      },
+      {
+        "type": "Repositorio de código",
+        "url": "https://repos.uclv.edu.cu",
+        "title": "UCLV - Repositorio de código"
+      },
+      {
+        "type": "Respositorio de Antivirus",
+        "url": "https://antivirus.uclv.edu.cu",
+        "title": "UCLV - Respositorio de Antivirus"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.uclv.edu.cu",
+        "title": "UCLV - SIGENU"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://teletrabajo.uclv.cu",
+        "title": "UCLV - Sitio Web"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://moodle.uclv.edu.cu",
+        "title": "UCLV - EVEA Pregrado"
+      }
+    ]
+  },
+  {
+    "id": "ucf",
+    "name": "UCf (Universidad de Cienfuegos)",
+    "resources": [
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.ucf.edu.cu",
+        "title": "UCf - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.ucf.edu.cu",
+        "title": "UCf - Correo electrónico"
+      },
+      {
+        "type": "Nube",
+        "url": "https://nube.ucf.edu.cu",
+        "title": "UCf - Nube"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://dspace.ucf.edu.cu",
+        "title": "UCf - Repositorio Institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.ucf.cu",
+        "title": "UCf - Correo electrónico"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.ucf.edu.cu",
+        "title": "UCf - Sitio Web Institucional"
+      },
+      {
+        "type": "Intranet",
+        "url": "https://intranet.ucf.edu.cu",
+        "title": "UCf - Intranet"
+      },
+      {
+        "type": "EVEA MOOCs",
+        "url": "https://cursos.ucf.edu.cu",
+        "title": "UCf - EVEA MOOCs"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://clasesvirtuales.ucf.edu.cu",
+        "title": "UCf - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://postgradosvirtuales.ucf.edu.cu",
+        "title": "UCf - EVEA Posgrado"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.ucf.edu.cu",
+        "title": "UCf - SIGENU"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://pled.ucf.edu.cu",
+        "title": "UCf - EVEA Posgrado"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rus.ucf.edu.cu",
+        "title": "UCf - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://conrado.ucf.edu.cu",
+        "title": "UCf - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://aes.ucf.edu.cu",
+        "title": "UCf - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rccd.ucf.edu.cu/",
+        "title": "UCf - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://universosur.ucf.edu.cu",
+        "title": "UCf - Revista Científica"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://encuestas.ucf.edu.cu",
+        "title": "UCf - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://caipd.ucf.edu.cu",
+        "title": "UCf - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://npv.ucf.edu.cu",
+        "title": "UCf - Sitio Web"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "https://eventos.ucf.edu.cu",
+        "title": "UCf - Sitio Web Eventos"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "https://talleres.ucf.edu.cu",
+        "title": "UCf - Sitio Web Eventos"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://auth.ucf.edu.cu",
+        "title": "UCf - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://micuenta.ucf.edu.cu",
+        "title": "UCf - Sitio Web"
+      }
+    ]
+  },
+  {
+    "id": "uniss",
+    "name": "UNISS (Universidad de Sancti Spíritus \"José Martí Pérez\")",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.uniss.edu.cu",
+        "title": "UNISS - Sitio Web Institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.uniss.edu.cu",
+        "title": "UNISS - Correo electrónico"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://pregrado.uniss.edu.cu",
+        "title": "UNISS - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://posgrado.uniss.edu.cu",
+        "title": "UNISS - EVEA Posgrado"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://mooc.uniss.edu.cu",
+        "title": "UNISS - EVEA EaD"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.uniss.edu.cu",
+        "title": "UNISS - SIGENU"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://cambio.uniss.edu.cu",
+        "title": "UNISS - Sitio Web"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://dspace.uniss.edu.cu",
+        "title": "UNISS - Repositorio Institucional"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.uniss.edu.cu",
+        "title": "UNISS - Revista Científica"
+      },
+      {
+        "type": "Repositorio de aplicaciones",
+        "url": "https://software.uniss.edu.cu",
+        "title": "UNISS - Repositorio de aplicaciones"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "https://eventos.uniss.edu.cu",
+        "title": "UNISS - Sitio Web Eventos"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://desiderionavarro.uniss.edu.cu",
+        "title": "UNISS - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://encuestas.uniss.edu.cu",
+        "title": "UNISS - Sitio Web"
+      }
+    ]
+  },
+  {
+    "id": "unica",
+    "name": "UNICA (Universidad de Camagüey)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.unica.cu",
+        "title": "UNICA - Sitio Web Institucional"
+      },
+      {
+        "type": "Intranet",
+        "url": "https://intranet.unica.cu",
+        "title": "UNICA - Intranet"
+      },
+      {
+        "type": "Nube",
+        "url": "https://nube.unica.cu",
+        "title": "UNICA - Nube"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.unica.cu",
+        "title": "UNICA - Correo electrónico"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.unica.cu",
+        "title": "UNICA - SIGENU"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://dspace.unica.cu",
+        "title": "UNICA - Repositorio Institucional"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.unica.cu/index.php/uciencia",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.unica.cu/index.php/edusoc",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.unica.cu/index.php/regu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://pregrado.unica.cu",
+        "title": "UNICA - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://posgrado.unica.cu",
+        "title": "UNICA - EVEA Posgrado"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://tunota.unica.cu/",
+        "title": "UNICA - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://unilegal.unica.cu/",
+        "title": "UNICA - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://tickets.unica.cu/",
+        "title": "UNICA - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://tickets.sma.unica.cu/",
+        "title": "UNICA - Sitio Web"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.reduc.edu.cu",
+        "title": "UNICA - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.reduc.edu.cu",
+        "title": "UNICA - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail1.reduc.edu.cu",
+        "title": "UNICA - Correo electrónico"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://cienciaydeporte.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://agrisost.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://monteverdia.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://transformacion.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://retos.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://arcada.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rpa.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://perspectiva.reduc.edu.cu",
+        "title": "UNICA - Revista Científica"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.reduc.edu.cu",
+        "title": "UNICA - Sitio Web Institucional"
+      },
+      {
+        "type": "EVEA de Pregrado",
+        "url": "https://moodle.reduc.edu.cu",
+        "title": "UNICA - EVEA de Pregrado"
+      },
+      {
+        "type": "EVEA de Posgrado",
+        "url": "https://moodlepost.reduc.edu.cu",
+        "title": "UNICA - EVEA de Posgrado"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.reduc.edu.cu",
+        "title": "UNICA - SIGENU"
+      },
+      {
+        "type": "Nube",
+        "url": "https://nube.reduc.edu.cu",
+        "title": "UNICA - Nube"
+      },
+      {
+        "type": "Repositorio de código",
+        "url": "https://gitlab.reduc.edu.cu",
+        "title": "UNICA - Repositorio de código"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://rediuc.reduc.edu.cu",
+        "title": "UNICA - Repositorio Institucional"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://bivi.reduc.edu.cu",
+        "title": "UNICA - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://encuestas.reduc.edu.cu",
+        "title": "UNICA - Sitio Web"
+      }
+    ]
+  },
+  {
+    "id": "ult",
+    "name": "ULT (Universidad de Las Tunas)",
+    "resources": [
+      {
+        "type": "Nube",
+        "url": "https://nube.ult.edu.cu",
+        "title": "ULT - Nube"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://pregrado.ult.edu.cu",
+        "title": "ULT - EVEA Pregrado"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.ult.edu.cu",
+        "title": "ULT - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correoest.ult.edu.cu",
+        "title": "ULT - Correo electrónico"
+      },
+      {
+        "type": "Repositorio de Videos",
+        "url": "https://media.ult.edu.cu",
+        "title": "ULT - Repositorio de Videos"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://roa.ult.edu.cu",
+        "title": "ULT - Repositorio Institucional"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://biblioteca.ult.edu.cu",
+        "title": "ULT - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://opuntiabrava.ult.edu.cu",
+        "title": "ULT - Revista Científica"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://uvp.ult.edu.cu",
+        "title": "ULT - EVEA Posgrado"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.ult.edu.cu",
+        "title": "ULT - Sitio Web Institucional"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.ult.edu.cu",
+        "title": "ULT - Revista Científica"
+      }
+    ]
+  },
+  {
+    "id": "uho",
+    "name": "UHo (Universidad de Holguín)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.uho.edu.cu",
+        "title": "UHo - Sitio Web Institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.uho.edu.cu",
+        "title": "UHo - Correo electrónico"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://deporvida.uho.edu.cu",
+        "title": "UHo - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://luz.uho.edu.cu",
+        "title": "UHo - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://tecedu.uho.edu.cu",
+        "title": "UHo - Revista Científica"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://redbibliotecas.uho.edu.cu",
+        "title": "UHo - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://repositorio.uho.edu.cu",
+        "title": "UHo - Repositorio Institucional"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://eduvirtual.uho.edu.cu",
+        "title": "UHo - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://aulasvirtuales.uho.edu.cu",
+        "title": "UHo - EVEA Pregrado"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://educa.uho.edu.cu",
+        "title": "UHo - Sitio Web"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://eadvirtual.uho.edu.cu",
+        "title": "UHo - EVEA Posgrado"
+      }
+    ]
+  },
+  {
+    "id": "umoa",
+    "name": "UMoa (Universidad de Moa)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.ismm.edu.cu",
+        "title": "UMoa - Sitio Web Institucional"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://moodle-postgrado.ismm.edu.cu",
+        "title": "UMoa - EVEA Posgrado"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revista.ismm.edu.cu",
+        "title": "UMoa - Revista Científica"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://ninive.ismm.edu.cu",
+        "title": "UMoa - Repositorio Institucional"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://cep.ismm.edu.cu",
+        "title": "UMoa - Repositorio Institucional"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://moodle.ismm.edu.cu",
+        "title": "UMoa - EVEA Pregrado"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.cujae.edu.cu",
+        "title": "UMoa - Correo electrónico"
+      }
+    ]
+  },
+  {
+    "id": "udg",
+    "name": "UDG (Universidad de Granma)",
+    "resources": [
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.udg.co.cu",
+        "title": "UDG - Revista Científica"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "https://congresodesarrollolocal.udg.co.cu",
+        "title": "UDG - Sitio Web Eventos"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://passwd.udg.co.cu",
+        "title": "UDG - Sitio Web"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://secretaria.udg.co.cu",
+        "title": "UDG - SIGENU"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://poblacion.udg.co.cu",
+        "title": "UDG - Sitio Web"
+      },
+      {
+        "type": "Repositorio Linux",
+        "url": "https://repo.udg.co.cu",
+        "title": "UDG - Repositorio Linux"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://eddist.udg.co.cu",
+        "title": "UDG - EVEA EaD"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correos.udg.co.cu",
+        "title": "UDG - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.udg.co.cu",
+        "title": "UDG - Correo electrónico"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://moodle.udg.co.cu",
+        "title": "UDG - EVEA EaD"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://mooc.udg.co.cu",
+        "title": "UDG - EVEA EaD"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.udg.co.cu",
+        "title": "UDG - Sitio Web Institucional"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://gestion.udg.co.cu",
+        "title": "UDG - Sitio Web"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://eva.udg.co.cu",
+        "title": "UDG - EVEA EaD"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://evea.udg.co.cu",
+        "title": "UDG - EVEA EaD"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://ediciones.udg.co.cu",
+        "title": "UDG - Sitio Web"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://repositorio.udg.co.cu",
+        "title": "UDG - Repositorio Institucional"
+      },
+      {
+        "type": "Nube",
+        "url": "https://cloud.udg.co.cu",
+        "title": "UDG - Nube"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://office.udg.co.cu",
+        "title": "UDG - Sitio Web"
+      }
+    ]
+  },
+  {
+    "id": "ug",
+    "name": "UG (Universidad de Guantánamo)",
+    "resources": [
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://cursovirtual.cug.co.cu/",
+        "title": "UG - EVEA Pregrado"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://docsvirtual.cug.co.cu/",
+        "title": "UG - Repositorio Institucional"
+      },
+      {
+        "type": "Bibliografías de apoyo al Moodle",
+        "url": "https://docsvirtual.cug.co.cu/",
+        "title": "UG - Bibliografías de apoyo al Moodle"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.cug.co.cu/",
+        "title": "UG - Correo electrónico"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "http://biblioteca.cug.co.cu/",
+        "title": "UG - Sitio Web Biblioteca"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "http://repositorio.cug.co.cu:8080/jspui/",
+        "title": "UG - Repositorio Institucional"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.cug.co.cu/",
+        "title": "UG - Sitio Web Institucional"
+      }
+    ]
+  },
+  {
+    "id": "uo",
+    "name": "UO (Universidad de Oriente)",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "http://www.uo.edu.cu/",
+        "title": "UO - Sitio Web Institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "http://correo.uo.edu.cu/",
+        "title": "UO - Correo electrónico"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "http://consejo.uo.edu.cu/",
+        "title": "UO - Correo electrónico"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "http://eva.uo.edu.cu/",
+        "title": "UO - EVEA Pregrado"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "http://cursos.uo.edu.cu/",
+        "title": "UO - EVEA Posgrado"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://anuarioeco.uo.edu.cu/",
+        "title": "UO - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://maestroysociedad.uo.edu.cu/",
+        "title": "UO - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://santiago.uo.edu.cu/",
+        "title": "UO - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://tecnologiaquimica.uo.edu.cu/",
+        "title": "UO - Revista Científica"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://cubanaquimica.uo.edu.cu",
+        "title": "UO - Revista Científica"
+      },
+      {
+        "type": "Nube",
+        "url": "http://nube.uo.edu.cu/",
+        "title": "UO - Nube"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "http://referenciaict.uo.edu.cu",
+        "title": "UO - Repositorio Institucional"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "http://repositorio.uo.edu.cu/",
+        "title": "UO - Repositorio Institucional"
+      },
+      {
+        "type": "Repositorio de OA",
+        "url": "http://repotematico.uo.edu.cu/",
+        "title": "UO - Repositorio de OA"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "http://redes.uo.edu.cu/",
+        "title": "UO - Sitio Web"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "http://reportes.uo.edu.cu/",
+        "title": "UO - Sitio Web"
+      }
+    ]
+  }
+]
