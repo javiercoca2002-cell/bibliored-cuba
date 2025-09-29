@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
       });
 
-      // Ahora que las secciones existen, configurar búsqueda
+      // Configurar búsqueda
       searchInput.addEventListener('input', performSearch);
       searchButton.addEventListener('click', performSearch);
       searchInput.addEventListener('keypress', function(e) {
@@ -310,13 +310,24 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>${description}</p>
         <button id="nextTourBtn">Siguiente</button>
       `;
-      tourTooltip.style.top = `${rect.bottom + 10}px`;
-      tourTooltip.style.left = `${rect.left + (rect.width / 2) - (tourTooltip.offsetWidth / 2)}px`;
 
-      // Ajustar posición si está fuera de la vista
-      if (tourTooltip.getBoundingClientRect().bottom > window.innerHeight) {
-        tourTooltip.style.top = `${rect.top - tourTooltip.offsetHeight - 10}px`;
+      // Ajustar posición vertical
+      let topPosition = rect.bottom + 10;
+      if (topPosition + tourTooltip.offsetHeight > window.innerHeight) {
+        topPosition = rect.top - tourTooltip.offsetHeight - 10;
       }
+      tourTooltip.style.top = `${topPosition}px`;
+
+      // Ajustar posición horizontal para que no se salga del viewport
+      let leftPosition = rect.left + (rect.width / 2) - (tourTooltip.offsetWidth / 2);
+      const tooltipWidth = tourTooltip.offsetWidth;
+      const viewportWidth = window.innerWidth;
+      if (leftPosition < 10) {
+        leftPosition = 10; // Margen mínimo de 10px desde el borde izquierdo
+      } else if (leftPosition + tooltipWidth > viewportWidth - 10) {
+        leftPosition = viewportWidth - tooltipWidth - 10; // Margen mínimo de 10px desde el borde derecho
+      }
+      tourTooltip.style.left = `${leftPosition}px`;
 
       target.classList.add('tour-highlight');
       document.getElementById('nextTourBtn').addEventListener('click', nextStep);
