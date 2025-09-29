@@ -104,7 +104,7 @@
   {
     "id": "uij",
     "name": "UIJ (Universidad de Isla de la Juventud)",
-    "logo": "/logos/uij.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uij.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -141,7 +141,7 @@
   {
     "id": "uh",
     "name": "UH (Universidad de La Habana)",
-    "logo": "/logos/uh.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uh.png",
     "resources": [
       {
         "type": "Correo electrónico",
@@ -233,7 +233,7 @@
   {
     "id": "uci",
     "name": "UCI (Universidad de las Ciencias Informáticas)",
-    "logo": "/logos/uci.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uci.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -310,7 +310,7 @@
   {
     "id": "cujae",
     "name": "CUJAE (Universidad Tecnológica de La Habana)",
-    "logo": "/logos/cujae.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/cujae.png",
     "resources": [
       {
         "type": "Chat",
@@ -402,7 +402,7 @@
   {
     "id": "um",
     "name": "UM (Universidad de Matanzas)",
-    "logo": "/logos/um.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/um.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -454,7 +454,7 @@
   {
     "id": "uclv",
     "name": "UCLV (Universidad Central \"Marta Abreu\" de Las Villas)",
-    "logo": "/logos/uclv.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uclv.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -566,7 +566,7 @@
   {
     "id": "ucf",
     "name": "UCf (Universidad de Cienfuegos)",
-    "logo": "/logos/ucf.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/ucf.png",
     "resources": [
       {
         "type": "Correo electrónico",
@@ -693,7 +693,7 @@
   {
     "id": "uniss",
     "name": "UNISS (Universidad de Sancti Spíritus \"José Martí Pérez\")",
-    "logo": "/logos/uniss.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uniss.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -765,7 +765,7 @@
   {
     "id": "unica",
     "name": "UNICA (Universidad de Ciego de Ávila)",
-    "logo": "/logos/unica.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/unica.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -952,7 +952,7 @@
   {
     "id": "ult",
     "name": "ULT (Universidad de Las Tunas)",
-    "logo": "/logos/ult.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/ult.png",
     "resources": [
       {
         "type": "Nube",
@@ -1014,7 +1014,7 @@
   {
     "id": "uho",
     "name": "UHo (Universidad de Holguín)",
-    "logo": "/logos/uho.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uho.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -1076,7 +1076,7 @@
   {
     "id": "umoa",
     "name": "UMoa (Universidad de Moa)",
-    "logo": "/logos/umoa.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/umoa.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -1118,7 +1118,7 @@
   {
     "id": "udg",
     "name": "UDG (Universidad de Granma)",
-    "logo": "/logos/udg.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/udg.png",
     "resources": [
       {
         "type": "Revista Científica",
@@ -1220,7 +1220,7 @@
   {
     "id": "ug",
     "name": "UG (Universidad de Guantánamo)",
-    "logo": "/logos/ug.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/ug.png",
     "resources": [
       {
         "type": "EVEA Pregrado",
@@ -1262,7 +1262,7 @@
   {
     "id": "uo",
     "name": "UO (Universidad de Oriente)",
-    "logo": "/logos/uo.png",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uo.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
