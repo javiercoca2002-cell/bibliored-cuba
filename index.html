@@ -18,6 +18,9 @@
         <li class="nav-item" role="none">
           <a class="nav-link" href="#top" role="menuitem">Volver arriba</a>
         </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#" id="helpLink" role="menuitem">Ayuda</a>
+        </li>
       </ul>
       <button id="themeToggle" aria-label="Cambiar tema">🌙</button>
       <button class="hamburger" aria-expanded="false" aria-label="Abrir menú">☰</button>
@@ -29,6 +32,16 @@
       <span class="close-modal">&times;</span>
       <h3 class="modal-title">⭐ Tus Favoritos</h3>
       <ul class="favorites-list" id="favoritesList"></ul>
+    </div>
+  </div>
+
+  <div id="tourConfirmModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 class="modal-title">¿Quieres ver la guía interactiva?</h3>
+      <p>Esta guía te mostrará las funcionalidades principales de la web. ¿Deseas verla ahora?</p>
+      <button id="startTourBtn">Sí, mostrar guía</button>
+      <button id="skipTourBtn">No, pasar directamente</button>
     </div>
   </div>
 
@@ -48,6 +61,9 @@
   </header>
 
   <main></main>
+
+  <div id="tourOverlay" class="tour-overlay"></div>
+  <div id="tourTooltip" class="tour-tooltip"></div>
 
   <footer>
     <p>© 2025 Bibliored Cuba. Todos los derechos reservados.<br>
