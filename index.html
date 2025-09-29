@@ -3,14 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Plataforma educativa nacional con acceso libre a recursos universitarios desde la red móvil cubana">
-  <meta name="keywords" content="Bibliored Cuba, universidades cubanas, recursos educativos, educación superior, acceso libre">
-  <meta name="author" content="Bibliored Cuba">
-  <meta property="og:title" content="Bibliored Cuba - Universidades">
-  <meta property="og:description" content="Accede a recursos educativos organizados por universidades cubanas, disponibles gratuitamente desde la red móvil cubana.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tudominio.com">
-  <meta property="og:image" content="https://tudominio.com/og-image.jpg">
+  <meta name="description" content="Plataforma educativa nacional con acceso libre desde la red móvil cubana">
   <title>Bibliored Cuba - Universidades</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
@@ -42,10 +35,8 @@
 
   <div class="search-container">
     <div class="search-box">
-      <span class="search-icon">🔍</span>
       <input type="text" id="searchInput" placeholder="Buscar por universidad o recurso..." aria-label="Buscar recursos">
       <button id="searchButton">Buscar</button>
-      <div id="searchSpinner" class="spinner" aria-hidden="true"></div>
     </div>
   </div>
 
@@ -57,9 +48,8 @@
     </p>
   </header>
 
-  <main aria-live="polite">
+  <main>
     <p id="noResults" style="display: none;">No se encontraron resultados para tu búsqueda.</p>
-    <div id="pagination" class="pagination"></div>
   </main>
 
   <footer>
