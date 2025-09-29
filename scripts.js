@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('searchInput');
   const searchButton = document.getElementById('searchButton');
-  const clearSearch = document.getElementById('clearSearch');
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const favoritesLink = document.getElementById('favoritesLink');
@@ -77,17 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Enter') {
           performSearch();
         }
-      });
-
-      // Configurar botón de borrar búsqueda
-      searchInput.addEventListener('input', () => {
-        clearSearch.style.display = searchInput.value ? 'block' : 'none';
-      });
-
-      clearSearch.addEventListener('click', () => {
-        searchInput.value = '';
-        clearSearch.style.display = 'none';
-        performSearch();
       });
     })
     .catch(error => console.error('Error al cargar universities.json:', error));
