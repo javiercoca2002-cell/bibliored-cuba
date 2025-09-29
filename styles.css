@@ -310,7 +310,7 @@ main {
   color: gold;
 }
 
-/* Modal de favoritos y confirmación de tour */
+/* Modal de favoritos */
 .modal {
   display: none;
   position: fixed;
@@ -417,16 +417,6 @@ footer p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes spotlight {
-  0% { r: 0; }
-  100% { r: 100; }
-}
-
-@keyframes fadeInScale {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
 @media (max-width: 768px) {
   body {
     padding-top: 60px;
@@ -493,62 +483,4 @@ footer p {
     margin: 10% auto;
     padding: 15px;
   }
-
-  .tour-tooltip {
-    max-width: calc(100% - 20px);
-    padding: 10px;
-    box-sizing: border-box;
-  }
-}
-
-/* Estilos para el tour interactivo */
-.tour-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
-}
-
-.tour-spotlight {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2001;
-}
-
-.tour-spotlight circle {
-  transition: all 0.5s ease-in-out;
-}
-
-.tour-tooltip {
-  display: none;
-  position: absolute;
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 2002;
-  max-width: 300px;
-  text-align: center;
-  animation: fadeInScale 0.3s ease-in-out;
-}
-
-.tour-tooltip button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: var(--accent-primary);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.tour-tooltip button:hover {
-  background-color: var(--accent-secondary);
 }
