@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('searchInput');
   const searchButton = document.getElementById('searchButton');
-  const clearSearch = document.getElementById('clearSearch');
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const favoritesLink = document.getElementById('favoritesLink');
@@ -20,10 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cargar favoritos desde localStorage
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
+  // Variable para almacenar todos los datos de universidades
+  let allUniversities = [];
+
+  // Crear elemento para mensaje de no resultados
+  const noResultsMessage = document.createElement('p');
+  noResultsMessage.id = 'noResults';
+  noResultsMessage.textContent = 'No se encontraron resultados para tu búsqueda.';
+  main.appendChild(noResultsMessage);
+
   // Cargar datos de JSON y generar secciones
   fetch('universities.json')
     .then(response => response.json())
     .then(data => {
+      allUniversities = data;
+
       data.forEach(university => {
         const section = document.createElement('section');
         section.id = university.id;
@@ -204,10 +214,11 @@ document.addEventListener('DOMContentLoaded', function() {
     showFavorites();
   }
 
-  // Función para realizar la búsqueda
+  // Función para realizar la búsqueda optimizada con Fuse.js
   function performSearch() {
     const searchTerm = searchInput.value.trim().toLowerCase();
     const allSections = document.querySelectorAll('.university-section');
+    noResultsMessage.style.display = 'none';
 
     if (searchTerm === '') {
       allSections.forEach(section => {
@@ -216,52 +227,61 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.resource-card').forEach(card => {
         card.style.display = 'block';
       });
-    } else {
-      allSections.forEach(section => {
-        section.style.display = 'none';
-      });
-      document.querySelectorAll('.resource-card').forEach(card => {
-        card.style.display = 'none';
-      });
-
-      let hasMatch = false;
-
-      allSections.forEach(section => {
-        const universityName = section.querySelector('.university-title').textContent.toLowerCase();
-        let sectionMatch = false;
-
-        if (universityName.includes(searchTerm)) {
-          section.style.display = 'block';
-          sectionMatch = true;
-          // Mostrar todas las tarjetas si la universidad coincide
-          section.querySelectorAll('.resource-card').forEach(card => {
-            card.style.display = 'block';
-          });
-        } else {
-          const cards = section.querySelectorAll('.resource-card');
-          cards.forEach(card => {
-            const link = card.querySelector('.resource-link');
-            const linkText = link.textContent.toLowerCase();
-            const linkType = card.querySelector('.resource-type').textContent.toLowerCase();
-
-            if (linkText.includes(searchTerm) || linkType.includes(searchTerm)) {
-              card.style.display = 'block';
-              section.style.display = 'block';
-              sectionMatch = true;
-            }
-          });
-        }
-
-        if (sectionMatch) {
-          hasMatch = true;
-        }
-      });
-
-      if (!hasMatch) {
-        // Mostrar mensaje si no hay coincidencias
-        alert('No se encontraron resultados para tu búsqueda.');
-      }
+      return;
     }
+
+    // Crear una lista plana de recursos con sus universidades para búsqueda fuzzy
+    const flatResources = [];
+    allUniversities.forEach(university => {
+      university.resources.forEach(resource => {
+        flatResources.push({
+          universityId: university.id,
+          universityName: university.name,
+          type: resource.type,
+          url: resource.url,
+          title: resource.title
+        });
+      });
+    });
+
+    // Configurar Fuse.js para búsqueda fuzzy
+    const fuse = new Fuse(flatResources, {
+      keys: ['universityName', 'type', 'url', 'title'],
+      threshold: 0.3, // Tolerancia para errores ortográficos (0.0 = exacto, 1.0 = muy laxo)
+      ignoreLocation: true,
+      includeScore: true
+    });
+
+    const results = fuse.search(searchTerm);
+
+    // Ocultar todas las secciones y tarjetas primero
+    allSections.forEach(section => {
+      section.style.display = 'none';
+    });
+    document.querySelectorAll('.resource-card').forEach(card => {
+      card.style.display = 'none';
+    });
+
+    if (results.length === 0) {
+      noResultsMessage.style.display = 'block';
+      return;
+    }
+
+    // Mostrar coincidencias
+    results.forEach(result => {
+      const { universityId } = result.item;
+      const section = document.getElementById(universityId);
+      if (section) {
+        section.style.display = 'block';
+        // Mostrar todas las tarjetas de la universidad coincidente, o solo las coincidentes si quieres más precisión
+        section.querySelectorAll('.resource-card').forEach(card => {
+          const cardUrl = card.querySelector('.resource-link').href;
+          if (cardUrl === result.item.url) {
+            card.style.display = 'block';
+          }
+        });
+      }
+    });
   }
 
   // Configurar cambio de tema
@@ -374,15 +394,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   tourOverlay.addEventListener('click', endTour);
-
-  // Configurar botón de borrar búsqueda
-  searchInput.addEventListener('input', () => {
-    clearSearch.style.display = searchInput.value ? 'block' : 'none';
-  });
-
-  clearSearch.addEventListener('click', () => {
-    searchInput.value = '';
-    clearSearch.style.display = 'none';
-    performSearch(); // Actualizar la vista para mostrar todo
-  });
 });
