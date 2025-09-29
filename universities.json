@@ -2,6 +2,7 @@
   {
     "id": "upr",
     "name": "UPR (Universidad de Pinar del Río)",
+    "logo": "/logos/upr.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -103,6 +104,7 @@
   {
     "id": "uij",
     "name": "UIJ (Universidad de Isla de la Juventud)",
+    "logo": "/logos/uij.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -139,6 +141,7 @@
   {
     "id": "uh",
     "name": "UH (Universidad de La Habana)",
+    "logo": "/logos/uh.png",
     "resources": [
       {
         "type": "Correo electrónico",
@@ -230,6 +233,7 @@
   {
     "id": "uci",
     "name": "UCI (Universidad de las Ciencias Informáticas)",
+    "logo": "/logos/uci.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -306,6 +310,7 @@
   {
     "id": "cujae",
     "name": "CUJAE (Universidad Tecnológica de La Habana)",
+    "logo": "/logos/cujae.png",
     "resources": [
       {
         "type": "Chat",
@@ -395,8 +400,9 @@
     ]
   },
   {
-     "id": "um",
+    "id": "um",
     "name": "UM (Universidad de Matanzas)",
+    "logo": "/logos/um.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -448,6 +454,7 @@
   {
     "id": "uclv",
     "name": "UCLV (Universidad Central \"Marta Abreu\" de Las Villas)",
+    "logo": "/logos/uclv.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -506,7 +513,7 @@
       },
       {
         "type": "Sitio Web Eventos",
-        "url": "https://convencion.uclv.cu",
+        "url": "https://convencion.uclv.edu.cu",
         "title": "UCLV - Sitio Web Eventos"
       },
       {
@@ -546,7 +553,7 @@
       },
       {
         "type": "Sitio Web",
-        "url": "https://teletrabajo.uclv.cu",
+        "url": "https://teletrabajo.uclv.edu.cu",
         "title": "UCLV - Sitio Web"
       },
       {
@@ -559,6 +566,7 @@
   {
     "id": "ucf",
     "name": "UCf (Universidad de Cienfuegos)",
+    "logo": "/logos/ucf.png",
     "resources": [
       {
         "type": "Correo electrónico",
@@ -685,6 +693,7 @@
   {
     "id": "uniss",
     "name": "UNISS (Universidad de Sancti Spíritus \"José Martí Pérez\")",
+    "logo": "/logos/uniss.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -756,6 +765,7 @@
   {
     "id": "unica",
     "name": "UNICA (Universidad de Ciego de Ávila)",
+    "logo": "/logos/unica.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -942,6 +952,7 @@
   {
     "id": "ult",
     "name": "ULT (Universidad de Las Tunas)",
+    "logo": "/logos/ult.png",
     "resources": [
       {
         "type": "Nube",
@@ -1003,6 +1014,7 @@
   {
     "id": "uho",
     "name": "UHo (Universidad de Holguín)",
+    "logo": "/logos/uho.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -1064,6 +1076,7 @@
   {
     "id": "umoa",
     "name": "UMoa (Universidad de Moa)",
+    "logo": "/logos/umoa.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
@@ -1105,6 +1118,7 @@
   {
     "id": "udg",
     "name": "UDG (Universidad de Granma)",
+    "logo": "/logos/udg.png",
     "resources": [
       {
         "type": "Revista Científica",
@@ -1206,6 +1220,7 @@
   {
     "id": "ug",
     "name": "UG (Universidad de Guantánamo)",
+    "logo": "/logos/ug.png",
     "resources": [
       {
         "type": "EVEA Pregrado",
@@ -1247,6 +1262,7 @@
   {
     "id": "uo",
     "name": "UO (Universidad de Oriente)",
+    "logo": "/logos/uo.png",
     "resources": [
       {
         "type": "Sitio Web Institucional",
