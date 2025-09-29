@@ -395,38 +395,7 @@
     ]
   },
   {
-    "id": "ucpejv",
-    "name": "UCPEJV (Universidad de Ciencias Pedagógicas Enrique José Varona)",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "http://portal.ucpejv.edu.cu/",
-        "title": "UCPEJV - Sitio Web Institucional"
-      },
-      {
-        "type": "Sitio Web Eventos",
-        "url": "http://eventos.ucpejv.edu.cu/",
-        "title": "UCPEJV - Sitio Web Eventos"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "http://webdocente.ucpejv.edu.cu/",
-        "title": "UCPEJV - EVEA Pregrado"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "http://revistas.ucpejv.edu.cu/",
-        "title": "UCPEJV - Revista Científica"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://webmail.ucpejv.edu.cu/",
-        "title": "UCPEJV - Correo electrónico"
-      }
-    ]
-  },
-  {
-    "id": "um",
+     "id": "um",
     "name": "UM (Universidad de Matanzas)",
     "resources": [
       {
