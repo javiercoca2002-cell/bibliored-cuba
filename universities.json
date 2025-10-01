@@ -1345,164 +1345,164 @@
         "title": "UO - Sitio Web"
       }
     ]
+  },
+  {
+    "id": "uc",
+    "name": "UC (Universidad de Camagüey)",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uc.png",
+    "resources": [
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.reduc.edu.cu",
+        "title": "UC - Servicio de correo institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.reduc.edu.cu",
+        "title": "UC - Servicio de correo institucional"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail1.reduc.edu.cu",
+        "title": "UC - Servicio de correo institucional"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.reduc.edu.cu",
+        "title": "UC - Plataformas de las revistas de la Universidad"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://cienciaydeporte.reduc.edu.cu",
+        "title": "UC - Revista Científica de Ciencia y Deporte"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://agrisost.reduc.edu.cu",
+        "title": "UC - Revista Científica Agricultura sostenible"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://monteverdia.reduc.edu.cu",
+        "title": "UC - Revista Científica Monteverdia"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://transformacion.reduc.edu.cu",
+        "title": "UC - Revista Científica Transformación"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://retos.reduc.edu.cu",
+        "title": "UC - Revista Científica Retos de la Administración"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://arcada.reduc.edu.cu",
+        "title": "UC - Arcada Revista de conservación del patrimonio cultural"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://rpa.reduc.edu.cu",
+        "title": "UC - Revista Científica de Producción Animal"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://perspectiva.reduc.edu.cu",
+        "title": "UC - Revista Científica de Ciencias Sociales"
+      },
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.reduc.edu.cu",
+        "title": "UC - Sitio web Institucional"
+      },
+      {
+        "type": "EVEA de Pregrado",
+        "url": "https://moodle.reduc.edu.cu",
+        "title": "UC - EVEA de pregrado"
+      },
+      {
+        "type": "EVEA de Posgrado",
+        "url": "https://moodlepost.reduc.edu.cu",
+        "title": "UC - EVEA de postgrado"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.reduc.edu.cu",
+        "title": "UC - Plataforma de gestión de estudiantes"
+      },
+      {
+        "type": "Nube",
+        "url": "https://nube.reduc.edu.cu",
+        "title": "UC - Almacenamiento colaborativo para estudiantes/profesores"
+      },
+      {
+        "type": "Repositorio de código",
+        "url": "https://gitlab.reduc.edu.cu",
+        "title": "UC - Plataforma DevOps institucional, repositorios de código"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://rediuc.reduc.edu.cu",
+        "title": "UC - Repositorio Digital Institucional de la UC"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://bivi.reduc.edu.cu",
+        "title": "UC - Plataforma de la Biblioteca central de la UC"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://encuestas.reduc.edu.cu",
+        "title": "UC - Plataformas para la realización de encuestas"
+      }
+    ]
+  },
+  {
+    "id": "ua",
+    "name": "UA (Universidad de Artemisa)",
+    "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/ua.png",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://ua.uart.edu.cu",
+        "title": "UA - Portal institucional de la UA"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://uva.uart.edu.cu",
+        "title": "UA - Entorno virtual de enseñanza-aprendizaje (Moodle)"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.uart.edu.cu",
+        "title": "UA - Correo Institucional de la UA"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://repositorio.uart.edu.cu",
+        "title": "UA - Repositorio de Tesis"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenus.uart.edu.cu",
+        "title": "UA - Sistema de Gestión Universitaria"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistavillena.uart.edu.cu",
+        "title": "UA - Revista Cientifica UA"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "ftp.uart.edu.cu",
+        "title": "UA - Repositorio de libros y documentos"
+      },
+      {
+        "type": "Sitio Web",
+        "url": "https://redsocial.uart.edu.cu",
+        "title": "UA - Red social que permite a los usuarios interactuar"
+      }
+    ]
   }
-{
-  "id": "uc",
-  "name": "UC (Universidad de Camagüey)",
-  "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/uc.png",
-  "resources": [
-    {
-      "type": "Correo electrónico",
-      "url": "https://correo.reduc.edu.cu",
-      "title": "UC - Servicio de correo institucional"
-    },
-    {
-      "type": "Correo electrónico",
-      "url": "https://webmail.reduc.edu.cu",
-      "title": "UC - Servicio de correo institucional"
-    },
-    {
-      "type": "Correo electrónico",
-      "url": "https://webmail1.reduc.edu.cu",
-      "title": "UC - Servicio de correo institucional"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://revistas.reduc.edu.cu",
-      "title": "UC - Plataformas de las revistas de la Universidad"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://cienciaydeporte.reduc.edu.cu",
-      "title": "UC - Revista Científica de Ciencia y Deporte"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://agrisost.reduc.edu.cu",
-      "title": "UC - Revista Científica Agricultura sostenible"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://monteverdia.reduc.edu.cu",
-      "title": "UC - Revista Científica Monteverdia"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://transformacion.reduc.edu.cu",
-      "title": "UC - Revista Científica Transformación"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://retos.reduc.edu.cu",
-      "title": "UC - Revista Científica Retos de la Administración"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://arcada.reduc.edu.cu",
-      "title": "UC - Arcada Revista de conservación del patrimonio cultural"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://rpa.reduc.edu.cu",
-      "title": "UC - Revista Científica de Producción Animal"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://perspectiva.reduc.edu.cu",
-      "title": "UC - Revista Científica de Ciencias Sociales"
-    },
-    {
-      "type": "Sitio Web Institucional",
-      "url": "https://www.reduc.edu.cu",
-      "title": "UC - Sitio web Institucional"
-    },
-    {
-      "type": "EVEA de Pregrado",
-      "url": "https://moodle.reduc.edu.cu",
-      "title": "UC - EVEA de pregrado"
-    },
-    {
-      "type": "EVEA de Posgrado",
-      "url": "https://moodlepost.reduc.edu.cu",
-      "title": "UC - EVEA de postgrado"
-    },
-    {
-      "type": "SIGENU",
-      "url": "https://sigenu.reduc.edu.cu",
-      "title": "UC - Plataforma de gestión de estudiantes"
-    },
-    {
-      "type": "Nube",
-      "url": "https://nube.reduc.edu.cu",
-      "title": "UC - Almacenamiento colaborativo para estudiantes/profesores"
-    },
-    {
-      "type": "Repositorio de código",
-      "url": "https://gitlab.reduc.edu.cu",
-      "title": "UC - Plataforma DevOps institucional, repositorios de código"
-    },
-    {
-      "type": "Repositorio Institucional",
-      "url": "https://rediuc.reduc.edu.cu",
-      "title": "UC - Repositorio Digital Institucional de la UC"
-    },
-    {
-      "type": "Sitio Web Biblioteca",
-      "url": "https://bivi.reduc.edu.cu",
-      "title": "UC - Plataforma de la Biblioteca central de la UC"
-    },
-    {
-      "type": "Sitio Web",
-      "url": "https://encuestas.reduc.edu.cu",
-      "title": "UC - Plataformas para la realización de encuestas"
-    }
-  ]
-},
-{
-  "id": "ua",
-  "name": "UA (Universidad de Artemisa)",
-  "logo": "https://javiercoca2002-cell.github.io/bibliored-cuba/logos/ua.png",
-  "resources": [
-    {
-      "type": "Sitio Web Institucional",
-      "url": "https://ua.uart.edu.cu",
-      "title": "UA - Portal institucional de la UA"
-    },
-    {
-      "type": "EVEA Pregrado",
-      "url": "https://uva.uart.edu.cu",
-      "title": "UA - Entorno virtual de enseñanza-aprendizaje (Moodle)"
-    },
-    {
-      "type": "Correo electrónico",
-      "url": "https://correo.uart.edu.cu",
-      "title": "UA - Correo Institucional de la UA"
-    },
-    {
-      "type": "Repositorio Institucional",
-      "url": "https://repositorio.uart.edu.cu",
-      "title": "UA - Repositorio de Tesis"
-    },
-    {
-      "type": "SIGENU",
-      "url": "https://sigenus.uart.edu.cu",
-      "title": "UA - Sistema de Gestión Universitaria"
-    },
-    {
-      "type": "Revista Científica",
-      "url": "https://revistavillena.uart.edu.cu",
-      "title": "UA - Revista Cientifica UA"
-    },
-    {
-      "type": "Repositorio Institucional",
-      "url": "ftp.uart.edu.cu",
-      "title": "UA - Repositorio de libros y documentos"
-    },
-    {
-      "type": "Sitio Web",
-      "url": "https://redsocial.uart.edu.cu",
-      "title": "UA - Red social que permite a los usuarios interactuar"
-    }
-  ]
-}
 ]
