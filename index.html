@@ -4,56 +4,295 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Plataforma educativa nacional con acceso libre desde la red móvil cubana">
-  <title>Bibliored Cuba - Universidades</title>
+  <title>SaberCuba - Universidades Cubanas</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <script src="fuse.js"></script>
 </head>
 <body>
+
+  <!-- ===== BARRA DE NAVEGACIÓN ===== -->
   <nav class="nav-container" role="navigation" aria-label="Menú principal">
     <div class="navbar">
-      <a href="#" class="logo">📚 Bibliored Cuba</a>
+      <a href="#" class="logo">
+        <img src="logo-app.png" alt="Logo SaberCuba" class="logo-icon">
+        SaberCuba
+      </a>
       <ul class="nav-menu" role="menubar">
+        <!-- Favoritos -->
         <li class="nav-item" role="none">
-          <a class="nav-link" href="#" id="favoritesLink" role="menuitem">Favoritos</a>
+          <a class="nav-link" href="#" id="favoritesLink" role="menuitem">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+            Favoritos
+          </a>
         </li>
+        
+        <!-- Historial -->
         <li class="nav-item" role="none">
-          <a class="nav-link" href="#top" role="menuitem">Volver arriba</a>
+          <a class="nav-link" href="#" id="historyLink" role="menuitem">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+            </svg>
+            Historial
+          </a>
+        </li>
+        
+        <!-- Mis Links -->
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#" id="customLinksLink" role="menuitem">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+            </svg>
+            Mis Links
+          </a>
+        </li>
+        
+        <!-- Acerca de -->
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#" id="aboutLink" role="menuitem">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            Acerca de
+          </a>
+        </li>
+        
+        <!-- Danos tu opinión -->
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#" id="feedbackLink" role="menuitem">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12zM7 9h10v2H7zm0 4h7v2H7z"/>
+            </svg>
+            Danos tu opinión
+          </a>
+        </li>
+        
+        <!-- Volver arriba -->
+        <li class="nav-item" role="none">
+          <a class="nav-link" href="#top" role="menuitem">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+            </svg>
+            Volver arriba
+          </a>
         </li>
       </ul>
-      <button id="themeToggle" aria-label="Cambiar tema">🌙</button>
-      <button class="hamburger" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <button id="themeToggle" aria-label="Cambiar tema">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <button class="hamburger" aria-expanded="false" aria-label="Abrir menú">
+        <svg class="hamburger-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
     </div>
   </nav>
 
+  <!-- ===== MODAL DE FAVORITOS ===== -->
   <div id="favoritesModal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
-      <h3 class="modal-title">⭐ Tus Favoritos</h3>
+      <h3 class="modal-title">
+        <svg class="modal-title-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        Tus Favoritos
+      </h3>
       <ul class="favorites-list" id="favoritesList"></ul>
     </div>
   </div>
 
-  <div class="search-container">
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar por universidad o recurso..." aria-label="Buscar recursos">
-      <button id="searchButton">Buscar</button>
+  <!-- ===== MODAL DE HISTORIAL ===== -->
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal close-history">&times;</span>
+      <h3 class="modal-title">
+        <svg class="modal-title-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+        </svg>
+        Historial de visitas
+      </h3>
+      <ul class="favorites-list" id="historyList"></ul>
+      <button id="clearHistoryBtn" class="clear-btn">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+        </svg>
+        Limpiar historial
+      </button>
     </div>
   </div>
 
+  <!-- ===== MODAL DE MIS LINKS ===== -->
+  <div id="customLinksModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal close-custom">&times;</span>
+      <h3 class="modal-title">
+        <svg class="modal-title-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+        </svg>
+        Mis Links guardados
+      </h3>
+      
+      <ul class="favorites-list" id="customLinksList"></ul>
+      
+      <div class="add-link-section">
+        <h4 style="color: var(--accent-primary); margin: 20px 0 15px 0; display: flex; align-items: center; gap: 8px;">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+          Agregar nuevo link
+        </h4>
+        <div class="add-link-form">
+          <input type="text" id="newLinkTitle" placeholder="Título del enlace (ej: Cubadebate)" class="add-link-input">
+          <input type="url" id="newLinkUrl" placeholder="URL (ej: https://www.cubadebate.cu)" class="add-link-input">
+          <button id="saveNewLinkBtn" class="save-link-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"/>
+            </svg>
+            Guardar link
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL DE ACERCA DE ===== -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content modal-about">
+      <span class="close-modal close-about">&times;</span>
+      <h3 class="modal-title">
+        <svg class="modal-title-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </svg>
+        Acerca de SaberCuba
+      </h3>
+      <div class="about-content">
+        <p><strong>SaberCuba v1.0</strong></p>
+        <p>Plataforma educativa nacional que recopila y organiza los recursos digitales de todas las universidades cubanas.</p>
+        
+        <h4>🎯 Ventajas:</h4>
+        <ul class="about-list">
+          <li>✅ Acceso rápido a repositorios, revistas, EVEA y servicios</li>
+          <li>✅ Búsqueda inteligente con tolerancia a errores</li>
+          <li>✅ Funciona sin consumir datos móviles</li>
+          <li>✅ Totalmente gratuito y sin publicidad</li>
+          <li>✅ Creado para la comunidad universitaria cubana</li>
+        </ul>
+        
+        <h4>📚 Universidades incluidas:</h4>
+        <p>17 instituciones de educación superior de toda Cuba.</p>
+        
+        <h4>👨‍💻 Desarrollo:</h4>
+        <p>Aplicación desarrollada para mejorar el acceso a los recursos educativos institucionales.</p>
+        <p>© 2026 SaberCuba. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BARRA DE BÚSQUEDA Y FILTROS ===== -->
+  <div class="search-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar por universidad o recurso..." aria-label="Buscar universidades">
+      <button id="searchButton">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C10.01 14 12 12.01 12 9.5S10.01 5 7.5 5 3 6.99 3 9.5 4.99 14 7.5 14z"/>
+        </svg>
+        Buscar
+      </button>
+    </div>
+    
+    <!-- ===== FILTROS RÁPIDOS ===== -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 5v14h18V5H3zm16 12H5V7h14v10z"/>
+        </svg>
+        Todos
+      </button>
+      <button class="filter-btn" data-filter="tesis">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L1 21h22L12 2zm0 4.2L18.5 19h-13L12 6.2z"/>
+        </svg>
+        Tesis
+      </button>
+      <button class="filter-btn" data-filter="revista">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 6h16v12H4V6zm2 2v8h12V8H6z"/>
+        </svg>
+        Revistas
+      </button>
+      <button class="filter-btn" data-filter="moodle">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"/>
+        </svg>
+        Moodle
+      </button>
+      <button class="filter-btn" data-filter="correo">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        Correo
+      </button>
+      <button class="filter-btn" data-filter="sigenu">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h10v2H7v-2zm0 4h7v2H7v-2z"/>
+        </svg>
+        SIGENU
+      </button>
+      <button class="filter-btn" data-filter="eventos">
+        <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+        </svg>
+        Eventos
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
   <header id="top">
-    <h1>🏫 Universidades Cubanas</h1>
+    <h1>
+      <svg class="header-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+      </svg>
+      Universidades Cubanas
+    </h1>
     <p class="subtitulo">
       Recursos organizados por institución académica<br>
       Acceso directo a todos los portales y servicios universitarios
     </p>
   </header>
 
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
   <main>
-    <p id="noResults" style="display: none;">No se encontraron resultados para tu búsqueda.</p>
+    <!-- Vista: Lista de universidades (PRINCIPAL) -->
+    <div id="universitiesListView">
+      <div id="universitiesListContainer" class="universities-list-container">
+        <!-- Aquí se generarán las tarjetas de universidades dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Vista: Recursos de una universidad (DETALLE) -->
+    <div id="universityDetailView" style="display: none;">
+      <button id="backToListBtn" class="back-button">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Volver a la lista
+      </button>
+      <div id="universityDetailContainer">
+        <!-- Aquí se cargarán los recursos de la universidad seleccionada -->
+      </div>
+    </div>
+
+    <p id="noResults" style="display: none;">No se encontraron universidades para tu búsqueda.</p>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2026 Bibliored Cuba. Todos los derechos reservados.<br>
+    <p>© 2026 SaberCuba. Todos los derechos reservados.<br>
       Esta plataforma promueve el acceso libre y gratuito a recursos educativos institucionales.</p>
   </footer>
 
