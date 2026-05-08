@@ -55,6 +55,9 @@ header, footer {
 }
 
 h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent-primary);
   font-size: 2em;
   margin-bottom: 10px;
@@ -65,6 +68,74 @@ p.subtitulo {
   font-size: 1.1em;
 }
 
+/* ===== ICONOS SVG ===== */
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+}
+
+.modal-title-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: var(--accent-primary);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.filter-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: var(--accent-primary);
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.nav-link:hover .menu-icon {
+  color: var(--accent-primary);
+}
+
+#themeToggle:hover .theme-icon {
+  color: var(--accent-primary);
+}
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
 .nav-container {
   position: fixed;
   top: 0;
@@ -88,10 +159,19 @@ p.subtitulo {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--accent-primary);
   font-weight: bold;
   font-size: 1.2rem;
   text-decoration: none;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .nav-menu {
@@ -100,15 +180,19 @@ p.subtitulo {
 }
 
 .nav-item {
-  margin: 0 0.5rem;
+  margin: 0 0.3rem;
 }
 
 .nav-link {
+  display: flex;
+  align-items: center;
   color: var(--text-primary);
   text-decoration: none;
   padding: 0.5rem;
   border-radius: 4px;
   transition: background-color 0.3s;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -121,24 +205,20 @@ p.subtitulo {
   cursor: pointer;
   background: none;
   border: none;
-  color: var(--text-primary);
-  font-size: 1.5rem;
+  padding: 5px;
 }
 
 #themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
-  color: var(--text-primary);
   cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  transition: color 0.3s;
+  padding: 5px;
 }
 
-#themeToggle:hover {
-  color: var(--accent-primary);
-}
-
+/* ===== BARRA DE BÚSQUEDA ===== */
 .search-container {
   padding: 1rem;
   background-color: var(--search-bg);
@@ -169,6 +249,9 @@ p.subtitulo {
 }
 
 #searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.8rem 1.2rem;
   background-color: var(--accent-primary);
   color: var(--bg-primary);
@@ -179,6 +262,69 @@ p.subtitulo {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#searchButton:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* ===== FILTROS RÁPIDOS ===== */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 0 10px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border-color: var(--accent-primary);
+}
+
+.filter-btn:hover .filter-icon {
+  color: var(--bg-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border-color: var(--accent-primary);
+}
+
+.filter-btn.active .filter-icon {
+  color: var(--bg-primary);
+}
+
+body.light-mode .filter-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+body.light-mode .filter-btn.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+body.light-mode .filter-btn.active .filter-icon {
+  color: white;
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -186,47 +332,153 @@ main {
   overflow-x: hidden;
 }
 
-.university-section {
-  padding: 20px;
-  border-bottom: 1px solid var(--border-color);
-  animation: fadeInUp 0.8s ease-in;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.university-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.university-header {
+/* ===== ESTILOS PARA VISTA PRINCIPAL (LISTA DE UNIVERSIDADES) ===== */
+.universities-list-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.university-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--accent-primary);
+  text-align: center;
 }
 
-.university-title {
+.university-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.university-card .university-logo {
+  max-width: 120px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.university-card h3 {
   color: var(--accent-primary);
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
 }
 
-.resource-count-badge {
+.university-card .resource-badge {
   background-color: var(--accent-primary);
   color: var(--bg-primary);
-  padding: 5px 10px;
+  padding: 5px 15px;
   border-radius: 20px;
   font-weight: bold;
   font-size: 0.9rem;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.view-university-btn {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.view-university-btn:hover {
+  background-color: var(--accent-secondary);
+  transform: scale(1.02);
+}
+
+/* ===== BADGE DE COINCIDENCIAS ===== */
+.match-badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+body.light-mode .match-badge {
+  background-color: #2e7d32;
+}
+
+/* ===== ESTILOS PARA VISTA DETALLE ===== */
+.back-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  color: var(--accent-primary);
+  border: 2px solid var(--accent-primary);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 20px 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.back-button:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.back-button:hover .btn-icon {
+  color: var(--bg-primary);
+}
+
+#universityDetailContainer {
+  padding: 10px 0 30px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--accent-primary);
+  flex-wrap: wrap;
+}
+
+.detail-header .university-logo {
+  max-width: 100px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.detail-header h2 {
+  color: var(--accent-primary);
+  font-size: 1.8rem;
+  margin: 0;
+  flex: 1;
+}
+
+.detail-resource-count {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* ===== ESTILOS PARA RECURSOS ===== */
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -236,6 +488,7 @@ main {
 .resource-card {
   background-color: var(--card-bg);
   padding: 15px;
+  padding-top: 45px;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -248,11 +501,28 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+.resource-card-search {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
 .resource-type {
   color: var(--accent-secondary);
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resource-title {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 5px 0 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .resource-link {
@@ -265,23 +535,36 @@ main {
   transition: background-color 0.3s ease;
   word-break: break-all;
   overflow-wrap: break-word;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 .resource-link:hover {
   background-color: rgba(0, 204, 255, 0.1);
   text-decoration: underline;
+  opacity: 1;
 }
 
-.favorite-btn {
+/* ===== CONTENEDOR DE BOTONES DE ACCIÓN ===== */
+.resource-card-actions {
   position: absolute;
   top: 10px;
   right: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* ===== BOTÓN FAVORITO ===== */
+.favorite-btn {
   background: none;
   border: none;
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0;
+  line-height: 1;
 }
 
 .favorite-btn:hover {
@@ -293,7 +576,60 @@ main {
   color: gold;
 }
 
-/* Modal de favoritos */
+/* ===== BOTÓN COPIAR ENLACE ===== */
+.copy-link-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.copy-link-btn:hover {
+  color: var(--accent-primary);
+  transform: scale(1.2);
+}
+
+/* ===== ENCABEZADO DE RESULTADOS DE BÚSQUEDA ===== */
+.search-result-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.search-result-header:first-of-type {
+  margin-top: 0;
+}
+
+.search-result-logo {
+  max-width: 50px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.search-result-header h3 {
+  color: var(--accent-primary);
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+}
+
+.result-count {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* ===== MODALES ===== */
 .modal {
   display: none;
   position: fixed;
@@ -319,6 +655,14 @@ main {
   transition: background-color 0.3s ease;
 }
 
+.modal-small {
+  max-width: 500px;
+}
+
+.modal-about {
+  max-width: 600px;
+}
+
 .close-modal {
   color: #aaa;
   float: right;
@@ -332,11 +676,14 @@ main {
 }
 
 .modal-title {
+  display: flex;
+  align-items: center;
   color: var(--accent-primary);
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* ===== LISTAS DENTRO DE MODALES ===== */
 .favorites-list {
   list-style: none;
   padding: 0;
@@ -349,6 +696,8 @@ main {
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s ease;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .favorite-item:hover {
@@ -360,6 +709,12 @@ main {
   text-decoration: none;
   word-break: break-all;
   overflow-wrap: break-word;
+  flex: 1;
+}
+
+.favorite-item a:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
 }
 
 .remove-favorite {
@@ -376,36 +731,143 @@ main {
   transform: scale(1.2);
 }
 
+/* ===== FORMULARIO AGREGAR LINK ===== */
+.add-link-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.add-link-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.add-link-input {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.add-link-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.save-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.save-link-btn:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* ===== BOTÓN LIMPIAR HISTORIAL ===== */
+.clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+  background-color: #cc0000;
+}
+
+/* ===== BOTÓN ELIMINAR LINK PERSONALIZADO ===== */
+.delete-custom-link {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 5px;
+}
+
+.delete-custom-link:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* ===== CONTENIDO ACERCA DE ===== */
+.about-content {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.about-content h4 {
+  color: var(--accent-primary);
+  margin: 20px 0 10px 0;
+}
+
+.about-content p {
+  margin: 10px 0;
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.about-list li {
+  padding: 5px 0;
+  color: var(--text-secondary);
+}
+
+/* ===== FOOTER ===== */
 footer p {
   font-size: 0.9em;
   color: #999;
 }
 
-/* Estilo para mensaje de no resultados */
+/* ===== MENSAJE DE NO RESULTADOS ===== */
 #noResults {
   text-align: center;
   color: var(--text-secondary);
   font-size: 1.2em;
-  margin: 20px 0;
+  margin: 40px 0;
   display: none;
 }
 
-/* Estilos para los logos de las universidades */
+/* ===== LOGOS DE UNIVERSIDADES ===== */
 .university-logo {
-  max-width: 150px;
-  height: auto;
-  margin-bottom: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.university-section.visible .university-logo {
   opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
+/* Ocultar elementos antiguos */
+.university-section {
+  display: none;
+}
+
+/* ===== ANIMACIONES ===== */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -416,6 +878,15 @@ footer p {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== PREFERENCIAS DE MOVIMIENTO REDUCIDO ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   body {
     padding-top: 60px;
@@ -423,6 +894,11 @@ footer p {
 
   h1 {
     font-size: 1.5em;
+  }
+
+  .header-icon {
+    width: 28px;
+    height: 28px;
   }
 
   .navbar {
@@ -436,10 +912,12 @@ footer p {
     flex-direction: column;
     background-color: var(--menu-bg);
     width: 100%;
-    text-align: center;
+    text-align: left;
     transition: 0.3s;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    padding: 1rem 0;
+    padding: 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -447,7 +925,12 @@ footer p {
   }
 
   .nav-item {
-    margin: 0.8rem 0;
+    margin: 0.5rem 0;
+  }
+
+  .nav-link {
+    white-space: normal;
+    padding: 0.8rem;
   }
 
   .hamburger {
@@ -463,6 +946,20 @@ footer p {
     max-width: 100%;
   }
 
+  .filter-container {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .filter-icon {
+    width: 14px;
+    height: 14px;
+  }
+
   .resources-grid {
     grid-template-columns: 1fr;
   }
@@ -471,10 +968,36 @@ footer p {
     max-width: 100%;
   }
 
-  .university-header {
+  .university-card {
+    padding: 15px;
+  }
+
+  .university-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .detail-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    text-align: center;
+  }
+
+  .detail-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .resource-card-actions {
+    gap: 12px;
+  }
+
+  .copy-link-btn,
+  .favorite-btn {
+    font-size: 1.4rem;
+  }
+
+  .search-result-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
   .modal-content {
@@ -483,7 +1006,18 @@ footer p {
     padding: 15px;
   }
 
-  .university-logo {
-    max-width: 100px;
+  .favorite-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .favorite-item a {
+    width: 100%;
+  }
+
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
   }
 }
