@@ -1379,439 +1379,516 @@ document.addEventListener('DOMContentLoaded', function() {
   ]
 },
   {
-    "id": "ult",
-    "name": "ULT (Universidad de Las Tunas)",
-    "logo": "logos/ult.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "https://www.ult.edu.cu",
-        "title": "Portal oficial de la Universidad de Las Tunas"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "https://pregrado.ult.edu.cu",
-        "title": "Plataforma de cursos virtuales para pregrado"
-      },
-      {
-        "type": "EVEA Posgrado",
-        "url": "https://uvp.ult.edu.cu",
-        "title": "Universidad Virtual de Posgrado"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "https://roa.ult.edu.cu",
-        "title": "Repositorio de Objetos de Aprendizaje"
-      },
-      {
-        "type": "Repositorio de Videos",
-        "url": "https://media.ult.edu.cu",
-        "title": "Videoteca universitaria con recursos educativos multimedia"
-      },
-      {
-        "type": "Sitio Web Biblioteca",
-        "url": "https://biblioteca.ult.edu.cu",
-        "title": "Portal de la biblioteca y sus servicios en línea"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://opuntiabrava.ult.edu.cu",
-        "title": "Revista Opuntia Brava - ciencias sociales y humanísticas"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://revistas.ult.edu.cu",
-        "title": "Sitio de gestión editorial de revistas de la ULT"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correo.ult.edu.cu",
-        "title": "Correo electrónico para profesores y personal"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correoest.ult.edu.cu",
-        "title": "Servicio de correo electrónico para estudiantes"
-      },
-      {
-        "type": "Nube",
-        "url": "https://nube.ult.edu.cu",
-        "title": "Sistema de almacenamiento en la nube institucional"
-      }
-    ]
-  },
+  "id": "ult",
+  "name": "ULT (Universidad de Las Tunas)",
+  "logo": "logos/ult.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "https://www.ult.edu.cu",
+      "title": "Portal oficial de la Universidad de Las Tunas",
+      "searchTags": "portal institucional noticias inicio universidad las tunas ult vladimir ilich lenin cuba pregrado posgrado carreras investigacion innovacion extension facultades matricula estudiantes profesores campus tunero"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "https://pregrado.ult.edu.cu",
+      "title": "Plataforma de cursos virtuales para pregrado",
+      "searchTags": "moodle aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes ult universidad las tunas"
+    },
+    {
+      "type": "EVEA Posgrado",
+      "url": "https://uvp.ult.edu.cu",
+      "title": "Universidad Virtual de Posgrado",
+      "searchTags": "moodle uvp universidad virtual posgrado superacion posgraduada cursos maestrias doctorados diplomados plataforma educativa estudiantes profesores investigadores ult universidad las tunas"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "https://roa.ult.edu.cu",
+      "title": "Repositorio de Objetos de Aprendizaje",
+      "searchTags": "repositorio roa objetos aprendizaje recursos educativos digitales contenidos didacticos material docente tesis trabajos diploma articulos produccion cientifica acceso abierto ult universidad las tunas"
+    },
+    {
+      "type": "Repositorio de Videos",
+      "url": "https://media.ult.edu.cu",
+      "title": "Videoteca universitaria con recursos educativos multimedia",
+      "searchTags": "videoteca videos educativos multimedia recursos audiovisuales conferencias clases grabadas tutoriales documentales repositorio multimedia ult universidad las tunas"
+    },
+    {
+      "type": "Sitio Web Biblioteca",
+      "url": "https://biblioteca.ult.edu.cu",
+      "title": "Portal de la biblioteca y sus servicios en línea",
+      "searchTags": "biblioteca universitaria catalogo libros consulta busqueda bibliografica recurso documental prestamo sala lectura servicios linea ult universidad las tunas"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://opuntiabrava.ult.edu.cu",
+      "title": "Revista Opuntia Brava - ciencias sociales y humanísticas",
+      "searchTags": "revista cientifica opuntia brava ciencias sociales humanisticas humanidades sociologia filosofia historia psicologia pedagogia ult universidad las tunas"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://revistas.ult.edu.cu",
+      "title": "Sitio de gestión editorial de revistas de la ULT",
+      "searchTags": "portal revistas cientificas gestion editorial publicaciones academicas articulos investigacion ojs acceso abierto open access ult universidad las tunas"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correo.ult.edu.cu",
+      "title": "Correo electrónico para profesores y personal",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores administrativos ult universidad las tunas"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correoest.ult.edu.cu",
+      "title": "Servicio de correo electrónico para estudiantes",
+      "searchTags": "correo electronico estudiantes webmail zimbra email estudiantil login acceso bandeja entrada mensajes buzon correo alumnos universitario ult universidad las tunas"
+    },
+    {
+      "type": "Nube",
+      "url": "https://nube.ult.edu.cu",
+      "title": "Sistema de almacenamiento en la nube institucional",
+      "searchTags": "nube almacenamiento cloud nextcloud drive archivos compartir colaboracion calendario contactos documentos fotos backup sincronizacion ult universidad las tunas"
+    }
+  ]
+},
   {
-    "id": "uho",
-    "name": "UHo (Universidad de Holguín)",
-    "logo": "logos/uho.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "https://www.uho.edu.cu",
-        "title": "Portal principal de la Universidad de Holguín"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "https://educa.uho.edu.cu",
-        "title": "Portal educativo con recursos didácticos"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "https://eduvirtual.uho.edu.cu",
-        "title": "Educación Virtual - plataforma Moodle para pregrado"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "https://aulasvirtuales.uho.edu.cu",
-        "title": "Aulas virtuales complementarias para cursos regulares"
-      },
-      {
-        "type": "EVEA Posgrado",
-        "url": "https://eadvirtual.uho.edu.cu",
-        "title": "Educación a Distancia Virtual para posgrado"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "https://repositorio.uho.edu.cu",
-        "title": "Repositorio académico y de investigación"
-      },
-      {
-        "type": "Sitio Web Biblioteca",
-        "url": "https://redbibliotecas.uho.edu.cu",
-        "title": "Red de bibliotecas universitarias de Holguín"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://deporvida.uho.edu.cu",
-        "title": "Revista DeporVida - cultura física y deporte"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://luz.uho.edu.cu",
-        "title": "Revista Luz - ciencias de la educación"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://tecedu.uho.edu.cu",
-        "title": "Revista Tecnología Educativa"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correo.uho.edu.cu",
-        "title": "Servicio de correo electrónico institucional"
-      }
-    ]
-  },
+  "id": "uho",
+  "name": "UHo (Universidad de Holguín)",
+  "logo": "logos/uho.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "https://www.uho.edu.cu",
+      "title": "Portal principal de la Universidad de Holguín",
+      "searchTags": "portal institucional noticias inicio universidad holguin uho oscar lucero cuba pregrado posgrado carreras investigacion innovacion extension facultades matricula estudiantes profesores campus holguinero"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "https://educa.uho.edu.cu",
+      "title": "Portal educativo con recursos didácticos",
+      "searchTags": "portal educativo recursos didacticos materiales docentes contenidos educativos guias tutoriales apoyo docencia aprendizaje uho universidad holguin"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "https://eduvirtual.uho.edu.cu",
+      "title": "Educación Virtual - plataforma Moodle para pregrado",
+      "searchTags": "moodle educacion virtual aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes uho universidad holguin"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "https://aulasvirtuales.uho.edu.cu",
+      "title": "Aulas virtuales complementarias para cursos regulares",
+      "searchTags": "moodle aulas virtuales complementarias pregrado cursos regulares asignaturas plataforma educativa estudiantes profesores matricula clases material didactico uho universidad holguin"
+    },
+    {
+      "type": "EVEA Posgrado",
+      "url": "https://eadvirtual.uho.edu.cu",
+      "title": "Educación a Distancia Virtual para posgrado",
+      "searchTags": "moodle educacion distancia virtual posgrado superacion posgraduada cursos maestrias doctorados diplomados plataforma educativa estudiantes profesores uho universidad holguin"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "https://repositorio.uho.edu.cu",
+      "title": "Repositorio académico y de investigación",
+      "searchTags": "repositorio academico investigacion dspace tesis doctorado maestria pregrado trabajo diploma articulos libros publicaciones produccion cientifica acceso abierto open access uho universidad holguin"
+    },
+    {
+      "type": "Sitio Web Biblioteca",
+      "url": "https://redbibliotecas.uho.edu.cu",
+      "title": "Red de bibliotecas universitarias de Holguín",
+      "searchTags": "red bibliotecas universitarias catalogo libros consulta busqueda bibliografica recurso documental prestamo servicios bibliotecarios uho universidad holguin"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://deporvida.uho.edu.cu",
+      "title": "Revista DeporVida - cultura física y deporte",
+      "searchTags": "revista cientifica deporvida cultura fisica deporte actividad fisica entrenamiento deportivo educacion fisica recreacion uho universidad holguin"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://luz.uho.edu.cu",
+      "title": "Revista Luz - ciencias de la educación",
+      "searchTags": "revista cientifica luz ciencias educacion pedagogia didactica formacion docente ensenanza aprendizaje investigacion educativa uho universidad holguin"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://tecedu.uho.edu.cu",
+      "title": "Revista Tecnología Educativa",
+      "searchTags": "revista cientifica tecedu tecnologia educativa tic educacion entornos virtuales aprendizaje digital innovacion educativa uho universidad holguin"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correo.uho.edu.cu",
+      "title": "Servicio de correo electrónico institucional",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores estudiantes uho universidad holguin"
+    }
+  ]
+},
   {
-    "id": "umoa",
-    "name": "UMoa (Universidad de Moa)",
-    "logo": "logos/umoa.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "https://www.ismm.edu.cu",
-        "title": "Portal oficial de la Universidad de Moa Dr. Antonio Núñez Jiménez"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "https://moodle.ismm.edu.cu",
-        "title": "Aula virtual para cursos de grado"
-      },
-      {
-        "type": "EVEA Posgrado",
-        "url": "https://moodle-postgrado.ismm.edu.cu",
-        "title": "Entorno virtual de aprendizaje para posgrado"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "https://ninive.ismm.edu.cu",
-        "title": "Repositorio Ninive - producción científica institucional"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "https://cep.ismm.edu.cu",
-        "title": "Centro de Estudios Pedagógicos - repositorio educativo"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://revista.ismm.edu.cu",
-        "title": "Revista Ciencia & Futuro - minería y metalurgia"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correo.cujae.edu.cu",
-        "title": "Servicio de correo electrónico (compartido con CUJAE)"
-      }
-    ]
-  },
+  "id": "umoa",
+  "name": "UMoa (Universidad de Moa)",
+  "logo": "logos/umoa.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "https://www.ismm.edu.cu",
+      "title": "Portal oficial de la Universidad de Moa Dr. Antonio Núñez Jiménez",
+      "searchTags": "portal institucional noticias inicio universidad moa antonio nuñez jimenez ismm holguin cuba pregrado posgrado carreras ingenieria geologia mineria metalurgia investigacion innovacion extension facultades matricula estudiantes profesores campus"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "https://moodle.ismm.edu.cu",
+      "title": "Aula virtual para cursos de grado",
+      "searchTags": "moodle aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes ismm universidad moa"
+    },
+    {
+      "type": "EVEA Posgrado",
+      "url": "https://moodle-postgrado.ismm.edu.cu",
+      "title": "Entorno virtual de aprendizaje para posgrado",
+      "searchTags": "moodle posgrado virtual superacion posgraduada cursos maestrias doctorados diplomados plataforma educativa estudiantes profesores ismm universidad moa"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "https://ninive.ismm.edu.cu",
+      "title": "Repositorio Ninive - producción científica institucional",
+      "searchTags": "repositorio ninive cientifico institucional dspace tesis doctorado maestria pregrado trabajo diploma articulos libros publicaciones academicas produccion cientifica acceso abierto open access geologia mineria metalurgia ismm universidad moa"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "https://cep.ismm.edu.cu",
+      "title": "Centro de Estudios Pedagógicos - repositorio educativo",
+      "searchTags": "repositorio educativo centro estudios pedagogicos cep documentos academicos objetos aprendizaje investigacion educativa formacion docente ismm universidad moa"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://revista.ismm.edu.cu",
+      "title": "Revista Ciencia & Futuro - minería y metalurgia",
+      "searchTags": "revista cientifica ciencia futuro mineria metalurgia geologia ingenieria industrial medio ambiente desarrollo sostenible ismm universidad moa"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correo.cujae.edu.cu",
+      "title": "Servicio de correo electrónico (compartido con CUJAE)",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores estudiantes ismm universidad moa cujae"
+    }
+  ]
+},
   {
-    "id": "udg",
-    "name": "UDG (Universidad de Granma)",
-    "logo": "logos/udg.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "https://www.udg.co.cu",
-        "title": "Portal institucional de la Universidad de Granma"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "https://passwd.udg.co.cu",
-        "title": "Gestión de contraseñas y cuentas de usuario"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "https://poblacion.udg.co.cu",
-        "title": "Sistema de información de población y estadísticas"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "https://gestion.udg.co.cu",
-        "title": "Plataforma de gestión administrativa y trámites"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "https://ediciones.udg.co.cu",
-        "title": "Editorial Universitaria de Granma"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "https://office.udg.co.cu",
-        "title": "Acceso a suite ofimática en línea"
-      },
-      {
-        "type": "Sitio Web Eventos",
-        "url": "https://congresodesarrollolocal.udg.co.cu",
-        "title": "Congreso de Desarrollo Local"
-      },
-      {
-        "type": "EVEA EaD",
-        "url": "https://eddist.udg.co.cu",
-        "title": "Educación a Distancia - plataforma principal"
-      },
-      {
-        "type": "EVEA EaD",
-        "url": "https://moodle.udg.co.cu",
-        "title": "Moodle de la Universidad de Granma"
-      },
-      {
-        "type": "EVEA EaD",
-        "url": "https://mooc.udg.co.cu",
-        "title": "Plataforma de cursos MOOC"
-      },
-      {
-        "type": "EVEA EaD",
-        "url": "https://eva.udg.co.cu",
-        "title": "Entorno Virtual de Aprendizaje (alternativo)"
-      },
-      {
-        "type": "EVEA EaD",
-        "url": "https://evea.udg.co.cu",
-        "title": "Espacio virtual de enseñanza-aprendizaje"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "https://repositorio.udg.co.cu",
-        "title": "Repositorio institucional de tesis y publicaciones"
-      },
-      {
-        "type": "Repositorio Linux",
-        "url": "https://repo.udg.co.cu",
-        "title": "Repositorio local de paquetes para distribuciones Linux"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://revistas.udg.co.cu",
-        "title": "Portal de revistas científicas de la UDG"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correos.udg.co.cu",
-        "title": "Servicio de correo electrónico institucional"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://webmail.udg.co.cu",
-        "title": "Acceso web al correo de la UDG"
-      },
-      {
-        "type": "SIGENU",
-        "url": "https://secretaria.udg.co.cu",
-        "title": "SIGENU - Sistema de Gestión de la Secretaría Docente"
-      },
-      {
-        "type": "Nube",
-        "url": "https://cloud.udg.co.cu",
-        "title": "Servicio de nube privada Nextcloud"
-      }
-    ]
-  },
+  "id": "udg",
+  "name": "UDG (Universidad de Granma)",
+  "logo": "logos/udg.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "https://www.udg.co.cu",
+      "title": "Portal institucional de la Universidad de Granma",
+      "searchTags": "portal institucional noticias inicio universidad granma udg blas roca cuba pregrado posgrado carreras investigacion innovacion extension facultades matricula estudiantes profesores campus granmense bayamo"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "https://passwd.udg.co.cu",
+      "title": "Gestión de contraseñas y cuentas de usuario",
+      "searchTags": "gestion contraseñas cambio recuperacion password reset pwm autoservicio cuentas usuario perfil dominio acceso login credenciales seguridad udg universidad granma"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "https://poblacion.udg.co.cu",
+      "title": "Sistema de información de población y estadísticas",
+      "searchTags": "sistema informacion poblacion estadisticas datos demograficos censo recursos humanos estudiantes trabajadores indicadores metricas udg universidad granma"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "https://gestion.udg.co.cu",
+      "title": "Plataforma de gestión administrativa y trámites",
+      "searchTags": "gestion administrativa tramites plataforma solicitudes servicios internos recursos humanos finanzas logistica control interno udg universidad granma"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "https://ediciones.udg.co.cu",
+      "title": "Editorial Universitaria de Granma",
+      "searchTags": "editorial universitaria granma ediciones publicaciones academicas libros revistas produccion cientifica difusion conocimiento udg universidad granma"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "https://office.udg.co.cu",
+      "title": "Acceso a suite ofimática en línea",
+      "searchTags": "ofimatica office suite documentos colaboracion en linea procesador texto hojas calculo presentaciones correo calendario udg universidad granma"
+    },
+    {
+      "type": "Sitio Web Eventos",
+      "url": "https://congresodesarrollolocal.udg.co.cu",
+      "title": "Congreso de Desarrollo Local",
+      "searchTags": "congreso desarrollo local eventos cientificos academicos conferencias ponencias talleres investigacion comunidad territorio sostenibilidad emprendimiento udg universidad granma"
+    },
+    {
+      "type": "EVEA EaD",
+      "url": "https://eddist.udg.co.cu",
+      "title": "Educación a Distancia - plataforma principal",
+      "searchTags": "moodle educacion distancia eddist plataforma principal virtual aula cursos asignaturas estudiantes profesores matricula clases material didactico tareas foros udg universidad granma"
+    },
+    {
+      "type": "EVEA EaD",
+      "url": "https://moodle.udg.co.cu",
+      "title": "Moodle de la Universidad de Granma",
+      "searchTags": "moodle aula virtual pregrado posgrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes udg universidad granma"
+    },
+    {
+      "type": "EVEA EaD",
+      "url": "https://mooc.udg.co.cu",
+      "title": "Plataforma de cursos MOOC",
+      "searchTags": "moodle mooc cursos abiertos masivos en linea plataforma educativa gratuita autoaprendizaje certificacion capacitacion superacion profesional udg universidad granma"
+    },
+    {
+      "type": "EVEA EaD",
+      "url": "https://eva.udg.co.cu",
+      "title": "Entorno Virtual de Aprendizaje (alternativo)",
+      "searchTags": "moodle eva entorno virtual aprendizaje alternativo aula virtual cursos asignaturas plataforma educativa estudiantes profesores matricula material didactico udg universidad granma"
+    },
+    {
+      "type": "EVEA EaD",
+      "url": "https://evea.udg.co.cu",
+      "title": "Espacio virtual de enseñanza-aprendizaje",
+      "searchTags": "moodle evea espacio virtual ensenanza aprendizaje aula virtual cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico udg universidad granma"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "https://repositorio.udg.co.cu",
+      "title": "Repositorio institucional de tesis y publicaciones",
+      "searchTags": "repositorio institucional dspace tesis doctorado maestria pregrado trabajo diploma articulos libros publicaciones academicas produccion cientifica acceso abierto open access udg universidad granma"
+    },
+    {
+      "type": "Repositorio Linux",
+      "url": "https://repo.udg.co.cu",
+      "title": "Repositorio local de paquetes para distribuciones Linux",
+      "searchTags": "repositorio paquetes linux mirror local ubuntu debian fedora centos actualizaciones descargas software campus udg universidad granma"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://revistas.udg.co.cu",
+      "title": "Portal de revistas científicas de la UDG",
+      "searchTags": "portal revistas cientificas publicaciones academicas articulos investigacion ojs acceso abierto open access udg universidad granma"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correos.udg.co.cu",
+      "title": "Servicio de correo electrónico institucional",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores administrativos udg universidad granma"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://webmail.udg.co.cu",
+      "title": "Acceso web al correo de la UDG",
+      "searchTags": "correo electronico webmail acceso alternativo email login bandeja entrada mensajes buzon udg universidad granma"
+    },
+    {
+      "type": "SIGENU",
+      "url": "https://secretaria.udg.co.cu",
+      "title": "SIGENU - Sistema de Gestión de la Secretaría Docente",
+      "searchTags": "sigenu sistema gestion universitaria notas calificaciones expediente matricula secretaria docente control academico historial academico estudiantes profesores udg universidad granma"
+    },
+    {
+      "type": "Nube",
+      "url": "https://cloud.udg.co.cu",
+      "title": "Servicio de nube privada Nextcloud",
+      "searchTags": "nube almacenamiento cloud nextcloud drive archivos compartir colaboracion calendario contactos documentos fotos backup sincronizacion udg universidad granma"
+    }
+  ]
+},
   {
-    "id": "uo",
-    "name": "UO (Universidad de Oriente)",
-    "logo": "logos/uo.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "http://www.uo.edu.cu/",
-        "title": "Portal oficial de la Universidad de Oriente"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "http://redes.uo.edu.cu/",
-        "title": "Departamento de Redes y Servicios Telemáticos"
-      },
-      {
-        "type": "Sitio Web",
-        "url": "http://reportes.uo.edu.cu/",
-        "title": "Sistema de reportes y consultas académicas"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "http://eva.uo.edu.cu/",
-        "title": "Entorno Virtual de Aprendizaje para pregrado"
-      },
-      {
-        "type": "EVEA Posgrado",
-        "url": "http://cursos.uo.edu.cu/",
-        "title": "Plataforma de cursos de posgrado y capacitación"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "http://referenciaict.uo.edu.cu",
-        "title": "Repositorio de referencia del ICT"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "http://repositorio.uo.edu.cu/",
-        "title": "Repositorio académico institucional"
-      },
-      {
-        "type": "Repositorio de OA",
-        "url": "http://repotematico.uo.edu.cu/",
-        "title": "Repositorio temático de objetos de aprendizaje"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "http://anuarioeco.uo.edu.cu/",
-        "title": "Anuario de Ecología y Medio Ambiente"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "http://maestroysociedad.uo.edu.cu/",
-        "title": "Revista Maestro y Sociedad"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "http://santiago.uo.edu.cu/",
-        "title": "Revista Santiago - ciencias sociales y humanidades"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "http://tecnologiaquimica.uo.edu.cu/",
-        "title": "Revista Tecnología Química"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "http://cubanaquimica.uo.edu.cu",
-        "title": "Revista Cubana de Química"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "http://correo.uo.edu.cu/",
-        "title": "Servicio de correo electrónico institucional"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "http://consejo.uo.edu.cu/",
-        "title": "Acceso al correo del Consejo Universitario"
-      },
-      {
-        "type": "Nube",
-        "url": "http://nube.uo.edu.cu/",
-        "title": "Sistema de almacenamiento en nube propia"
-      }
-    ]
-  },
+  "id": "uo",
+  "name": "UO (Universidad de Oriente)",
+  "logo": "logos/uo.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "http://www.uo.edu.cu/",
+      "title": "Portal oficial de la Universidad de Oriente",
+      "searchTags": "portal institucional noticias inicio universidad oriente uo santiago cuba pregrado posgrado carreras investigacion innovacion extension facultades matricula estudiantes profesores campus santiaguero mella"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "http://redes.uo.edu.cu/",
+      "title": "Departamento de Redes y Servicios Telemáticos",
+      "searchTags": "redes servicios telematicos departamento conectividad campus infraestructura internet intranet proxy navegacion wifi soporte tecnico telecomunicaciones uo universidad oriente"
+    },
+    {
+      "type": "Sitio Web",
+      "url": "http://reportes.uo.edu.cu/",
+      "title": "Sistema de reportes y consultas académicas",
+      "searchTags": "reportes consultas academicas sistema informacion estadisticas estudiantes profesores notas calificaciones rendimiento academico indicadores metricas uo universidad oriente"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "http://eva.uo.edu.cu/",
+      "title": "Entorno Virtual de Aprendizaje para pregrado",
+      "searchTags": "moodle eva entorno virtual aprendizaje pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes uo universidad oriente"
+    },
+    {
+      "type": "EVEA Posgrado",
+      "url": "http://cursos.uo.edu.cu/",
+      "title": "Plataforma de cursos de posgrado y capacitación",
+      "searchTags": "moodle posgrado cursos capacitacion superacion profesional maestrias doctorados diplomados plataforma educativa estudiantes profesores investigadores uo universidad oriente"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "http://referenciaict.uo.edu.cu",
+      "title": "Repositorio de referencia del ICT",
+      "searchTags": "repositorio referencia ict informacion cientifico tecnica documentos academicos publicaciones articulos libros tesis acceso abierto uo universidad oriente"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "http://repositorio.uo.edu.cu/",
+      "title": "Repositorio académico institucional",
+      "searchTags": "repositorio academico institucional dspace tesis doctorado maestria pregrado trabajo diploma articulos libros publicaciones produccion cientifica acceso abierto open access uo universidad oriente"
+    },
+    {
+      "type": "Repositorio de OA",
+      "url": "http://repotematico.uo.edu.cu/",
+      "title": "Repositorio temático de objetos de aprendizaje",
+      "searchTags": "repositorio tematico objetos aprendizaje recursos educativos digitales contenidos didacticos material docente guias tutoriales acceso abierto uo universidad oriente"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "http://anuarioeco.uo.edu.cu/",
+      "title": "Anuario de Ecología y Medio Ambiente",
+      "searchTags": "revista cientifica anuario ecologia medio ambiente biodiversidad conservacion recursos naturales sostenibilidad cambio climatico uo universidad oriente"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "http://maestroysociedad.uo.edu.cu/",
+      "title": "Revista Maestro y Sociedad",
+      "searchTags": "revista cientifica maestro sociedad educacion pedagogia didactica formacion docente ciencias sociales humanidades uo universidad oriente"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "http://santiago.uo.edu.cu/",
+      "title": "Revista Santiago - ciencias sociales y humanidades",
+      "searchTags": "revista cientifica santiago ciencias sociales humanidades filosofia historia sociologia literatura arte cultura caribe uo universidad oriente"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "http://tecnologiaquimica.uo.edu.cu/",
+      "title": "Revista Tecnología Química",
+      "searchTags": "revista cientifica tecnologia quimica ingenieria quimica procesos industriales biotecnologia farmacia alimentos medio ambiente uo universidad oriente"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "http://cubanaquimica.uo.edu.cu",
+      "title": "Revista Cubana de Química",
+      "searchTags": "revista cientifica cubana quimica ciencias quimicas investigacion analitica organica inorganica fisicoquimica bioquimica uo universidad oriente"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "http://correo.uo.edu.cu/",
+      "title": "Servicio de correo electrónico institucional",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores administrativos uo universidad oriente"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "http://consejo.uo.edu.cu/",
+      "title": "Acceso al correo del Consejo Universitario",
+      "searchTags": "correo electronico consejo universitario webmail email login acceso bandeja entrada mensajes buzon directivos administracion uo universidad oriente"
+    },
+    {
+      "type": "Nube",
+      "url": "http://nube.uo.edu.cu/",
+      "title": "Sistema de almacenamiento en nube propia",
+      "searchTags": "nube almacenamiento cloud nextcloud drive archivos compartir colaboracion calendario contactos documentos fotos backup sincronizacion uo universidad oriente"
+    }
+  ]
+},
   {
-    "id": "ug",
-    "name": "UG (Universidad de Guantánamo)",
-    "logo": "logos/ug.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "https://www.cug.co.cu/",
-        "title": "Portal institucional de la Universidad de Guantánamo"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "https://cursovirtual.cug.co.cu/",
-        "title": "Aula virtual de pregrado (Moodle)"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "https://docsvirtual.cug.co.cu/",
-        "title": "Repositorio virtual de documentos académicos"
-      },
-      {
-        "type": "Bibliografías de apoyo al Moodle",
-        "url": "https://docsvirtual.cug.co.cu/",
-        "title": "Bibliografía digital de apoyo a cursos virtuales"
-      },
-      {
-        "type": "Repositorio Institucional",
-        "url": "http://repositorio.cug.co.cu:8080/jspui/",
-        "title": "Repositorio institucional en DSpace"
-      },
-      {
-        "type": "Sitio Web Biblioteca",
-        "url": "http://biblioteca.cug.co.cu/",
-        "title": "Portal de la biblioteca universitaria"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correo.cug.co.cu/",
-        "title": "Servicio de correo electrónico institucional"
-      }
-    ]
-  },
+  "id": "ug",
+  "name": "UG (Universidad de Guantánamo)",
+  "logo": "logos/ug.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "https://www.cug.co.cu/",
+      "title": "Portal institucional de la Universidad de Guantánamo",
+      "searchTags": "portal institucional noticias inicio universidad guantanamo cug cuba pregrado posgrado carreras investigacion innovacion extension facultades matricula estudiantes profesores campus guantanamero"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "https://cursovirtual.cug.co.cu/",
+      "title": "Aula virtual de pregrado (Moodle)",
+      "searchTags": "moodle aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes cug universidad guantanamo"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "https://docsvirtual.cug.co.cu/",
+      "title": "Repositorio virtual de documentos académicos",
+      "searchTags": "repositorio virtual documentos academicos bibliografia digital apoyo cursos virtuales tesis trabajos diploma articulos libros cug universidad guantanamo"
+    },
+    {
+      "type": "Bibliografías de apoyo al Moodle",
+      "url": "https://docsvirtual.cug.co.cu/",
+      "title": "Bibliografía digital de apoyo a cursos virtuales",
+      "searchTags": "bibliografia digital apoyo cursos virtuales moodle documentos academicos recursos educativos descargas cug universidad guantanamo"
+    },
+    {
+      "type": "Repositorio Institucional",
+      "url": "http://repositorio.cug.co.cu:8080/jspui/",
+      "title": "Repositorio institucional en DSpace",
+      "searchTags": "repositorio institucional dspace tesis doctorado maestria pregrado trabajo diploma articulos libros publicaciones academicas produccion cientifica acceso abierto open access cug universidad guantanamo"
+    },
+    {
+      "type": "Sitio Web Biblioteca",
+      "url": "http://biblioteca.cug.co.cu/",
+      "title": "Portal de la biblioteca universitaria",
+      "searchTags": "biblioteca universitaria catalogo libros consulta busqueda bibliografica recurso documental prestamo sala lectura cug universidad guantanamo"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correo.cug.co.cu/",
+      "title": "Servicio de correo electrónico institucional",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores estudiantes cug universidad guantanamo"
+    }
+  ]
+},
   {
-    "id": "uij",
-    "name": "UIJ (Universidad de Isla de la Juventud)",
-    "logo": "logos/uij.png",
-    "resources": [
-      {
-        "type": "Sitio Web Institucional",
-        "url": "https://www.uij.edu.cu",
-        "title": "Portal oficial de la Universidad de la Isla de la Juventud"
-      },
-      {
-        "type": "EVEA Pregrado",
-        "url": "https://aulavirtual.uij.edu.cu",
-        "title": "Aula virtual para la docencia de grado"
-      },
-      {
-        "type": "EVEA Posgrado",
-        "url": "https://postgrado.uij.edu.cu",
-        "title": "Entorno virtual de enseñanza de posgrado"
-      },
-      {
-        "type": "Repositorio de aplicaciones",
-        "url": "https://ftp.uij.edu.cu",
-        "title": "Servidor FTP con aplicaciones y documentos institucionales"
-      },
-      {
-        "type": "Revista Científica",
-        "url": "https://magisterio.uij.edu.cu",
-        "title": "Revista Magisterio - ciencias pedagógicas"
-      },
-      {
-        "type": "Correo electrónico",
-        "url": "https://correo.uij.edu.cu",
-        "title": "Servicio de correo electrónico para la comunidad universitaria"
-      }
-    ]
-  }
+  "id": "uij",
+  "name": "UIJ (Universidad de Isla de la Juventud)",
+  "logo": "logos/uij.png",
+  "resources": [
+    {
+      "type": "Sitio Web Institucional",
+      "url": "https://www.uij.edu.cu",
+      "title": "Portal oficial de la Universidad de la Isla de la Juventud",
+      "searchTags": "portal institucional noticias inicio universidad isla juventud uij pinos cuba pregrado posgrado carreras investigacion innovacion extension facultades matricula estudiantes profesores campus"
+    },
+    {
+      "type": "EVEA Pregrado",
+      "url": "https://aulavirtual.uij.edu.cu",
+      "title": "Aula virtual para la docencia de grado",
+      "searchTags": "moodle aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes uij universidad isla juventud"
+    },
+    {
+      "type": "EVEA Posgrado",
+      "url": "https://postgrado.uij.edu.cu",
+      "title": "Entorno virtual de enseñanza de posgrado",
+      "searchTags": "moodle posgrado virtual superacion posgraduada cursos maestrias doctorados diplomados plataforma educativa estudiantes profesores uij universidad isla juventud"
+    },
+    {
+      "type": "Repositorio de aplicaciones",
+      "url": "https://ftp.uij.edu.cu",
+      "title": "Servidor FTP con aplicaciones y documentos institucionales",
+      "searchTags": "ftp servidor archivos descargas software aplicaciones documentos bibliografia utilidades herramientas informaticas repositorio archivos compartidos uij universidad isla juventud"
+    },
+    {
+      "type": "Revista Científica",
+      "url": "https://magisterio.uij.edu.cu",
+      "title": "Revista Magisterio - ciencias pedagógicas",
+      "searchTags": "revista cientifica magisterio ciencias pedagogicas educacion pedagogia didactica formacion docente uij universidad isla juventud"
+    },
+    {
+      "type": "Correo electrónico",
+      "url": "https://correo.uij.edu.cu",
+      "title": "Servicio de correo electrónico para la comunidad universitaria",
+      "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores estudiantes uij universidad isla juventud"
+    }
+  ]
+}
 ]
 ;
 
