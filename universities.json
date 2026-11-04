@@ -1840,6 +1840,176 @@
       "searchTags": "correo electronico institucional webmail zimbra email login acceso bandeja entrada mensajes buzon correo profesores trabajadores estudiantes uij universidad isla juventud"
     }
   ]
-}
+},
+  {
+    "id": "unah",
+    "name": "UNAH (Universidad de las Artes)",
+    "logo": "logos/unah.png",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.unah.edu.cu",
+        "title": "Portal institucional de la UNAH",
+        "searchTags": "portal institucional noticias inicio universidad artes unah isa la habana cuba pregrado posgrado carreras arte danza teatro musica artes plasticas medios audiovisuales facultades matricula estudiantes profesores"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.unah.edu.cu",
+        "title": "Correo Institucional de la UNAH",
+        "searchTags": "correo electronico institucional webmail email login acceso bandeja entrada mensajes buzon profesores trabajadores estudiantes unah universidad artes"
+      },
+      {
+        "type": "Nube",
+        "url": "https://nube.unah.edu.cu",
+        "title": "Nube Institucional de la UNAH",
+        "searchTags": "nube almacenamiento cloud drive archivos compartir colaboracion documentos fotos nextcloud unah universidad artes"
+      },
+      {
+        "type": "FTP",
+        "url": "https://ftp.unah.edu.cu",
+        "title": "FTP Institucional de la UNAH",
+        "searchTags": "ftp servidor archivos descargas software aplicaciones documentos bibliografia repositorio archivos compartidos unah universidad artes"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.unah.edu.cu",
+        "title": "Sistema de Gestión de la Nueva Universidad",
+        "searchTags": "sigenu sistema gestion universitaria notas calificaciones expediente matricula secretaria docente control academico historial academico estudiantes profesores unah universidad artes"
+      },
+      {
+        "type": "Repositorio Institucional",
+        "url": "https://dspace.unah.edu.cu",
+        "title": "Repositorio Institucional de la UNAH",
+        "searchTags": "repositorio institucional dspace tesis doctorado maestria pregrado trabajo diploma articulos libros publicaciones produccion cientifica acceso abierto open access unah universidad artes"
+      },
+      {
+        "type": "Repositorio de código",
+        "url": "https://git.unah.edu.cu",
+        "title": "Git Institucional de la UNAH",
+        "searchTags": "git gitlab repositorio codigo fuente desarrollo colaborativo software control versiones proyectos programacion forja unah universidad artes"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://revistas.unah.edu.cu",
+        "title": "Revistas institucionales de la UNAH",
+        "searchTags": "revista cientifica revistas institucionales articulos investigacion publicaciones academicas ojs acceso abierto open access unah universidad artes"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://evea.unah.edu.cu",
+        "title": "EVEA de Pregrado - UNAH",
+        "searchTags": "moodle evea aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes unah universidad artes"
+      },
+      {
+        "type": "EVEA EaD",
+        "url": "https://evead.unah.edu.cu",
+        "title": "EVEA de Educación a Distancia - UNAH",
+        "searchTags": "moodle evea educacion distancia ead plataforma virtual cursos asignaturas estudiantes profesores autoaprendizaje unah universidad artes"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://eveapg.unah.edu.cu",
+        "title": "EVEA de Posgrado - UNAH",
+        "searchTags": "moodle evea posgrado postgrado virtual cursos maestrias doctorados diplomados superacion profesional plataforma educativa estudiantes profesores unah universidad artes"
+      },
+      {
+        "type": "Repositorio de OA",
+        "url": "https://runah.unah.edu.cu",
+        "title": "Repositorio de Objetos de Aprendizaje - UNAH",
+        "searchTags": "repositorio objetos aprendizaje roa recursos educativos digitales contenidos didacticos material docente guias tutoriales acceso abierto unah universidad artes"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://ebiblio.unah.edu.cu",
+        "title": "Sitio web de la Biblioteca - UNAH",
+        "searchTags": "biblioteca digital libros catalogo consulta busqueda bibliografica recurso documental prestamo sala lectura unah universidad artes"
+      }
+    ]
+  },
+  {
+    "id": "ucpejv",
+    "name": "UCPEJV (Universidad de Ciencias Pedagógicas Enrique José Varona)",
+    "logo": "logos/ucpejv.png",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "http://portal.ucpejv.edu.cu/",
+        "title": "Portal de la Universidad de Ciencias Pedagógicas Enrique José Varona",
+        "searchTags": "portal institucional noticias inicio universidad ciencias pedagogicas enrique jose varona ucpejv la habana cuba pregrado posgrado carreras pedagogia educacion facultades matricula estudiantes profesores"
+      },
+      {
+        "type": "Sitio Web Eventos",
+        "url": "http://eventos.ucpejv.edu.cu/",
+        "title": "Sitio de eventos de la UCPEJV",
+        "searchTags": "eventos congresos conferencias talleres jornadas simposios ponencias cientificos academicos inscripcion programa comite organizador ucpejv universidad ciencias pedagogicas"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "http://webdocente.ucpejv.edu.cu/",
+        "title": "Aula virtual de la UCPEJV",
+        "searchTags": "moodle aula virtual webdocente pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes ucpejv universidad ciencias pedagogicas"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "http://revistas.ucpejv.edu.cu/",
+        "title": "Sitio de las revistas científicas de la UCPEJV",
+        "searchTags": "revista cientifica revistas institucionales articulos investigacion publicaciones academicas pedagogia educacion ojs acceso abierto open access ucpejv universidad ciencias pedagogicas"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://webmail.ucpejv.edu.cu/",
+        "title": "Correo electrónico de la UCPEJV",
+        "searchTags": "correo electronico institucional webmail email login acceso bandeja entrada mensajes buzon profesores trabajadores estudiantes ucpejv universidad ciencias pedagogicas"
+      }
+    ]
+  },
+  {
+    "id": "uccfd",
+    "name": "UCCFD (Universidad de Ciencias de la Cultura Física y el Deporte)",
+    "logo": "logos/uccfd.png",
+    "resources": [
+      {
+        "type": "Sitio Web Institucional",
+        "url": "https://www.uccfd.cu",
+        "title": "Sitio institucional de la UCCFD Manuel Fajardo",
+        "searchTags": "portal institucional noticias inicio universidad ciencias cultura fisica deporte manuel fajardo uccfd la habana cuba pregrado posgrado carreras facultades matricula estudiantes profesores"
+      },
+      {
+        "type": "EVEA Posgrado",
+        "url": "https://posgrado.uccfd.cu",
+        "title": "Plataforma de posgrado - UCCFD",
+        "searchTags": "moodle posgrado virtual cursos diplomados maestrias doctorados superacion profesional plataforma educativa estudiantes profesores uccfd universidad cultura fisica deporte"
+      },
+      {
+        "type": "EVEA Pregrado",
+        "url": "https://moodle.uccfd.cu",
+        "title": "Plataforma de pregrado - UCCFD",
+        "searchTags": "moodle aula virtual pregrado cursos asignaturas plataforma educativa estudiantes profesores matricula clases material didactico tareas foros cuestionarios examenes uccfd universidad cultura fisica deporte"
+      },
+      {
+        "type": "Revista Científica",
+        "url": "https://accion.uccfd.cu",
+        "title": "Revista Acción - UCCFD",
+        "searchTags": "revista cientifica accion cultura fisica deporte actividad fisica entrenamiento deportivo educacion fisica investigacion uccfd universidad cultura fisica deporte"
+      },
+      {
+        "type": "Correo electrónico",
+        "url": "https://correo.uccfd.cu",
+        "title": "Webmail de correo institucional - UCCFD",
+        "searchTags": "correo electronico webmail email institucional login acceso bandeja entrada mensajes buzon profesores trabajadores estudiantes uccfd universidad cultura fisica deporte"
+      },
+      {
+        "type": "SIGENU",
+        "url": "https://sigenu.uccfd.cu",
+        "title": "Sistema de Gestión de la Nueva Universidad - UCCFD",
+        "searchTags": "sigenu sistema gestion universitaria notas calificaciones expediente matricula secretaria docente control academico historial academico estudiantes profesores uccfd universidad cultura fisica deporte"
+      },
+      {
+        "type": "Sitio Web Biblioteca",
+        "url": "https://info.uccfd.cu",
+        "title": "Sitio de la biblioteca - UCCFD",
+        "searchTags": "biblioteca digital libros catalogo consulta busqueda bibliografica recurso documental info uccfd universidad cultura fisica deporte"
+      }
+    ]
+  }
 ]
-;
