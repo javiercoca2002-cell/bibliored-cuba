@@ -1,4 +1,4 @@
-:root {
+html {
   --bg-primary: #121212;
   --bg-secondary: #1f1f1f;
   --text-primary: #f0f0f0;
@@ -9,8 +9,10 @@
   --menu-bg: #1a1a1a;
   --search-bg: #2a2a2a;
   --card-bg: #1a1a1a;
+  background-color: var(--bg-primary);
 }
 
+html.light-mode,
 body.light-mode {
   --bg-primary: #f0f0f0;
   --bg-secondary: #ffffff;
@@ -41,7 +43,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Quitar outline al tocar con el dedo, mantenerlo con teclado */
 a:focus, button:focus {
+  outline: none;
+}
+
+a:focus-visible, button:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
@@ -169,8 +176,8 @@ p.subtitulo {
 }
 
 .logo-icon {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
@@ -238,6 +245,19 @@ p.subtitulo {
   align-items: stretch;
 }
 
+/* ===== WRAPPER PARA EL INPUT DE BÚSQUEDA ===== */
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.search-input-wrapper #searchInput {
+  width: 100%;
+  padding-right: 40px; /* Espacio para el botón X */
+}
+
 #searchInput {
   flex: 1;
   padding: 0.8rem;
@@ -266,7 +286,110 @@ p.subtitulo {
   background-color: var(--accent-secondary);
 }
 
+/* ===== BOTÓN LIMPIAR BÚSQUEDA ===== */
+.clear-search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.clear-search-btn:hover {
+  background-color: rgba(128, 128, 128, 0.15);
+  color: var(--text-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.clear-search-btn svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  color: var(--text-primary);
+}
+
+body.light-mode .clear-search-btn svg {
+  color: #000000; /* Icono negro en tema claro */
+}
+
+body.light-mode .clear-search-btn:hover {
+  color: #000000;
+}
+
 /* ===== FILTROS RÁPIDOS ===== */
+/* ===== BOTÓN TOGGLE DE FILTROS ===== */
+.filter-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 12px auto 0;
+  padding: 8px 16px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  max-width: 100%;
+}
+
+.filter-toggle-btn:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border-color: var(--accent-primary);
+}
+
+.filter-toggle-btn:hover .filter-toggle-icon,
+.filter-toggle-btn:hover .filter-toggle-chevron {
+  color: var(--bg-primary);
+}
+
+.filter-toggle-icon,
+.filter-toggle-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+  transition: color 0.2s ease, transform 0.3s ease;
+}
+
+.filter-toggle-btn[aria-expanded="true"] .filter-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.filter-toggle-text {
+  line-height: 1;
+}
+
+body.light-mode .filter-toggle-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+body.light-mode .filter-toggle-btn:hover {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+body.light-mode .filter-toggle-btn:hover .filter-toggle-icon,
+body.light-mode .filter-toggle-btn:hover .filter-toggle-chevron {
+  color: #ffffff;
+}
+
+/* ===== CONTENEDOR DE FILTROS (OCULTO POR DEFECTO) ===== */
 .filter-container {
   display: flex;
   flex-wrap: wrap;
@@ -274,6 +397,17 @@ p.subtitulo {
   gap: 8px;
   margin-top: 12px;
   padding: 0 10px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.3s ease;
+}
+
+.filter-container.open {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .filter-btn {
@@ -332,7 +466,7 @@ main {
   overflow-x: hidden;
 }
 
-/* ===== ESTILOS PARA VISTA PRINCIPAL (LISTA DE UNIVERSIDADES) ===== */
+/* ===== ESTILOS PARA VISTA PRINCIPAL ===== */
 .universities-list-container {
   display: flex;
   flex-direction: column;
@@ -418,7 +552,7 @@ body.light-mode .match-badge {
   background-color: #2e7d32;
 }
 
-/* ===== ESTILOS PARA VISTA DETALLE ===== */
+/* ===== VISTA DETALLE ===== */
 .back-button {
   display: flex;
   align-items: center;
@@ -478,7 +612,7 @@ body.light-mode .match-badge {
   font-weight: bold;
 }
 
-/* ===== ESTILOS PARA RECURSOS ===== */
+/* ===== RECURSOS ===== */
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -545,7 +679,7 @@ body.light-mode .match-badge {
   opacity: 1;
 }
 
-/* ===== CONTENEDOR DE BOTONES DE ACCIÓN ===== */
+/* ===== BOTONES DE ACCIÓN ===== */
 .resource-card-actions {
   position: absolute;
   top: 10px;
@@ -555,7 +689,6 @@ body.light-mode .match-badge {
   z-index: 10;
 }
 
-/* ===== BOTÓN FAVORITO ===== */
 .favorite-btn {
   background: none;
   border: none;
@@ -576,7 +709,6 @@ body.light-mode .match-badge {
   color: gold;
 }
 
-/* ===== BOTÓN COPIAR ENLACE ===== */
 .copy-link-btn {
   background: none;
   border: none;
@@ -593,7 +725,38 @@ body.light-mode .match-badge {
   transform: scale(1.2);
 }
 
-/* ===== ENCABEZADO DE RESULTADOS DE BÚSQUEDA ===== */
+/* ===== BOTÓN COMPARTIR ===== */
+.share-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.share-btn:hover {
+  color: var(--accent-primary);
+  transform: scale(1.2);
+}
+
+.share-btn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.share-btn:hover svg {
+  color: var(--accent-primary);
+  transform: scale(1.15);
+}
+
+/* ===== RESULTADOS DE BÚSQUEDA ===== */
 .search-result-header {
   display: flex;
   align-items: center;
@@ -683,7 +846,7 @@ body.light-mode .match-badge {
   text-align: center;
 }
 
-/* ===== LISTAS DENTRO DE MODALES ===== */
+/* ===== LISTAS EN MODALES ===== */
 .favorites-list {
   list-style: none;
   padding: 0;
@@ -693,11 +856,10 @@ body.light-mode .match-badge {
   padding: 10px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
-  flex-wrap: wrap;
   gap: 10px;
+  transition: background-color 0.3s ease;
+  flex-wrap: nowrap;
 }
 
 .favorite-item:hover {
@@ -707,9 +869,11 @@ body.light-mode .match-badge {
 .favorite-item a {
   color: var(--text-primary);
   text-decoration: none;
-  word-break: break-all;
-  overflow-wrap: break-word;
-  flex: 1;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
 }
 
 .favorite-item a:hover {
@@ -779,7 +943,7 @@ body.light-mode .match-badge {
   background-color: var(--accent-secondary);
 }
 
-/* ===== BOTÓN LIMPIAR HISTORIAL ===== */
+/* ===== BOTÓN LIMPIAR ===== */
 .clear-btn {
   display: flex;
   align-items: center;
@@ -800,7 +964,7 @@ body.light-mode .match-badge {
   background-color: #cc0000;
 }
 
-/* ===== BOTÓN ELIMINAR LINK PERSONALIZADO ===== */
+/* ===== BOTÓN ELIMINAR LINK ===== */
 .delete-custom-link {
   background: none;
   border: none;
@@ -816,7 +980,7 @@ body.light-mode .match-badge {
   transform: scale(1.2);
 }
 
-/* ===== CONTENIDO ACERCA DE ===== */
+/* ===== ACERCA DE ===== */
 .about-content {
   color: var(--text-primary);
   line-height: 1.6;
@@ -847,7 +1011,7 @@ footer p {
   color: #999;
 }
 
-/* ===== MENSAJE DE NO RESULTADOS ===== */
+/* ===== NO RESULTADOS ===== */
 #noResults {
   text-align: center;
   color: var(--text-secondary);
@@ -856,13 +1020,12 @@ footer p {
   display: none;
 }
 
-/* ===== LOGOS DE UNIVERSIDADES ===== */
+/* ===== LOGOS ===== */
 .university-logo {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Ocultar elementos antiguos */
 .university-section {
   display: none;
 }
@@ -878,12 +1041,206 @@ footer p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== PREFERENCIAS DE MOVIMIENTO REDUCIDO ===== */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ===== TOAST NOTIFICATION ===== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* ===== RESALTAR BÚSQUEDA ===== */
+mark.search-highlight {
+  background: #FFEB3B;
+  color: #000;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+body.light-mode mark.search-highlight {
+  background: #FFD600;
+}
+
+/* ===== BOTÓN VOLVER ARRIBA ===== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+
+/* ===================================================================
+   ICONOS SVG DINÁMICOS
+   =================================================================== */
+
+/* ===== ICONOS SVG EN BOTONES DE ACCIÓN (copiar) ===== */
+.copy-link-btn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.copy-link-btn:hover svg {
+  color: var(--accent-primary);
+  transform: scale(1.15);
+}
+
+/* ===== ICONOS SVG EN TOASTS ===== */
+.toast svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.toast-success {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.toast-error {
+  background: #f44336;
+  color: #ffffff;
+}
+
+/* ===== ICONOS SVG EN LISTAS (Favoritos / Mis Links) ===== */
+.favorite-item .remove-favorite,
+.favorite-item .delete-custom-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.favorite-item .remove-favorite svg,
+.favorite-item .delete-custom-link svg {
+  width: 16px;
+  height: 16px;
+  color: #ff4444;
+  pointer-events: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.favorite-item .remove-favorite:hover svg,
+.favorite-item .delete-custom-link:hover svg {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* ===================================================================
+   ICONOS SVG EN "ACERCA DE"
+   =================================================================== */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-primary);
+  margin: 20px 0 10px 0;
+}
+
+.about-header-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  color: var(--text-secondary);
+}
+
+.about-list-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #4caf50;
+  margin-top: 3px;
+}
+
+body.light-mode .about-list-icon {
+  color: #2e7d32;
+}
+
+/* ===================================================================
+   NUEVO: MODAL DE CONFIRMACIÓN
+   =================================================================== */
+#confirmModal .modal-title {
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+#confirmModal .modal-small {
+  max-width: 400px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -960,6 +1317,22 @@ footer p {
     height: 14px;
   }
 
+  .filter-toggle-btn {
+    max-width: 100%;
+    font-size: 0.8rem;
+    padding: 7px 12px;
+  }
+
+  .filter-toggle-icon,
+  .filter-toggle-chevron {
+    width: 16px;
+    height: 16px;
+  }
+
+  .filter-container.open {
+    max-height: 600px;
+  }
+
   .resources-grid {
     grid-template-columns: 1fr;
   }
@@ -989,9 +1362,17 @@ footer p {
     gap: 12px;
   }
 
+  /* Ajuste móvil para los 3 botones */
   .copy-link-btn,
-  .favorite-btn {
+  .favorite-btn,
+  .share-btn {
     font-size: 1.4rem;
+  }
+
+  .copy-link-btn svg,
+  .share-btn svg {
+    width: 20px;
+    height: 20px;
   }
 
   .search-result-header {
@@ -1007,12 +1388,18 @@ footer p {
   }
 
   .favorite-item {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: nowrap;
   }
 
   .favorite-item a {
-    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .favorite-item .remove-favorite svg,
+  .favorite-item .delete-custom-link svg {
+    width: 18px;
+    height: 18px;
   }
 
   .menu-icon {
@@ -1020,4 +1407,24 @@ footer p {
     height: 20px;
     margin-right: 8px;
   }
+
+  .scroll-to-top {
+    bottom: 20px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ===== NUEVO: MODAL DE VALORACIÓN ===== */
+#ratingModal .save-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  min-height: 50px;
+}
+
+#ratingModal .save-link-btn img {
+  flex-shrink: 0;
 }
