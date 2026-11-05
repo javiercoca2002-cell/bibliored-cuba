@@ -1,3 +1,15 @@
+// ===== ESPÍA DE ERRORES (Para detectar fallos de sintaxis) =====
+window.addEventListener('error', function(e) {
+  document.body.innerHTML = `
+    <div style="padding:20px; background:#ff0000; color:#ffffff; font-family:monospace; font-size:16px; z-index:99999; position:fixed; top:0; left:0; width:100%; height:100%; overflow:auto;">
+      <h2>❌ ERROR DETECTADO EN EL SCRIPT</h2>
+      <p><b>Mensaje:</b> ${e.message}</p>
+      <p><b>Archivo:</b> ${e.filename}</p>
+      <p><b>Línea:</b> ${e.lineno}</p>
+    </div>
+  `;
+});
+
 document.addEventListener('DOMContentLoaded', async function() {
   // ========== ELEMENTOS DEL DOM ==========
   const searchInput = document.getElementById('searchInput');
@@ -67,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   let visitHistory = JSON.parse(localStorage.getItem('visitHistory')) || [];
   let customLinks = JSON.parse(localStorage.getItem('customLinks')) || [];
   let currentFilter = 'all';
-  
+
   let universitiesData = []; // Se llenará con el fetch
 
   // ===== TOGGLE DE FILTROS =====
@@ -91,12 +103,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // ========== CARGAR DATOS DESDE JSON EXTERNO ==========
   try {
-    const response = await fetch('./universities.json');
-    if (!response.ok) throw new Error('Error al cargar universities.json');
+    // Añadimos ?v= para forzar la recarga y evitar la caché vieja
+    const response = await fetch('./universities.json?v=' + new Date().getTime());
+    if (!response.ok) throw new Error('Error HTTP: ' + response.status);
     universitiesData = await response.json();
   } catch (error) {
-    console.error(error);
-    universitiesListContainer.innerHTML = '<p style="text-align:center; color:red;">Error al cargar los datos. Verifica la consola.</p>';
+    console.error("Error crítico cargando JSON:", error);
+    // Alerta visible para saber si el fetch falla
+    alert('❌ ERROR AL CARGAR EL JSON: ' + error.message + '\n\nRevisa la consola para más detalles.');
+    universitiesListContainer.innerHTML = '<p style="text-align:center; color:red; padding:20px;">Error al cargar los datos de las universidades. Verifica tu conexión o recarga la página.</p>';
     return;
   }
 
@@ -223,7 +238,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       );
       tags.push(...normalizedAliases);
     }
-    
+
     tags.push(universityId);
     tags.push(universityName.toLowerCase());
 
